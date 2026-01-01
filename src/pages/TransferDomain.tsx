@@ -203,7 +203,7 @@ const TransferDomain = () => {
               className="relative"
             >
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600" 
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600" 
                 alt="Domain transfer" 
                 className="rounded-2xl shadow-2xl border border-primary/20"
               />
@@ -425,7 +425,7 @@ const TransferDomain = () => {
               
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500" 
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500" 
                   alt="Customer support" 
                   className="rounded-2xl shadow-2xl"
                 />
