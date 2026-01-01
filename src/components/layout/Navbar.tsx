@@ -8,13 +8,29 @@ const navLinks = [
   {
     label: "Hosting & Servers",
     href: "#hosting",
-    items: [
-      { icon: Server, label: "Web Hosting", description: "Fast & reliable shared hosting" },
-      { icon: Cloud, label: "Cloud Hosting", description: "Scalable cloud infrastructure" },
-      { icon: Cpu, label: "VPS Hosting", description: "Virtual private servers" },
-      { icon: HardDrive, label: "Dedicated Servers", description: "Full server resources" },
-      { icon: Database, label: "Managed Databases", description: "MySQL, PostgreSQL & more" },
-      { icon: Layers, label: "Reseller Hosting", description: "Start your hosting business" },
+    categories: [
+      {
+        title: "Shared Hosting",
+        items: [
+          { icon: Server, label: "Web Hosting", description: "Feature-rich cPanel & one-click tools" },
+          { icon: Globe, label: "Hosting for WordPress", description: "Optimized WordPress hosting for growth" },
+          { icon: Layers, label: "Reseller Hosting", description: "Launch your own hosting business" },
+        ],
+      },
+      {
+        title: "VPS Hosting",
+        items: [
+          { icon: Cloud, label: "Managed VPS Hosting", description: "Zero server hassle, 100% managed for you" },
+          { icon: Cpu, label: "VPS Hosting (root access)", description: "Full root access, full control" },
+        ],
+      },
+      {
+        title: "Dedicated",
+        items: [
+          { icon: Database, label: "Managed VDS Hosting", description: "Dedicated-level power" },
+          { icon: HardDrive, label: "Dedicated Servers", description: "Full control on your hardware" },
+        ],
+      },
     ],
   },
   {
@@ -99,22 +115,55 @@ export function Navbar() {
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 pt-2 z-50"
                     >
-                      <div className="bg-light-dark border border-border rounded-xl shadow-2xl p-3 min-w-[320px] grid gap-1">
-                        {link.items?.map((item) => (
-                          <a
-                            key={item.label}
-                            href="#"
-                            className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
-                          >
-                            <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors">
-                              <item.icon className="w-5 h-5 text-secondary" />
-                            </div>
-                            <div>
-                              <div className="font-medium text-foreground">{item.label}</div>
-                              <div className="text-sm text-muted-foreground">{item.description}</div>
-                            </div>
-                          </a>
-                        ))}
+                      <div className="bg-light-dark border border-border rounded-xl shadow-2xl p-4 min-w-[320px]">
+                        {/* Categories layout for Hosting & Servers */}
+                        {link.categories ? (
+                          <div className="flex gap-6">
+                            {link.categories.map((category) => (
+                              <div key={category.title} className="min-w-[200px]">
+                                <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-2">
+                                  {category.title}
+                                </div>
+                                <div className="grid gap-1">
+                                  {category.items.map((item) => (
+                                    <a
+                                      key={item.label}
+                                      href="#"
+                                      className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors group"
+                                    >
+                                      <div className="w-9 h-9 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors">
+                                        <item.icon className="w-4 h-4 text-secondary" />
+                                      </div>
+                                      <div>
+                                        <div className="font-medium text-foreground text-sm">{item.label}</div>
+                                        <div className="text-xs text-muted-foreground">{item.description}</div>
+                                      </div>
+                                    </a>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          /* Regular items layout */
+                          <div className="grid gap-1">
+                            {link.items?.map((item) => (
+                              <a
+                                key={item.label}
+                                href="#"
+                                className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+                              >
+                                <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors">
+                                  <item.icon className="w-5 h-5 text-secondary" />
+                                </div>
+                                <div>
+                                  <div className="font-medium text-foreground">{item.label}</div>
+                                  <div className="text-sm text-muted-foreground">{item.description}</div>
+                                </div>
+                              </a>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </motion.div>
                   )}
@@ -168,22 +217,52 @@ export function Navbar() {
                           className="overflow-hidden"
                         >
                           <div className="bg-light-dark rounded-lg p-2 mt-1 mb-2">
-                            {link.items?.map((item) => (
-                              <a
-                                key={item.label}
-                                href="#"
-                                className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
-                                onClick={() => setIsOpen(false)}
-                              >
-                                <div className="w-9 h-9 rounded-lg bg-secondary/20 flex items-center justify-center">
-                                  <item.icon className="w-4 h-4 text-secondary" />
-                                </div>
-                                <div>
-                                  <div className="font-medium text-foreground text-sm">{item.label}</div>
-                                  <div className="text-xs text-muted-foreground">{item.description}</div>
-                                </div>
-                              </a>
-                            ))}
+                            {/* Categories layout for Hosting & Servers */}
+                            {link.categories ? (
+                              <div className="grid gap-4">
+                                {link.categories.map((category) => (
+                                  <div key={category.title}>
+                                    <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 px-2">
+                                      {category.title}
+                                    </div>
+                                    {category.items.map((item) => (
+                                      <a
+                                        key={item.label}
+                                        href="#"
+                                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                                        onClick={() => setIsOpen(false)}
+                                      >
+                                        <div className="w-9 h-9 rounded-lg bg-secondary/20 flex items-center justify-center">
+                                          <item.icon className="w-4 h-4 text-secondary" />
+                                        </div>
+                                        <div>
+                                          <div className="font-medium text-foreground text-sm">{item.label}</div>
+                                          <div className="text-xs text-muted-foreground">{item.description}</div>
+                                        </div>
+                                      </a>
+                                    ))}
+                                  </div>
+                                ))}
+                              </div>
+                            ) : (
+                              /* Regular items layout */
+                              link.items?.map((item) => (
+                                <a
+                                  key={item.label}
+                                  href="#"
+                                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                                  onClick={() => setIsOpen(false)}
+                                >
+                                  <div className="w-9 h-9 rounded-lg bg-secondary/20 flex items-center justify-center">
+                                    <item.icon className="w-4 h-4 text-secondary" />
+                                  </div>
+                                  <div>
+                                    <div className="font-medium text-foreground text-sm">{item.label}</div>
+                                    <div className="text-xs text-muted-foreground">{item.description}</div>
+                                  </div>
+                                </a>
+                              ))
+                            )}
                           </div>
                         </motion.div>
                       )}
