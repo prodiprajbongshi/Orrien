@@ -157,13 +157,11 @@ export default function DedicatedServers() {
                   </div>
                 </div>
                 <div className="rounded-2xl overflow-hidden border border-border/30 shadow-2xl bg-gradient-to-br from-primary/10 to-secondary/10">
-                  <div className="aspect-video flex items-center justify-center p-8">
-                    <div className="text-center">
-                      <Server className="w-20 h-20 text-secondary mx-auto mb-4" />
-                      <p className="text-lg text-foreground font-medium">Enterprise Hardware</p>
-                      <p className="text-muted-foreground">100% dedicated to you</p>
-                    </div>
-                  </div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600" 
+                    alt="Dedicated server hardware" 
+                    className="w-full h-auto"
+                  />
                 </div>
                 <div className="absolute -bottom-4 -left-4 bg-card rounded-xl p-3 shadow-xl border border-border">
                   <div className="flex items-center gap-2">
