@@ -12,23 +12,23 @@ const navLinks = [
       {
         title: "Shared Hosting",
         items: [
-          { icon: Server, label: "Web Hosting", description: "Feature-rich cPanel & one-click tools" },
-          { icon: Globe, label: "Hosting for WordPress", description: "Optimized WordPress hosting for growth" },
-          { icon: Layers, label: "Reseller Hosting", description: "Launch your own hosting business" },
+          { icon: Server, label: "Web Hosting", description: "Feature-rich cPanel & one-click tools", href: "/web-hosting" },
+          { icon: Globe, label: "Hosting for WordPress", description: "Optimized WordPress hosting for growth", href: "#" },
+          { icon: Layers, label: "Reseller Hosting", description: "Launch your own hosting business", href: "#" },
         ],
       },
       {
         title: "VPS Hosting",
         items: [
-          { icon: Cloud, label: "Managed VPS Hosting", description: "Zero server hassle, 100% managed for you" },
-          { icon: Cpu, label: "VPS Hosting (root access)", description: "Full root access, full control" },
+          { icon: Cloud, label: "Managed VPS Hosting", description: "Zero server hassle, 100% managed for you", href: "#" },
+          { icon: Cpu, label: "VPS Hosting (root access)", description: "Full root access, full control", href: "#" },
         ],
       },
       {
         title: "Dedicated",
         items: [
-          { icon: Database, label: "Managed VDS Hosting", description: "Dedicated-level power" },
-          { icon: HardDrive, label: "Dedicated Servers", description: "Full control on your hardware" },
+          { icon: Database, label: "Managed VDS Hosting", description: "Dedicated-level power", href: "#" },
+          { icon: HardDrive, label: "Dedicated Servers", description: "Full control on your hardware", href: "#" },
         ],
       },
     ],
@@ -42,22 +42,22 @@ const navLinks = [
       {
         title: "Product",
         items: [
-          { icon: Globe, label: "Hosting for WordPress", description: "Optimized WordPress hosting for growth" },
-          { icon: ShoppingCart, label: "Hosting for Woocommerce", description: "Woocommerce hosting built for success" },
+          { icon: Globe, label: "Hosting for WordPress", description: "Optimized WordPress hosting for growth", href: "#" },
+          { icon: ShoppingCart, label: "Hosting for Woocommerce", description: "Woocommerce hosting built for success", href: "#" },
         ],
       },
       {
         title: "Features",
         items: [
-          { icon: Zap, label: "Speed & Performance", description: "Blazing speed for a smoother experience" },
-          { icon: Shield, label: "Security", description: "Continuous protection for your site" },
-          { icon: Palette, label: "Ease of Use", description: "Simple, intuitive site management" },
+          { icon: Zap, label: "Speed & Performance", description: "Blazing speed for a smoother experience", href: "#" },
+          { icon: Shield, label: "Security", description: "Continuous protection for your site", href: "#" },
+          { icon: Palette, label: "Ease of Use", description: "Simple, intuitive site management", href: "#" },
         ],
       },
       {
         title: "Add-ons / Plug-ins",
         items: [
-          { icon: Rocket, label: "WP Rocket", description: "Boost your website speed with WP Rocket" },
+          { icon: Rocket, label: "WP Rocket", description: "Boost your website speed with WP Rocket", href: "#" },
         ],
       },
     ],
@@ -71,21 +71,21 @@ const navLinks = [
       {
         title: "Domains & SSL",
         items: [
-          { icon: Globe, label: "Buy a domain", description: "Register your domain today" },
-          { icon: Layers, label: "Transfer a Domain", description: "Fast domain transfers" },
-          { icon: Shield, label: "SSL Certificates", description: "Lock in trust, secure your site with SSL" },
+          { icon: Globe, label: "Buy a domain", description: "Register your domain today", href: "#" },
+          { icon: Layers, label: "Transfer a Domain", description: "Fast domain transfers", href: "#" },
+          { icon: Shield, label: "SSL Certificates", description: "Lock in trust, secure your site with SSL", href: "#" },
         ],
       },
       {
         title: "Email",
         items: [
-          { icon: Mail, label: "Email Hosting", description: "Your brands inbox. Fast, secure, professional" },
+          { icon: Mail, label: "Email Hosting", description: "Your brands inbox. Fast, secure, professional", href: "#" },
         ],
       },
       {
         title: "Site Builder",
         items: [
-          { icon: Zap, label: "AI Sitebuilder", description: "Stress free sites, built by you in minutes" },
+          { icon: Zap, label: "AI Sitebuilder", description: "Stress free sites, built by you in minutes", href: "#" },
         ],
       },
     ],
@@ -99,23 +99,23 @@ const navLinks = [
       {
         title: "Company",
         items: [
-          { icon: BookOpen, label: "About", description: "Learn more about hosting.com" },
-          { icon: Layers, label: "M&A", description: "Powered by exceptional brands" },
+          { icon: BookOpen, label: "About", description: "Learn more about Orrien", href: "#" },
+          { icon: Layers, label: "M&A", description: "Powered by exceptional brands", href: "#" },
         ],
       },
       {
         title: "Resources",
         items: [
-          { icon: LifeBuoy, label: "Free Migration by Experts", description: "Effortless website transfers by experts" },
-          { icon: FileText, label: "Blog", description: "Latest insights" },
-          { icon: BookOpen, label: "Knowledge Base", description: "Learn more about our products" },
+          { icon: LifeBuoy, label: "Free Migration by Experts", description: "Effortless website transfers by experts", href: "#" },
+          { icon: FileText, label: "Blog", description: "Latest insights", href: "#" },
+          { icon: BookOpen, label: "Knowledge Base", description: "Learn more about our products", href: "#" },
         ],
       },
       {
         title: "Programs",
         items: [
-          { icon: Users, label: "Affiliate Program", description: "Start earning up to $125 today" },
-          { icon: MessageCircle, label: "Refer a Friend", description: "Earn up to $130 with a single referral" },
+          { icon: Users, label: "Affiliate Program", description: "Start earning up to $125 today", href: "#" },
+          { icon: MessageCircle, label: "Refer a Friend", description: "Earn up to $130 with a single referral", href: "#" },
         ],
       },
     ],
@@ -201,10 +201,11 @@ export function Navbar() {
                       </div>
                       <div className="grid gap-1">
                         {category.items.map((item) => (
-                          <a
+                          <Link
                             key={item.label}
-                            href="#"
+                            to={item.href}
                             className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors group"
+                            onClick={() => setActiveDropdown(null)}
                           >
                             <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors flex-shrink-0">
                               <item.icon className="w-5 h-5 text-secondary" />
@@ -213,7 +214,7 @@ export function Navbar() {
                               <div className="font-medium text-foreground text-sm">{item.label}</div>
                               <div className="text-xs text-muted-foreground">{item.description}</div>
                             </div>
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -279,9 +280,9 @@ export function Navbar() {
                                     {category.title}
                                   </div>
                                   {category.items.map((item) => (
-                                    <a
+                                    <Link
                                       key={item.label}
-                                      href="#"
+                                      to={item.href}
                                       className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
                                       onClick={() => setIsOpen(false)}
                                     >
@@ -292,7 +293,7 @@ export function Navbar() {
                                         <div className="font-medium text-foreground text-sm">{item.label}</div>
                                         <div className="text-xs text-muted-foreground">{item.description}</div>
                                       </div>
-                                    </a>
+                                    </Link>
                                   ))}
                                 </div>
                               ))}
