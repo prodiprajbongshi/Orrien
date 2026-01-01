@@ -20,7 +20,7 @@ const navLinks = [
       {
         title: "VPS Hosting",
         items: [
-          { icon: Cloud, label: "Managed VPS Hosting", description: "Zero server hassle, 100% managed for you", href: "#" },
+          { icon: Cloud, label: "Managed VPS Hosting", description: "Zero server hassle, 100% managed for you", href: "/managed-vps-hosting" },
           { icon: Cpu, label: "VPS Hosting (root access)", description: "Full root access, full control", href: "#" },
         ],
       },
