@@ -10,6 +10,7 @@ import ResellerHosting from "./pages/ResellerHosting";
 import ManagedVPSHosting from "./pages/ManagedVPSHosting";
 import VPSHosting from "./pages/VPSHosting";
 import ManagedVDSHosting from "./pages/ManagedVDSHosting";
+import DedicatedServers from "./pages/DedicatedServers";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/managed-vps-hosting" element={<ManagedVPSHosting />} />
           <Route path="/vps-hosting" element={<VPSHosting />} />
           <Route path="/managed-vds-hosting" element={<ManagedVDSHosting />} />
+          <Route path="/dedicated-servers" element={<DedicatedServers />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
