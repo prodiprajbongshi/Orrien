@@ -126,9 +126,6 @@ export function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <Button variant="ghost">Log In</Button>
-            <Button variant="hero" size="lg">
-              Get Started
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -196,9 +193,6 @@ export function Navbar() {
                 <div className="flex flex-col gap-3 pt-4 border-t border-border/30 mt-2">
                   <Button variant="outline" size="lg">
                     Log In
-                  </Button>
-                  <Button variant="hero" size="lg">
-                    Get Started
                   </Button>
                 </div>
               </div>
