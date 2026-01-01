@@ -73,53 +73,6 @@ export function HeroSection() {
           </motion.div>
 
         </div>
-
-        {/* Dashboard Preview */}
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-20 max-w-5xl mx-auto"
-        >
-          <div className="relative">
-            {/* Glow Effect */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-secondary/20 via-light/20 to-secondary/20 rounded-3xl blur-2xl opacity-50" />
-            
-            {/* Dashboard Card */}
-            <div className="relative glass-card p-2 rounded-2xl">
-              <div className="bg-dark rounded-xl overflow-hidden">
-                {/* Browser Chrome */}
-                <div className="flex items-center gap-2 px-4 py-3 bg-light-dark/50 border-b border-border/30">
-                  <div className="flex gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-destructive/50" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-                    <div className="w-3 h-3 rounded-full bg-secondary/50" />
-                  </div>
-                  <div className="flex-1 mx-4">
-                    <div className="w-full max-w-md mx-auto h-6 rounded-md bg-muted/30 flex items-center justify-center text-xs text-muted-foreground">
-                      dashboard.cloudhost.com
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Dashboard Content */}
-                <div className="p-6 md:p-8 min-h-[300px] grid md:grid-cols-3 gap-4">
-                  {[
-                    { label: "Active Servers", value: "12", change: "+2 this week" },
-                    { label: "Bandwidth Used", value: "847 GB", change: "of 2 TB" },
-                    { label: "Avg. Response", value: "42ms", change: "-8ms today" },
-                  ].map((item, i) => (
-                    <div key={i} className="p-4 rounded-xl bg-muted/20 border border-border/30">
-                      <div className="text-sm text-muted-foreground mb-1">{item.label}</div>
-                      <div className="text-2xl font-display font-bold text-foreground">{item.value}</div>
-                      <div className="text-xs text-secondary mt-1">{item.change}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
