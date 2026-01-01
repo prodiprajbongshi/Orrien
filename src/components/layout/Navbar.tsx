@@ -32,6 +32,8 @@ const navLinks = [
         ],
       },
     ],
+    cardTitle: "Talk to our sales team",
+    cardDescription: "Get in touch with our team to find the best solution for you",
   },
   {
     label: "WordPress",
@@ -93,14 +95,32 @@ const navLinks = [
   {
     label: "Resources",
     href: "#resources",
-    items: [
-      { icon: BookOpen, label: "Knowledge Base", description: "Tutorials & guides" },
-      { icon: FileText, label: "Blog", description: "Latest news & tips" },
-      { icon: Video, label: "Video Tutorials", description: "Step-by-step videos" },
-      { icon: HeadphonesIcon, label: "24/7 Support", description: "Get help anytime" },
-      { icon: MessageCircle, label: "Community Forum", description: "Connect with users" },
-      { icon: Users, label: "Affiliate Program", description: "Earn with us" },
+    categories: [
+      {
+        title: "Company",
+        items: [
+          { icon: BookOpen, label: "About", description: "Learn more about hosting.com" },
+          { icon: Layers, label: "M&A", description: "Powered by exceptional brands" },
+        ],
+      },
+      {
+        title: "Resources",
+        items: [
+          { icon: LifeBuoy, label: "Free Migration by Experts", description: "Effortless website transfers by experts" },
+          { icon: FileText, label: "Blog", description: "Latest insights" },
+          { icon: BookOpen, label: "Knowledge Base", description: "Learn more about our products" },
+        ],
+      },
+      {
+        title: "Programs",
+        items: [
+          { icon: Users, label: "Affiliate Program", description: "Start earning up to $125 today" },
+          { icon: MessageCircle, label: "Refer a Friend", description: "Earn up to $130 with a single referral" },
+        ],
+      },
     ],
+    cardTitle: "Talk to our sales team",
+    cardDescription: "Get in touch with our team to find the best solution for you",
   },
 ];
 
@@ -173,71 +193,49 @@ export function Navbar() {
           >
             <div className="container mx-auto px-4 pt-2">
               <div className="bg-light-dark border border-border rounded-xl shadow-2xl p-5">
-                {/* Categories layout */}
-                {activeLink.categories ? (
-                  <div className="flex gap-8">
-                    {activeLink.categories.map((category) => (
-                      <div key={category.title} className="min-w-[240px]">
-                        <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-2">
-                          {category.title}
-                        </div>
-                        <div className="grid gap-1">
-                          {category.items.map((item) => (
-                            <a
-                              key={item.label}
-                              href="#"
-                              className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors group"
-                            >
-                              <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors flex-shrink-0">
-                                <item.icon className="w-5 h-5 text-secondary" />
-                              </div>
-                              <div>
-                                <div className="font-medium text-foreground text-sm">{item.label}</div>
-                                <div className="text-xs text-muted-foreground">{item.description}</div>
-                              </div>
-                            </a>
-                          ))}
-                        </div>
+                <div className="flex gap-8">
+                  {activeLink.categories.map((category) => (
+                    <div key={category.title} className="min-w-[240px]">
+                      <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-2">
+                        {category.title}
                       </div>
-                    ))}
-                    {/* CTA Card */}
-                    <div className="min-w-[220px] bg-gradient-to-br from-secondary/10 to-primary/10 border border-secondary/20 rounded-xl p-4 flex flex-col justify-between">
-                      <div>
-                        <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center mb-3">
-                          <HeadphonesIcon className="w-5 h-5 text-secondary" />
-                        </div>
-                        <div className="font-semibold text-foreground mb-1">
-                          {activeLink.cardTitle || "Talk to our sales team"}
-                        </div>
-                        <div className="text-xs text-muted-foreground">
-                          {activeLink.cardDescription || "Get in touch with our team to find the best solution for you"}
-                        </div>
+                      <div className="grid gap-1">
+                        {category.items.map((item) => (
+                          <a
+                            key={item.label}
+                            href="#"
+                            className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors group"
+                          >
+                            <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors flex-shrink-0">
+                              <item.icon className="w-5 h-5 text-secondary" />
+                            </div>
+                            <div>
+                              <div className="font-medium text-foreground text-sm">{item.label}</div>
+                              <div className="text-xs text-muted-foreground">{item.description}</div>
+                            </div>
+                          </a>
+                        ))}
                       </div>
-                      <a href="#" className="mt-4 text-sm font-medium text-secondary hover:text-light transition-colors flex items-center gap-1">
-                        {activeLink.cardTitle === "Book a demo" ? "Book Now →" : "Contact Sales →"}
-                      </a>
                     </div>
+                  ))}
+                  {/* CTA Card */}
+                  <div className="min-w-[220px] bg-gradient-to-br from-secondary/10 to-primary/10 border border-secondary/20 rounded-xl p-4 flex flex-col justify-between">
+                    <div>
+                      <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center mb-3">
+                        <HeadphonesIcon className="w-5 h-5 text-secondary" />
+                      </div>
+                      <div className="font-semibold text-foreground mb-1">
+                        {activeLink.cardTitle}
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        {activeLink.cardDescription}
+                      </div>
+                    </div>
+                    <a href="#" className="mt-4 text-sm font-medium text-secondary hover:text-light transition-colors flex items-center gap-1">
+                      {activeLink.cardTitle === "Book a demo" ? "Book Now →" : activeLink.cardTitle === "Free site migrations" ? "Get Started →" : "Contact Sales →"}
+                    </a>
                   </div>
-                ) : (
-                  /* Regular items layout */
-                  <div className="grid grid-cols-3 gap-4">
-                    {activeLink.items?.map((item) => (
-                      <a
-                        key={item.label}
-                        href="#"
-                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
-                      >
-                        <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors flex-shrink-0">
-                          <item.icon className="w-5 h-5 text-secondary" />
-                        </div>
-                        <div>
-                          <div className="font-medium text-foreground">{item.label}</div>
-                          <div className="text-sm text-muted-foreground">{item.description}</div>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                )}
+                </div>
               </div>
             </div>
           </motion.div>
@@ -274,52 +272,31 @@ export function Navbar() {
                           className="overflow-hidden"
                         >
                           <div className="bg-light-dark rounded-lg p-2 mt-1 mb-2">
-                            {/* Categories layout for Hosting & Servers */}
-                            {link.categories ? (
-                              <div className="grid gap-4">
-                                {link.categories.map((category) => (
-                                  <div key={category.title}>
-                                    <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 px-2">
-                                      {category.title}
-                                    </div>
-                                    {category.items.map((item) => (
-                                      <a
-                                        key={item.label}
-                                        href="#"
-                                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
-                                        onClick={() => setIsOpen(false)}
-                                      >
-                                        <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                                          <item.icon className="w-5 h-5 text-secondary" />
-                                        </div>
-                                        <div>
-                                          <div className="font-medium text-foreground text-sm">{item.label}</div>
-                                          <div className="text-xs text-muted-foreground">{item.description}</div>
-                                        </div>
-                                      </a>
-                                    ))}
+                            <div className="grid gap-4">
+                              {link.categories.map((category) => (
+                                <div key={category.title}>
+                                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 px-2">
+                                    {category.title}
                                   </div>
-                                ))}
-                              </div>
-                            ) : (
-                              /* Regular items layout */
-                              link.items?.map((item) => (
-                                <a
-                                  key={item.label}
-                                  href="#"
-                                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
-                                  onClick={() => setIsOpen(false)}
-                                >
-                                  <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                                    <item.icon className="w-5 h-5 text-secondary" />
-                                  </div>
-                                  <div>
-                                    <div className="font-medium text-foreground text-sm">{item.label}</div>
-                                    <div className="text-xs text-muted-foreground">{item.description}</div>
-                                  </div>
-                                </a>
-                              ))
-                            )}
+                                  {category.items.map((item) => (
+                                    <a
+                                      key={item.label}
+                                      href="#"
+                                      className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                                      onClick={() => setIsOpen(false)}
+                                    >
+                                      <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                                        <item.icon className="w-5 h-5 text-secondary" />
+                                      </div>
+                                      <div>
+                                        <div className="font-medium text-foreground text-sm">{item.label}</div>
+                                        <div className="text-xs text-muted-foreground">{item.description}</div>
+                                      </div>
+                                    </a>
+                                  ))}
+                                </div>
+                              ))}
+                            </div>
                           </div>
                         </motion.div>
                       )}
