@@ -11,6 +11,7 @@ const slides = [
     title: "The team behind the technology",
     description: "Behind every server, control panel, and line of code is a team of skilled engineers, product specialists, and customer success managers. We hire for expertise and invest in our people so they can deliver the best for you.",
     bgGradient: "bg-gradient-to-br from-primary/40 via-secondary/30 to-light-dark",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop",
   },
   {
     badge: "Our values",
@@ -18,6 +19,7 @@ const slides = [
     title: "Built on trust and reliability",
     description: "We believe hosting should be as reliable as the technology behind it. Our commitment to uptime, security, and performance drives every decision we make. Your success is our priority.",
     bgGradient: "bg-gradient-to-br from-secondary/40 via-light/20 to-primary/30",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop",
   },
   {
     badge: "Our mission",
@@ -25,6 +27,7 @@ const slides = [
     title: "Supporting businesses worldwide",
     description: "From first-time site owners to global enterprises, we've got the tech and the team to support you. We combine decades of industry experience with a forward-thinking approach to create solutions that work.",
     bgGradient: "bg-gradient-to-br from-light-dark via-primary/30 to-secondary/40",
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop",
   },
 ];
 
@@ -101,14 +104,18 @@ export function TeamSliderSection() {
                 className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_45%] min-w-0"
               >
                 <div className="flex flex-col md:flex-row bg-light-dark border border-border/30 rounded-2xl overflow-hidden h-full">
-                  {/* Image/Icon Area */}
-                  <div className={`${slide.bgGradient} w-full md:w-1/2 min-h-[250px] md:min-h-[350px] flex items-center justify-center relative`}>
-                    <div className="w-24 h-24 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
-                      <slide.icon className="w-12 h-12 text-white" />
+                  {/* Image Area */}
+                  <div className={`${slide.bgGradient} w-full md:w-1/2 min-h-[250px] md:min-h-[350px] relative overflow-hidden`}>
+                    <img 
+                      src={slide.image} 
+                      alt={slide.title}
+                      className="w-full h-full object-cover absolute inset-0"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent" />
+                    {/* Icon badge */}
+                    <div className="absolute bottom-4 left-4 w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <slide.icon className="w-6 h-6 text-white" />
                     </div>
-                    {/* Decorative elements */}
-                    <div className="absolute top-4 left-4 w-16 h-16 rounded-full bg-white/5" />
-                    <div className="absolute bottom-8 right-8 w-24 h-24 rounded-full bg-white/5" />
                   </div>
 
                   {/* Content Area */}
