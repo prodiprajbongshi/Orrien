@@ -24,6 +24,7 @@ import AISitebuilder from "./pages/AISitebuilder";
 import SiteMigration from "./pages/SiteMigration";
 import About from "./pages/About";
 import MergersAcquisitions from "./pages/MergersAcquisitions";
+import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -56,6 +57,7 @@ const App = () => (
           <Route path="/site-migration" element={<SiteMigration />} />
           <Route path="/about" element={<About />} />
           <Route path="/mergers-acquisitions" element={<MergersAcquisitions />} />
+          <Route path="/blog" element={<Blog />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
