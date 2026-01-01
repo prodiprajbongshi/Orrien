@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, Server, Cloud, Shield, Globe, Cpu, Database, HardDrive, Layers, FileCode, Palette, ShoppingCart, Rocket, BookOpen, HeadphonesIcon, MessageCircle, FileText, Video, Users, LifeBuoy, Mail, Zap, ArrowRightLeft } from "lucide-react";
+import { Menu, X, ChevronDown, Server, Cloud, Shield, Globe, Cpu, Database, HardDrive, Layers, FileCode, Palette, ShoppingCart, Rocket, BookOpen, HeadphonesIcon, MessageCircle, FileText, Video, Users, LifeBuoy, Mail, Zap, ArrowRightLeft, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -105,7 +105,7 @@ const navLinks = [
       {
         title: "Company",
         items: [
-          { icon: BookOpen, label: "About", description: "Learn more about Orrien", href: "#" },
+          { icon: Building2, label: "About", description: "Learn more about Orrien", href: "/about" },
           { icon: Layers, label: "M&A", description: "Powered by exceptional brands", href: "#" },
         ],
       },
