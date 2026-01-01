@@ -18,6 +18,7 @@ import ManagedVDSHosting from "./pages/ManagedVDSHosting";
 import DedicatedServers from "./pages/DedicatedServers";
 import BuyDomain from "./pages/BuyDomain";
 import TransferDomain from "./pages/TransferDomain";
+import SSLCertificates from "./pages/SSLCertificates";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/dedicated-servers" element={<DedicatedServers />} />
           <Route path="/buy-domain" element={<BuyDomain />} />
           <Route path="/transfer-domain" element={<TransferDomain />} />
+          <Route path="/ssl-certificates" element={<SSLCertificates />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
