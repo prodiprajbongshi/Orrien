@@ -79,7 +79,7 @@ const navLinks = [
       {
         title: "Email",
         items: [
-          { icon: Mail, label: "Email Hosting", description: "Your brands inbox. Fast, secure, professional", href: "#" },
+          { icon: Mail, label: "Email Hosting", description: "Your brands inbox. Fast, secure, professional", href: "/email-hosting" },
         ],
       },
       {

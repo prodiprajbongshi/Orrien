@@ -19,6 +19,7 @@ import DedicatedServers from "./pages/DedicatedServers";
 import BuyDomain from "./pages/BuyDomain";
 import TransferDomain from "./pages/TransferDomain";
 import SSLCertificates from "./pages/SSLCertificates";
+import EmailHosting from "./pages/EmailHosting";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/buy-domain" element={<BuyDomain />} />
           <Route path="/transfer-domain" element={<TransferDomain />} />
           <Route path="/ssl-certificates" element={<SSLCertificates />} />
+          <Route path="/email-hosting" element={<EmailHosting />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
