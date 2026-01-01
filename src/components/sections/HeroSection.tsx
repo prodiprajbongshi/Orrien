@@ -8,9 +8,11 @@ const stats = [
   { icon: Clock, value: "<50ms", label: "Response" },
 ];
 
+// Remove pt-20 since DomainSearchBar handles spacing now
+
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--light-dark))_0%,hsl(var(--dark))_70%)]" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] hero-glow opacity-40 animate-pulse-glow" />
