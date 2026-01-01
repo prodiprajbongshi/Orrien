@@ -115,12 +115,12 @@ export function Navbar() {
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 pt-2 z-50"
                     >
-                      <div className="bg-light-dark border border-border rounded-xl shadow-2xl p-4 min-w-[320px]">
+                      <div className="bg-light-dark border border-border rounded-xl shadow-2xl p-5 min-w-[380px]">
                         {/* Categories layout for Hosting & Servers */}
                         {link.categories ? (
-                          <div className="flex gap-6">
+                          <div className="flex gap-8">
                             {link.categories.map((category) => (
-                              <div key={category.title} className="min-w-[200px]">
+                              <div key={category.title} className="min-w-[240px]">
                                 <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-2">
                                   {category.title}
                                 </div>
