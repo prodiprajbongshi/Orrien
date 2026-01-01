@@ -27,7 +27,7 @@ const navLinks = [
       {
         title: "Dedicated",
         items: [
-          { icon: Database, label: "Managed VDS Hosting", description: "Dedicated-level power", href: "#" },
+          { icon: Database, label: "Managed VDS Hosting", description: "Dedicated-level power", href: "/managed-vds-hosting" },
           { icon: HardDrive, label: "Dedicated Servers", description: "Full control on your hardware", href: "#" },
         ],
       },
