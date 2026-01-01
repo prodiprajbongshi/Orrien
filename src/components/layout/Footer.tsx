@@ -48,9 +48,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-secondary to-light flex items-center justify-center">
-                <Server className="w-5 h-5 text-dark" />
-              </div>
+              
               <span className="font-display text-xl font-bold text-foreground">
                 Orrien
               </span>

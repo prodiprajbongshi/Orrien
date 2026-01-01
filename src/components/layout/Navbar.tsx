@@ -34,6 +34,7 @@ const navLinks = [
     ],
     cardTitle: "Talk to our sales team",
     cardDescription: "Get in touch with our team to find the best solution for you",
+    cardLink: "/contact"
   },
   {
     label: "WordPress",
@@ -88,15 +89,11 @@ const navLinks = [
           { icon: Zap, label: "AI Sitebuilder", description: "Stress free sites, built by you in minutes", href: "/ai-sitebuilder" },
         ],
       },
-      {
-        title: "Migration",
-        items: [
-          { icon: ArrowRightLeft, label: "Site Migration", description: "Free site migration by our experts", href: "/site-migration" },
-        ],
-      },
+      
     ],
     cardTitle: "Free site migrations",
     cardDescription: "Let our experts migrate your site for you",
+    cardLink: "/site-migration"
   },
   {
     label: "Resources",
@@ -114,7 +111,7 @@ const navLinks = [
         items: [
           { icon: LifeBuoy, label: "Free Migration by Experts", description: "Effortless website transfers by experts", href: "/site-migration" },
           { icon: FileText, label: "Blog", description: "Latest insights", href: "/blog" },
-          { icon: BookOpen, label: "Knowledge Base", description: "Learn more about our products", href: "#" },
+           
         ],
       },
       {
@@ -143,9 +140,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-secondary to-light flex items-center justify-center">
-              <Server className="w-5 h-5 text-dark" />
-            </div>
+            
             <span className="font-display text-xl font-bold text-foreground">
               Orrien
             </span>
@@ -233,14 +228,15 @@ export function Navbar() {
                       </div>
                       <div className="font-semibold text-foreground mb-1">
                         {activeLink.cardTitle}
+                    
                       </div>
                       <div className="text-xs text-muted-foreground">
                         {activeLink.cardDescription}
                       </div>
                     </div>
-                    <a href="#" className="mt-4 text-sm font-medium text-secondary hover:text-light transition-colors flex items-center gap-1">
+                    <Link to={activeLink.cardLink} className="mt-4 text-sm font-medium text-secondary hover:text-light transition-colors flex items-center gap-1">
                       {activeLink.cardTitle === "Book a demo" ? "Book Now →" : activeLink.cardTitle === "Free site migrations" ? "Get Started →" : "Contact Sales →"}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
