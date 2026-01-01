@@ -1,0 +1,114 @@
+import { Link } from "react-router-dom";
+import { Server, Twitter, Github, Linkedin, Youtube } from "lucide-react";
+
+const footerLinks = {
+  Product: [
+    { label: "Web Hosting", href: "#" },
+    { label: "Cloud Servers", href: "#" },
+    { label: "VPS Hosting", href: "#" },
+    { label: "Dedicated Servers", href: "#" },
+    { label: "Domain Names", href: "#" },
+  ],
+  Company: [
+    { label: "About Us", href: "#" },
+    { label: "Careers", href: "#" },
+    { label: "Blog", href: "#" },
+    { label: "Press", href: "#" },
+    { label: "Partners", href: "#" },
+  ],
+  Resources: [
+    { label: "Documentation", href: "#" },
+    { label: "API Reference", href: "#" },
+    { label: "Tutorials", href: "#" },
+    { label: "Status Page", href: "#" },
+    { label: "Community", href: "#" },
+  ],
+  Support: [
+    { label: "Help Center", href: "#" },
+    { label: "Contact Us", href: "#" },
+    { label: "Live Chat", href: "#" },
+    { label: "System Status", href: "#" },
+    { label: "Report Abuse", href: "#" },
+  ],
+};
+
+const socialLinks = [
+  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Github, href: "#", label: "GitHub" },
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Youtube, href: "#", label: "YouTube" },
+];
+
+export function Footer() {
+  return (
+    <footer className="bg-dark border-t border-border/30">
+      <div className="container mx-auto px-4 py-16 md:py-20">
+        {/* Main Footer */}
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-12 mb-12">
+          {/* Brand */}
+          <div className="col-span-2">
+            <Link to="/" className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-secondary to-light flex items-center justify-center">
+                <Server className="w-5 h-5 text-dark" />
+              </div>
+              <span className="font-display text-xl font-bold text-foreground">
+                Cloud<span className="text-gradient">Host</span>
+              </span>
+            </Link>
+            <p className="text-muted-foreground mb-6 max-w-xs">
+              Lightning-fast hosting with enterprise-grade security. 
+              Trusted by 10,000+ businesses worldwide.
+            </p>
+            
+            {/* Social Links */}
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="w-10 h-10 rounded-lg bg-muted/30 border border-border/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/50 hover:border-secondary/50 transition-all"
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Links */}
+          {Object.entries(footerLinks).map(([category, links]) => (
+            <div key={category}>
+              <h4 className="font-display font-semibold text-foreground mb-4">
+                {category}
+              </h4>
+              <ul className="space-y-3">
+                {links.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="text-muted-foreground hover:text-secondary transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Footer */}
+        <div className="pt-8 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground">
+            © 2026 CloudHost. All rights reserved.
+          </p>
+          <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-foreground transition-colors">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
