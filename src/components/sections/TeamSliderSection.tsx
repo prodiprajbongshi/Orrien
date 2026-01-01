@@ -101,7 +101,7 @@ export function TeamSliderSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_45%] min-w-0"
+                className="flex-[0_0_100%] md:flex-[0_0_90%] lg:flex-[0_0_60%] min-w-0"
               >
                 <div className="flex flex-col md:flex-row bg-light-dark border border-border/30 rounded-2xl overflow-hidden h-full">
                   {/* Image Area */}
