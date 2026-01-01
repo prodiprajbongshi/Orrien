@@ -65,14 +65,30 @@ const navLinks = [
   {
     label: "Services",
     href: "#services",
-    items: [
-      { icon: Globe, label: "Domain Names", description: "Register your domain" },
-      { icon: Shield, label: "SSL Certificates", description: "Secure your website" },
-      { icon: Mail, label: "Email Hosting", description: "Professional email" },
-      { icon: FileCode, label: "Website Builder", description: "Drag & drop builder" },
-      { icon: Palette, label: "Website Design", description: "Custom web design" },
-      { icon: LifeBuoy, label: "Website Migration", description: "Free site transfer" },
+    categories: [
+      {
+        title: "Domains & SSL",
+        items: [
+          { icon: Globe, label: "Buy a domain", description: "Register your domain today" },
+          { icon: Layers, label: "Transfer a Domain", description: "Fast domain transfers" },
+          { icon: Shield, label: "SSL Certificates", description: "Lock in trust, secure your site with SSL" },
+        ],
+      },
+      {
+        title: "Email",
+        items: [
+          { icon: Mail, label: "Email Hosting", description: "Your brands inbox. Fast, secure, professional" },
+        ],
+      },
+      {
+        title: "Site Builder",
+        items: [
+          { icon: Zap, label: "AI Sitebuilder", description: "Stress free sites, built by you in minutes" },
+        ],
+      },
     ],
+    cardTitle: "Free site migrations",
+    cardDescription: "Let our experts migrate your site for you",
   },
   {
     label: "Resources",
