@@ -17,11 +17,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="pt-16 lg:pt-20">
-        <DomainSearchBar />
-      </div>
-      <main>
+  
+      <main className="pt-16 lg:pt-20">
         <HeroSection />
+        <DomainSearchBar />
         <FeaturesSection />
         <StatsSection />
         <PricingSection />
