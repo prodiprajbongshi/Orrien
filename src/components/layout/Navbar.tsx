@@ -1,32 +1,65 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, Server, Cloud, Shield, Globe } from "lucide-react";
+import { Menu, X, ChevronDown, Server, Cloud, Shield, Globe, Cpu, Database, HardDrive, Layers, FileCode, Palette, ShoppingCart, Rocket, BookOpen, HeadphonesIcon, MessageCircle, FileText, Video, Users, LifeBuoy, Mail, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   {
-    label: "Products",
-    href: "#products",
-    hasDropdown: true,
+    label: "Hosting & Servers",
+    href: "#hosting",
     items: [
-      { icon: Server, label: "Web Hosting", description: "Fast & reliable hosting" },
-      { icon: Cloud, label: "Cloud Servers", description: "Scalable cloud solutions" },
-      { icon: Shield, label: "SSL Certificates", description: "Secure your website" },
-      { icon: Globe, label: "Domain Names", description: "Find your perfect domain" },
+      { icon: Server, label: "Web Hosting", description: "Fast & reliable shared hosting" },
+      { icon: Cloud, label: "Cloud Hosting", description: "Scalable cloud infrastructure" },
+      { icon: Cpu, label: "VPS Hosting", description: "Virtual private servers" },
+      { icon: HardDrive, label: "Dedicated Servers", description: "Full server resources" },
+      { icon: Database, label: "Managed Databases", description: "MySQL, PostgreSQL & more" },
+      { icon: Layers, label: "Reseller Hosting", description: "Start your hosting business" },
     ],
   },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Features", href: "#features" },
-  { label: "Support", href: "#support" },
+  {
+    label: "WordPress",
+    href: "#wordpress",
+    items: [
+      { icon: Globe, label: "WordPress Hosting", description: "Optimized for WordPress" },
+      { icon: Rocket, label: "Managed WordPress", description: "Fully managed solution" },
+      { icon: ShoppingCart, label: "WooCommerce Hosting", description: "E-commerce optimized" },
+      { icon: Zap, label: "WordPress Starter", description: "Perfect for beginners" },
+    ],
+  },
+  {
+    label: "Services",
+    href: "#services",
+    items: [
+      { icon: Globe, label: "Domain Names", description: "Register your domain" },
+      { icon: Shield, label: "SSL Certificates", description: "Secure your website" },
+      { icon: Mail, label: "Email Hosting", description: "Professional email" },
+      { icon: FileCode, label: "Website Builder", description: "Drag & drop builder" },
+      { icon: Palette, label: "Website Design", description: "Custom web design" },
+      { icon: LifeBuoy, label: "Website Migration", description: "Free site transfer" },
+    ],
+  },
+  {
+    label: "Resources",
+    href: "#resources",
+    items: [
+      { icon: BookOpen, label: "Knowledge Base", description: "Tutorials & guides" },
+      { icon: FileText, label: "Blog", description: "Latest news & tips" },
+      { icon: Video, label: "Video Tutorials", description: "Step-by-step videos" },
+      { icon: HeadphonesIcon, label: "24/7 Support", description: "Get help anytime" },
+      { icon: MessageCircle, label: "Community Forum", description: "Connect with users" },
+      { icon: Users, label: "Affiliate Program", description: "Earn with us" },
+    ],
+  },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileActiveDropdown, setMobileActiveDropdown] = useState<string | null>(null);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-xl border-b border-border/30">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-xl border-b border-border/30">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -40,35 +73,33 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <div
                 key={link.label}
                 className="relative"
-                onMouseEnter={() => link.hasDropdown && setActiveDropdown(link.label)}
+                onMouseEnter={() => setActiveDropdown(link.label)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <a
                   href={link.href}
-                  className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors font-medium"
+                  className="flex items-center gap-1 px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium rounded-lg hover:bg-muted/30"
                 >
                   {link.label}
-                  {link.hasDropdown && (
-                    <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === link.label ? "rotate-180" : ""}`} />
-                  )}
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === link.label ? "rotate-180" : ""}`} />
                 </a>
 
                 {/* Dropdown */}
                 <AnimatePresence>
-                  {link.hasDropdown && activeDropdown === link.label && (
+                  {activeDropdown === link.label && (
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 pt-4"
+                      className="absolute top-full left-0 pt-2 z-50"
                     >
-                      <div className="glass-card p-4 min-w-[280px] grid gap-2">
+                      <div className="bg-light-dark border border-border rounded-xl shadow-2xl p-3 min-w-[320px] grid gap-1">
                         {link.items?.map((item) => (
                           <a
                             key={item.label}
@@ -117,21 +148,52 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-dark/95 backdrop-blur-xl border-b border-border/30"
+            className="lg:hidden bg-dark border-b border-border/30 max-h-[80vh] overflow-y-auto"
           >
             <div className="container mx-auto px-4 py-6">
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-2">
                 {navLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.label}
-                  </a>
+                  <div key={link.label}>
+                    <button
+                      onClick={() => setMobileActiveDropdown(mobileActiveDropdown === link.label ? null : link.label)}
+                      className="w-full flex items-center justify-between text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-3 px-2 rounded-lg hover:bg-muted/30"
+                    >
+                      {link.label}
+                      <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${mobileActiveDropdown === link.label ? "rotate-180" : ""}`} />
+                    </button>
+                    
+                    <AnimatePresence>
+                      {mobileActiveDropdown === link.label && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="bg-light-dark rounded-lg p-2 mt-1 mb-2">
+                            {link.items?.map((item) => (
+                              <a
+                                key={item.label}
+                                href="#"
+                                className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                <div className="w-9 h-9 rounded-lg bg-secondary/20 flex items-center justify-center">
+                                  <item.icon className="w-4 h-4 text-secondary" />
+                                </div>
+                                <div>
+                                  <div className="font-medium text-foreground text-sm">{item.label}</div>
+                                  <div className="text-xs text-muted-foreground">{item.description}</div>
+                                </div>
+                              </a>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 ))}
-                <div className="flex flex-col gap-3 pt-4 border-t border-border/30">
+                <div className="flex flex-col gap-3 pt-4 border-t border-border/30 mt-2">
                   <Button variant="outline" size="lg">
                     Log In
                   </Button>
