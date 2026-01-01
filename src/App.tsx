@@ -8,6 +8,7 @@ import WebHosting from "./pages/WebHosting";
 import WordPressHosting from "./pages/WordPressHosting";
 import WooCommerceHosting from "./pages/WooCommerceHosting";
 import SpeedPerformance from "./pages/SpeedPerformance";
+import Security from "./pages/Security";
 import ResellerHosting from "./pages/ResellerHosting";
 import ManagedVPSHosting from "./pages/ManagedVPSHosting";
 import VPSHosting from "./pages/VPSHosting";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/wordpress-hosting" element={<WordPressHosting />} />
           <Route path="/woocommerce-hosting" element={<WooCommerceHosting />} />
           <Route path="/speed-performance" element={<SpeedPerformance />} />
+          <Route path="/security" element={<Security />} />
           <Route path="/reseller-hosting" element={<ResellerHosting />} />
           <Route path="/managed-vps-hosting" element={<ManagedVPSHosting />} />
           <Route path="/vps-hosting" element={<VPSHosting />} />
