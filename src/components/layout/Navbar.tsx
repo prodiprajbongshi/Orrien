@@ -112,7 +112,7 @@ const navLinks = [
       {
         title: "Resources",
         items: [
-          { icon: LifeBuoy, label: "Free Migration by Experts", description: "Effortless website transfers by experts", href: "#" },
+          { icon: LifeBuoy, label: "Free Migration by Experts", description: "Effortless website transfers by experts", href: "/site-migration" },
           { icon: FileText, label: "Blog", description: "Latest insights", href: "#" },
           { icon: BookOpen, label: "Knowledge Base", description: "Learn more about our products", href: "#" },
         ],
