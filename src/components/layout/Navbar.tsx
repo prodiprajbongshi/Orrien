@@ -93,6 +93,8 @@ export function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileActiveDropdown, setMobileActiveDropdown] = useState<string | null>(null);
 
+  const activeLink = navLinks.find(link => link.label === activeDropdown);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-xl border-b border-border/30">
       <div className="container mx-auto px-4">
@@ -112,7 +114,6 @@ export function Navbar() {
             {navLinks.map((link) => (
               <div
                 key={link.label}
-                className="relative"
                 onMouseEnter={() => setActiveDropdown(link.label)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
@@ -123,87 +124,6 @@ export function Navbar() {
                   {link.label}
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === link.label ? "rotate-180" : ""}`} />
                 </a>
-
-                {/* Dropdown */}
-                <AnimatePresence>
-                  {activeDropdown === link.label && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 pt-2 z-50"
-                    >
-                      <div className="bg-light-dark border border-border rounded-xl shadow-2xl p-5 min-w-[380px]">
-                        {/* Categories layout for Hosting & Servers */}
-                        {link.categories ? (
-                          <div className="flex gap-8">
-                            {link.categories.map((category) => (
-                              <div key={category.title} className="min-w-[240px]">
-                                <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-2">
-                                  {category.title}
-                                </div>
-                                <div className="grid gap-1">
-                                  {category.items.map((item) => (
-                                    <a
-                                      key={item.label}
-                                      href="#"
-                                      className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors group"
-                                    >
-                                      <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors flex-shrink-0">
-                                        <item.icon className="w-5 h-5 text-secondary" />
-                                      </div>
-                                      <div>
-                                        <div className="font-medium text-foreground text-sm">{item.label}</div>
-                                        <div className="text-xs text-muted-foreground">{item.description}</div>
-                                      </div>
-                                    </a>
-                                  ))}
-                                </div>
-                              </div>
-                            ))}
-                            {/* CTA Card */}
-                            <div className="min-w-[220px] bg-gradient-to-br from-secondary/10 to-primary/10 border border-secondary/20 rounded-xl p-4 flex flex-col justify-between">
-                              <div>
-                                <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center mb-3">
-                                  <HeadphonesIcon className="w-5 h-5 text-secondary" />
-                                </div>
-                                <div className="font-semibold text-foreground mb-1">
-                                  {link.cardTitle || "Talk to our sales team"}
-                                </div>
-                                <div className="text-xs text-muted-foreground">
-                                  {link.cardDescription || "Get in touch with our team to find the best solution for you"}
-                                </div>
-                              </div>
-                              <a href="#" className="mt-4 text-sm font-medium text-secondary hover:text-light transition-colors flex items-center gap-1">
-                                {link.cardTitle === "Book a demo" ? "Book Now →" : "Contact Sales →"}
-                              </a>
-                            </div>
-                          </div>
-                        ) : (
-                          /* Regular items layout */
-                          <div className="grid gap-1">
-                            {link.items?.map((item) => (
-                              <a
-                                key={item.label}
-                                href="#"
-                                className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
-                              >
-                                <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors flex-shrink-0">
-                                  <item.icon className="w-5 h-5 text-secondary" />
-                                </div>
-                                <div>
-                                  <div className="font-medium text-foreground">{item.label}</div>
-                                  <div className="text-sm text-muted-foreground">{item.description}</div>
-                                </div>
-                              </a>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </div>
             ))}
           </div>
@@ -222,6 +142,91 @@ export function Navbar() {
           </button>
         </div>
       </div>
+
+      {/* Desktop Dropdown - Fixed Position at Container Start */}
+      <AnimatePresence>
+        {activeDropdown && activeLink && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.2 }}
+            className="hidden lg:block absolute top-full left-0 right-0 z-50"
+            onMouseEnter={() => setActiveDropdown(activeDropdown)}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <div className="container mx-auto px-4 pt-2">
+              <div className="bg-light-dark border border-border rounded-xl shadow-2xl p-5">
+                {/* Categories layout */}
+                {activeLink.categories ? (
+                  <div className="flex gap-8">
+                    {activeLink.categories.map((category) => (
+                      <div key={category.title} className="min-w-[240px]">
+                        <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 px-2">
+                          {category.title}
+                        </div>
+                        <div className="grid gap-1">
+                          {category.items.map((item) => (
+                            <a
+                              key={item.label}
+                              href="#"
+                              className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors group"
+                            >
+                              <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors flex-shrink-0">
+                                <item.icon className="w-5 h-5 text-secondary" />
+                              </div>
+                              <div>
+                                <div className="font-medium text-foreground text-sm">{item.label}</div>
+                                <div className="text-xs text-muted-foreground">{item.description}</div>
+                              </div>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                    {/* CTA Card */}
+                    <div className="min-w-[220px] bg-gradient-to-br from-secondary/10 to-primary/10 border border-secondary/20 rounded-xl p-4 flex flex-col justify-between">
+                      <div>
+                        <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center mb-3">
+                          <HeadphonesIcon className="w-5 h-5 text-secondary" />
+                        </div>
+                        <div className="font-semibold text-foreground mb-1">
+                          {activeLink.cardTitle || "Talk to our sales team"}
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          {activeLink.cardDescription || "Get in touch with our team to find the best solution for you"}
+                        </div>
+                      </div>
+                      <a href="#" className="mt-4 text-sm font-medium text-secondary hover:text-light transition-colors flex items-center gap-1">
+                        {activeLink.cardTitle === "Book a demo" ? "Book Now →" : "Contact Sales →"}
+                      </a>
+                    </div>
+                  </div>
+                ) : (
+                  /* Regular items layout */
+                  <div className="grid grid-cols-3 gap-4">
+                    {activeLink.items?.map((item) => (
+                      <a
+                        key={item.label}
+                        href="#"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+                      >
+                        <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors flex-shrink-0">
+                          <item.icon className="w-5 h-5 text-secondary" />
+                        </div>
+                        <div>
+                          <div className="font-medium text-foreground">{item.label}</div>
+                          <div className="text-sm text-muted-foreground">{item.description}</div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -268,8 +273,8 @@ export function Navbar() {
                                         className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
                                         onClick={() => setIsOpen(false)}
                                       >
-                                        <div className="w-9 h-9 rounded-lg bg-secondary/20 flex items-center justify-center">
-                                          <item.icon className="w-4 h-4 text-secondary" />
+                                        <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                                          <item.icon className="w-5 h-5 text-secondary" />
                                         </div>
                                         <div>
                                           <div className="font-medium text-foreground text-sm">{item.label}</div>
@@ -289,8 +294,8 @@ export function Navbar() {
                                   className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
                                   onClick={() => setIsOpen(false)}
                                 >
-                                  <div className="w-9 h-9 rounded-lg bg-secondary/20 flex items-center justify-center">
-                                    <item.icon className="w-4 h-4 text-secondary" />
+                                  <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                                    <item.icon className="w-5 h-5 text-secondary" />
                                   </div>
                                   <div>
                                     <div className="font-medium text-foreground text-sm">{item.label}</div>
