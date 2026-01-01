@@ -25,6 +25,7 @@ import SiteMigration from "./pages/SiteMigration";
 import About from "./pages/About";
 import MergersAcquisitions from "./pages/MergersAcquisitions";
 import Blog from "./pages/Blog";
+import AffiliateProgram from "./pages/AffiliateProgram";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -58,6 +59,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/mergers-acquisitions" element={<MergersAcquisitions />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/affiliate-program" element={<AffiliateProgram />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
