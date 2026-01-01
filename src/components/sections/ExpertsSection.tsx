@@ -7,30 +7,35 @@ const expertFeatures = [
     icon: null,
     title: "Up to 20X faster turbo",
     description: "That means better SEO rankings, lower bounce rates & higher conversion rates!",
+    bgClass: "bg-gradient-to-br from-dark to-light-dark",
   },
   {
     badge: null,
     icon: HeadphonesIcon,
     title: "Support that never clocks out",
     description: "Our in-house team is available 24/7/365. Real people ready to help, whether it's 3 p.m. or 3 a.m.",
+    bgClass: "bg-gradient-to-br from-light-dark to-primary/20",
   },
   {
     badge: null,
     icon: RefreshCw,
     title: "Free account migration",
     description: "Already have a Website? Let us do the hard work for you and transfer it for free! Ask us how!",
+    bgClass: "bg-gradient-to-br from-primary/30 to-secondary/20",
   },
   {
     badge: null,
     icon: PiggyBank,
     title: "Money-back guarantee",
     description: "Give our high-speed hosting service a try completely risk-free!",
+    bgClass: "bg-gradient-to-br from-secondary/20 to-light-dark",
   },
   {
     badge: "99%",
     icon: null,
     title: "99.9% uptime commitment",
     description: "Hosting.com is the host you can depend on with ultra-reliable servers!",
+    bgClass: "bg-gradient-to-br from-secondary/30 to-light/20",
   },
 ];
 
@@ -69,7 +74,7 @@ export function ExpertsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-light-dark border border-border/30 rounded-2xl p-6 hover:border-secondary/30 transition-all"
+              className={`${feature.bgClass} border border-border/30 rounded-2xl p-6 hover:border-secondary/30 hover:scale-105 transition-all duration-300`}
             >
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary to-light flex items-center justify-center mb-5">
                 {feature.badge ? (
