@@ -13,7 +13,7 @@ const navLinks = [
         title: "Shared Hosting",
         items: [
           { icon: Server, label: "Web Hosting", description: "Feature-rich cPanel & one-click tools", href: "/web-hosting" },
-          { icon: Globe, label: "Hosting for WordPress", description: "Optimized WordPress hosting for growth", href: "#" },
+          { icon: Globe, label: "Hosting for WordPress", description: "Optimized WordPress hosting for growth", href: "/wordpress-hosting" },
           { icon: Layers, label: "Reseller Hosting", description: "Launch your own hosting business", href: "#" },
         ],
       },
@@ -42,7 +42,7 @@ const navLinks = [
       {
         title: "Product",
         items: [
-          { icon: Globe, label: "Hosting for WordPress", description: "Optimized WordPress hosting for growth", href: "#" },
+          { icon: Globe, label: "Hosting for WordPress", description: "Optimized WordPress hosting for growth", href: "/wordpress-hosting" },
           { icon: ShoppingCart, label: "Hosting for Woocommerce", description: "Woocommerce hosting built for success", href: "#" },
         ],
       },
