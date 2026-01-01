@@ -36,12 +36,31 @@ const navLinks = [
   {
     label: "WordPress",
     href: "#wordpress",
-    items: [
-      { icon: Globe, label: "WordPress Hosting", description: "Optimized for WordPress" },
-      { icon: Rocket, label: "Managed WordPress", description: "Fully managed solution" },
-      { icon: ShoppingCart, label: "WooCommerce Hosting", description: "E-commerce optimized" },
-      { icon: Zap, label: "WordPress Starter", description: "Perfect for beginners" },
+    categories: [
+      {
+        title: "Product",
+        items: [
+          { icon: Globe, label: "Hosting for WordPress", description: "Optimized WordPress hosting for growth" },
+          { icon: ShoppingCart, label: "Hosting for Woocommerce", description: "Woocommerce hosting built for success" },
+        ],
+      },
+      {
+        title: "Features",
+        items: [
+          { icon: Zap, label: "Speed & Performance", description: "Blazing speed for a smoother experience" },
+          { icon: Shield, label: "Security", description: "Continuous protection for your site" },
+          { icon: Palette, label: "Ease of Use", description: "Simple, intuitive site management" },
+        ],
+      },
+      {
+        title: "Add-ons / Plug-ins",
+        items: [
+          { icon: Rocket, label: "WP Rocket", description: "Boost your website speed with WP Rocket" },
+        ],
+      },
     ],
+    cardTitle: "Book a demo",
+    cardDescription: "Discover the hosting platform trusted by thousands",
   },
   {
     label: "Services",
@@ -143,17 +162,21 @@ export function Navbar() {
                                 </div>
                               </div>
                             ))}
-                            {/* Sales Card */}
+                            {/* CTA Card */}
                             <div className="min-w-[220px] bg-gradient-to-br from-secondary/10 to-primary/10 border border-secondary/20 rounded-xl p-4 flex flex-col justify-between">
                               <div>
                                 <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center mb-3">
                                   <HeadphonesIcon className="w-5 h-5 text-secondary" />
                                 </div>
-                                <div className="font-semibold text-foreground mb-1">Talk to our sales team</div>
-                                <div className="text-xs text-muted-foreground">Get in touch with our team to find the best solution for you</div>
+                                <div className="font-semibold text-foreground mb-1">
+                                  {link.cardTitle || "Talk to our sales team"}
+                                </div>
+                                <div className="text-xs text-muted-foreground">
+                                  {link.cardDescription || "Get in touch with our team to find the best solution for you"}
+                                </div>
                               </div>
                               <a href="#" className="mt-4 text-sm font-medium text-secondary hover:text-light transition-colors flex items-center gap-1">
-                                Contact Sales →
+                                {link.cardTitle === "Book a demo" ? "Book Now →" : "Contact Sales →"}
                               </a>
                             </div>
                           </div>
