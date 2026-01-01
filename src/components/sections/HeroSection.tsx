@@ -70,10 +70,6 @@ export function HeroSection() {
               Start Free Trial
               <ArrowRight className="w-5 h-5" />
             </Button>
-            <Button variant="hero-outline" size="xl">
-              <Play className="w-5 h-5" />
-              Watch Demo
-            </Button>
           </motion.div>
 
           {/* Stats */}
