@@ -85,7 +85,7 @@ const navLinks = [
       {
         title: "Site Builder",
         items: [
-          { icon: Zap, label: "AI Sitebuilder", description: "Stress free sites, built by you in minutes", href: "#" },
+          { icon: Zap, label: "AI Sitebuilder", description: "Stress free sites, built by you in minutes", href: "/ai-sitebuilder" },
         ],
       },
     ],
