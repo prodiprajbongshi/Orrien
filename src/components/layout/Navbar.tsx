@@ -73,7 +73,7 @@ const navLinks = [
         items: [
           { icon: Globe, label: "Buy a domain", description: "Register your domain today", href: "/buy-domain" },
           { icon: Layers, label: "Transfer a Domain", description: "Fast domain transfers", href: "/transfer-domain" },
-          { icon: Shield, label: "SSL Certificates", description: "Lock in trust, secure your site with SSL", href: "#" },
+          { icon: Shield, label: "SSL Certificates", description: "Lock in trust, secure your site with SSL", href: "/ssl-certificates" },
         ],
       },
       {
