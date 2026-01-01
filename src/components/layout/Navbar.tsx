@@ -106,7 +106,7 @@ const navLinks = [
         title: "Company",
         items: [
           { icon: Building2, label: "About", description: "Learn more about Orrien", href: "/about" },
-          { icon: Layers, label: "M&A", description: "Powered by exceptional brands", href: "#" },
+          { icon: Layers, label: "M&A", description: "Powered by exceptional brands", href: "/mergers-acquisitions" },
         ],
       },
       {
