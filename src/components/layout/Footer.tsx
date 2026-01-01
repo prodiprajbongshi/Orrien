@@ -52,7 +52,7 @@ export function Footer() {
                 <Server className="w-5 h-5 text-dark" />
               </div>
               <span className="font-display text-xl font-bold text-foreground">
-                Cloud<span className="text-gradient">Host</span>
+                Orrien
               </span>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-xs">
@@ -100,7 +100,7 @@ export function Footer() {
         {/* Bottom Footer */}
         <div className="pt-8 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2026 CloudHost. All rights reserved.
+            © 2026 Orrien. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
