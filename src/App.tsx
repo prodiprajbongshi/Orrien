@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import WebHosting from "./pages/WebHosting";
 import WordPressHosting from "./pages/WordPressHosting";
 import ResellerHosting from "./pages/ResellerHosting";
+import ManagedVPSHosting from "./pages/ManagedVPSHosting";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/web-hosting" element={<WebHosting />} />
           <Route path="/wordpress-hosting" element={<WordPressHosting />} />
           <Route path="/reseller-hosting" element={<ResellerHosting />} />
+          <Route path="/managed-vps-hosting" element={<ManagedVPSHosting />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
