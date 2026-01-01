@@ -26,7 +26,7 @@ const benefits = [
 
 export function BenefitsSection() {
   return (
-    <section className="relative py-20 md:py-28 bg-[#f0f7f4]">
+    <section className="relative py-20 md:py-28 bg-light-dark">
       <div className="container mx-auto px-4">
         {/* Heading */}
         <motion.h2
@@ -34,7 +34,7 @@ export function BenefitsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-16 max-w-2xl"
+          className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-16 max-w-2xl"
         >
           Features built for better hosting, with hosting.com
         </motion.h2>
@@ -48,15 +48,15 @@ export function BenefitsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-dark border border-border/30 rounded-2xl p-6 hover:border-secondary/30 transition-all"
             >
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary to-light flex items-center justify-center mb-5">
                 <benefit.icon className="w-6 h-6 text-dark" />
               </div>
-              <h3 className="text-xl font-semibold text-dark mb-3">
+              <h3 className="text-xl font-semibold text-foreground mb-3">
                 {benefit.title}
               </h3>
-              <p className="text-dark/70 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 {benefit.description}
               </p>
             </motion.div>
