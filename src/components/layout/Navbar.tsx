@@ -51,7 +51,7 @@ const navLinks = [
         items: [
           { icon: Zap, label: "Speed & Performance", description: "Blazing speed for a smoother experience", href: "/speed-performance" },
           { icon: Shield, label: "Security", description: "Continuous protection for your site", href: "/security" },
-          { icon: Palette, label: "Ease of Use", description: "Simple, intuitive site management", href: "#" },
+          { icon: Palette, label: "Ease of Use", description: "Simple, intuitive site management", href: "/ease-of-use" },
         ],
       },
       {
