@@ -141,7 +141,7 @@ export function Navbar() {
               <Server className="w-5 h-5 text-dark" />
             </div>
             <span className="font-display text-xl font-bold text-foreground">
-              Cloud<span className="text-gradient">Host</span>
+              Orrien
             </span>
           </Link>
 

@@ -33,7 +33,7 @@ export function CTASection() {
 
           {/* Description */}
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Join thousands of businesses that trust CloudHost for their hosting needs. 
+            Join thousands of businesses that trust Orrien for their hosting needs. 
             Start your free trial today — no credit card required.
           </p>
 

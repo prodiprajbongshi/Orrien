@@ -8,7 +8,7 @@ const testimonials = [
     name: "Sarah Chen",
     role: "CTO at TechFlow",
     avatar: "SC",
-    content: "Migrating to CloudHost was the best decision we made. Our site loads 3x faster and we haven't had a single minute of downtime in 2 years.",
+    content: "Migrating to Orrien was the best decision we made. Our site loads 3x faster and we haven't had a single minute of downtime in 2 years.",
     rating: 5,
   },
   {
@@ -22,7 +22,7 @@ const testimonials = [
     name: "Emily Rodriguez",
     role: "Lead Developer at Startupify",
     avatar: "ER",
-    content: "One-click deployments, automatic scaling, and the best dashboard I've ever used. CloudHost makes hosting actually enjoyable.",
+    content: "One-click deployments, automatic scaling, and the best dashboard I've ever used. Orrien makes hosting actually enjoyable.",
     rating: 5,
   },
 ];
@@ -100,7 +100,7 @@ export function TestimonialsSection() {
             <span className="text-gradient">10,000+ Businesses</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            See what our customers have to say about their experience with CloudHost.
+            See what our customers have to say about their experience with Orrien.
           </p>
         </motion.div>
 
