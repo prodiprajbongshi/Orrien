@@ -322,20 +322,11 @@ export default function ManagedVPSHosting() {
               className="relative hidden lg:block"
             >
               <div className="relative rounded-2xl overflow-hidden border border-border/30 shadow-2xl">
-                <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="flex items-center justify-center gap-4 mb-4">
-                      <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center">
-                        <Server className="w-8 h-8 text-secondary" />
-                      </div>
-                      <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center">
-                        <Shield className="w-8 h-8 text-primary" />
-                      </div>
-                    </div>
-                    <p className="text-lg text-foreground font-medium">Fully Managed VPS</p>
-                    <p className="text-muted-foreground">Enterprise performance, zero hassle</p>
-                  </div>
-                </div>
+                <img 
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600" 
+                  alt="Managed VPS server infrastructure" 
+                  className="w-full h-auto"
+                />
               </div>
             </motion.div>
           </div>

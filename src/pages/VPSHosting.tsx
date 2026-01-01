@@ -334,18 +334,11 @@ export default function VPSHosting() {
               className="relative hidden lg:block"
             >
               <div className="relative rounded-2xl overflow-hidden border border-border/30 shadow-2xl">
-                <div className="aspect-video bg-gradient-to-br from-dark to-light-dark flex items-center justify-center p-8">
-                  <div className="w-full bg-dark/80 rounded-lg p-4 font-mono text-sm">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="w-3 h-3 rounded-full bg-red-500" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                      <div className="w-3 h-3 rounded-full bg-green-500" />
-                    </div>
-                    <div className="text-secondary">$ ssh root@your-vps.com</div>
-                    <div className="text-muted-foreground">Welcome to Ubuntu 22.04 LTS</div>
-                    <div className="text-foreground">root@vps:~# <span className="text-secondary">_</span></div>
-                  </div>
-                </div>
+                <img 
+                  src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?w=600" 
+                  alt="VPS server terminal access" 
+                  className="w-full h-auto"
+                />
               </div>
             </motion.div>
           </div>

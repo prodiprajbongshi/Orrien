@@ -159,10 +159,12 @@ export default function SpeedPerformance() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative bg-gradient-to-br from-secondary/20 to-primary/20 rounded-2xl p-8 border border-secondary/30">
-                <div className="aspect-video bg-dark/50 rounded-xl flex items-center justify-center">
-                  <Zap className="w-24 h-24 text-secondary" />
-                </div>
+              <div className="relative bg-gradient-to-br from-secondary/20 to-primary/20 rounded-2xl p-8 border border-secondary/30 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600" 
+                  alt="Fast WordPress performance" 
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
               </div>
             </motion.div>
           </div>
@@ -233,10 +235,12 @@ export default function SpeedPerformance() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20">
-                <div className="aspect-video bg-dark/50 rounded-xl flex items-center justify-center">
-                  <Search className="w-20 h-20 text-secondary" />
-                </div>
+              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600" 
+                  alt="Google SEO ranking" 
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
               </div>
             </motion.div>
             
@@ -310,10 +314,12 @@ export default function SpeedPerformance() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20">
-                <div className="aspect-video bg-dark/50 rounded-xl flex items-center justify-center">
-                  <Database className="w-20 h-20 text-secondary" />
-                </div>
+              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600" 
+                  alt="Database caching system" 
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
               </div>
             </motion.div>
           </div>
@@ -413,10 +419,12 @@ export default function SpeedPerformance() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20">
-                <div className="aspect-video bg-dark/50 rounded-xl flex items-center justify-center">
-                  <Bot className="w-20 h-20 text-secondary" />
-                </div>
+              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600" 
+                  alt="AI crawler optimization" 
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
               </div>
             </motion.div>
           </div>

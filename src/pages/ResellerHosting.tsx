@@ -335,13 +335,11 @@ export default function ResellerHosting() {
               className="relative hidden lg:block"
             >
               <div className="relative rounded-2xl overflow-hidden border border-border/30 shadow-2xl">
-                <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <Server className="w-20 h-20 text-secondary mx-auto mb-4" />
-                    <p className="text-lg text-foreground font-medium">Launch Your Hosting Business</p>
-                    <p className="text-muted-foreground">Everything you need to succeed</p>
-                  </div>
-                </div>
+                <img 
+                  src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600" 
+                  alt="Reseller hosting business" 
+                  className="w-full h-auto"
+                />
               </div>
             </motion.div>
           </div>

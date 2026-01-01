@@ -198,10 +198,12 @@ export default function Security() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative bg-gradient-to-br from-secondary/20 to-primary/20 rounded-2xl p-8 border border-secondary/30">
-                <div className="aspect-video bg-dark/50 rounded-xl flex items-center justify-center">
-                  <Shield className="w-24 h-24 text-secondary" />
-                </div>
+              <div className="relative bg-gradient-to-br from-secondary/20 to-primary/20 rounded-2xl p-8 border border-secondary/30 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600" 
+                  alt="WordPress security protection" 
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
               </div>
             </motion.div>
           </div>
@@ -219,13 +221,12 @@ export default function Security() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20">
-                <div className="aspect-video bg-dark/50 rounded-xl flex items-center justify-center">
-                  <div className="flex items-center gap-4">
-                    <Shield className="w-16 h-16 text-secondary" />
-                    <Shield className="w-16 h-16 text-secondary/60" />
-                  </div>
-                </div>
+              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600" 
+                  alt="Dual firewall protection" 
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
               </div>
             </motion.div>
             
@@ -294,10 +295,12 @@ export default function Security() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20">
-                <div className="aspect-video bg-dark/50 rounded-xl flex items-center justify-center">
-                  <Lock className="w-20 h-20 text-secondary" />
-                </div>
+              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600" 
+                  alt="Web application firewall" 
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
               </div>
             </motion.div>
           </div>
@@ -315,10 +318,12 @@ export default function Security() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20">
-                <div className="aspect-video bg-dark/50 rounded-xl flex items-center justify-center">
-                  <Scan className="w-20 h-20 text-secondary" />
-                </div>
+              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600" 
+                  alt="Security suite scanning" 
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
               </div>
             </motion.div>
             

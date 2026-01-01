@@ -293,20 +293,11 @@ export default function ManagedVDSHosting() {
               className="relative hidden lg:block"
             >
               <div className="relative rounded-2xl overflow-hidden border border-border/30 shadow-2xl">
-                <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center p-8">
-                  <div className="text-center">
-                    <div className="flex items-center justify-center gap-4 mb-4">
-                      <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center">
-                        <Cpu className="w-8 h-8 text-secondary" />
-                      </div>
-                      <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center">
-                        <Zap className="w-8 h-8 text-primary" />
-                      </div>
-                    </div>
-                    <p className="text-lg text-foreground font-medium">Dedicated Power</p>
-                    <p className="text-muted-foreground">Real cores, real performance</p>
-                  </div>
-                </div>
+                <img 
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600" 
+                  alt="Managed VDS server infrastructure" 
+                  className="w-full h-auto"
+                />
               </div>
             </motion.div>
           </div>

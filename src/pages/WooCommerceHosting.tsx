@@ -289,10 +289,12 @@ export default function WooCommerceHosting() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20">
-                <div className="aspect-video bg-dark/50 rounded-xl flex items-center justify-center">
-                  <Zap className="w-20 h-20 text-secondary" />
-                </div>
+              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" 
+                  alt="Speed performance analytics" 
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
               </div>
             </motion.div>
             
@@ -361,10 +363,12 @@ export default function WooCommerceHosting() {
               viewport={{ once: true }}
               className="relative order-1 lg:order-2"
             >
-              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20">
-                <div className="aspect-video bg-dark/50 rounded-xl flex items-center justify-center">
-                  <Shield className="w-20 h-20 text-secondary" />
-                </div>
+              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600" 
+                  alt="Secure hosting protection" 
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
               </div>
             </motion.div>
           </div>
@@ -382,10 +386,12 @@ export default function WooCommerceHosting() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20">
-                <div className="aspect-video bg-dark/50 rounded-xl flex items-center justify-center">
-                  <TrendingUp className="w-20 h-20 text-secondary" />
-                </div>
+              <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-8 border border-secondary/20 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" 
+                  alt="Sales growth analytics" 
+                  className="w-full h-auto rounded-xl shadow-lg"
+                />
               </div>
             </motion.div>
             
