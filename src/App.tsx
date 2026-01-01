@@ -21,6 +21,7 @@ import TransferDomain from "./pages/TransferDomain";
 import SSLCertificates from "./pages/SSLCertificates";
 import EmailHosting from "./pages/EmailHosting";
 import AISitebuilder from "./pages/AISitebuilder";
+import SiteMigration from "./pages/SiteMigration";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/ssl-certificates" element={<SSLCertificates />} />
           <Route path="/email-hosting" element={<EmailHosting />} />
           <Route path="/ai-sitebuilder" element={<AISitebuilder />} />
+          <Route path="/site-migration" element={<SiteMigration />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

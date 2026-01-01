@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, Server, Cloud, Shield, Globe, Cpu, Database, HardDrive, Layers, FileCode, Palette, ShoppingCart, Rocket, BookOpen, HeadphonesIcon, MessageCircle, FileText, Video, Users, LifeBuoy, Mail, Zap } from "lucide-react";
+import { Menu, X, ChevronDown, Server, Cloud, Shield, Globe, Cpu, Database, HardDrive, Layers, FileCode, Palette, ShoppingCart, Rocket, BookOpen, HeadphonesIcon, MessageCircle, FileText, Video, Users, LifeBuoy, Mail, Zap, ArrowRightLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -86,6 +86,12 @@ const navLinks = [
         title: "Site Builder",
         items: [
           { icon: Zap, label: "AI Sitebuilder", description: "Stress free sites, built by you in minutes", href: "/ai-sitebuilder" },
+        ],
+      },
+      {
+        title: "Migration",
+        items: [
+          { icon: ArrowRightLeft, label: "Site Migration", description: "Free site migration by our experts", href: "/site-migration" },
         ],
       },
     ],
