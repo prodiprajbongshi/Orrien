@@ -143,7 +143,7 @@ const EaseOfUse = () => {
               className="relative"
             >
               <img 
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600" 
+                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600" 
                 alt="Modern WordPress dashboard interface" 
                 className="rounded-2xl shadow-2xl border border-primary/20"
               />
