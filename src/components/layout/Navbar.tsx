@@ -57,7 +57,7 @@ const navLinks = [
       {
         title: "Add-ons / Plug-ins",
         items: [
-          { icon: Rocket, label: "WP Rocket", description: "Boost your website speed with WP Rocket", href: "#" },
+          { icon: Rocket, label: "WP Rocket", description: "Boost your website speed with WP Rocket", href: "/wp-rocket" },
         ],
       },
     ],

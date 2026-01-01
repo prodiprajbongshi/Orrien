@@ -10,6 +10,7 @@ import WooCommerceHosting from "./pages/WooCommerceHosting";
 import SpeedPerformance from "./pages/SpeedPerformance";
 import Security from "./pages/Security";
 import EaseOfUse from "./pages/EaseOfUse";
+import WPRocket from "./pages/WPRocket";
 import ResellerHosting from "./pages/ResellerHosting";
 import ManagedVPSHosting from "./pages/ManagedVPSHosting";
 import VPSHosting from "./pages/VPSHosting";
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/speed-performance" element={<SpeedPerformance />} />
           <Route path="/security" element={<Security />} />
           <Route path="/ease-of-use" element={<EaseOfUse />} />
+          <Route path="/wp-rocket" element={<WPRocket />} />
           <Route path="/reseller-hosting" element={<ResellerHosting />} />
           <Route path="/managed-vps-hosting" element={<ManagedVPSHosting />} />
           <Route path="/vps-hosting" element={<VPSHosting />} />
