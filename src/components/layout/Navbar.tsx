@@ -143,6 +143,19 @@ export function Navbar() {
                                 </div>
                               </div>
                             ))}
+                            {/* Sales Card */}
+                            <div className="min-w-[220px] bg-gradient-to-br from-secondary/10 to-primary/10 border border-secondary/20 rounded-xl p-4 flex flex-col justify-between">
+                              <div>
+                                <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center mb-3">
+                                  <HeadphonesIcon className="w-5 h-5 text-secondary" />
+                                </div>
+                                <div className="font-semibold text-foreground mb-1">Talk to our sales team</div>
+                                <div className="text-xs text-muted-foreground">Get in touch with our team to find the best solution for you</div>
+                              </div>
+                              <a href="#" className="mt-4 text-sm font-medium text-secondary hover:text-light transition-colors flex items-center gap-1">
+                                Contact Sales →
+                              </a>
+                            </div>
                           </div>
                         ) : (
                           /* Regular items layout */
