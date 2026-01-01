@@ -43,7 +43,7 @@ const navLinks = [
         title: "Product",
         items: [
           { icon: Globe, label: "Hosting for WordPress", description: "Optimized WordPress hosting for growth", href: "/wordpress-hosting" },
-          { icon: ShoppingCart, label: "Hosting for Woocommerce", description: "Woocommerce hosting built for success", href: "#" },
+          { icon: ShoppingCart, label: "Hosting for Woocommerce", description: "Woocommerce hosting built for success", href: "/woocommerce-hosting" },
         ],
       },
       {
