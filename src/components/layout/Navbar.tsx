@@ -14,7 +14,7 @@ const navLinks = [
         items: [
           { icon: Server, label: "Web Hosting", description: "Feature-rich cPanel & one-click tools", href: "/web-hosting" },
           { icon: Globe, label: "Hosting for WordPress", description: "Optimized WordPress hosting for growth", href: "/wordpress-hosting" },
-          { icon: Layers, label: "Reseller Hosting", description: "Launch your own hosting business", href: "#" },
+          { icon: Layers, label: "Reseller Hosting", description: "Launch your own hosting business", href: "/reseller-hosting" },
         ],
       },
       {
