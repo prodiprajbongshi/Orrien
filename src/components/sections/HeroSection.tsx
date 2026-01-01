@@ -1,14 +1,45 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Zap, Shield, Clock } from "lucide-react";
+import { ArrowRight, Server, Sparkles, Zap, Globe } from "lucide-react";
 
-const stats = [
-  { icon: Zap, value: "99.99%", label: "Uptime" },
-  { icon: Shield, value: "24/7", label: "Support" },
-  { icon: Clock, value: "<50ms", label: "Response" },
+const serviceCards = [
+  {
+    icon: Server,
+    title: "Fast Shared Hosting",
+    price: "$1.99",
+    bgClass: "bg-dark border-border/30",
+    textClass: "text-foreground",
+    priceClass: "text-foreground",
+    linkClass: "text-secondary",
+  },
+  {
+    icon: Sparkles,
+    title: "AI Sitebuilder",
+    price: "$4.99",
+    bgClass: "bg-light-dark border-border/30",
+    textClass: "text-foreground",
+    priceClass: "text-foreground",
+    linkClass: "text-secondary",
+  },
+  {
+    icon: Zap,
+    title: "Ultrafast VPS",
+    price: "$9.99",
+    bgClass: "bg-secondary border-secondary",
+    textClass: "text-dark",
+    priceClass: "text-dark",
+    linkClass: "text-dark/80",
+  },
+  {
+    icon: Globe,
+    title: "Hosting for WordPress",
+    price: "$1.00",
+    bgClass: "bg-white border-white/20",
+    textClass: "text-dark",
+    priceClass: "text-dark",
+    linkClass: "text-primary",
+  },
 ];
-
-// Remove pt-20 since DomainSearchBar handles spacing now
 
 export function HeroSection() {
   return (
@@ -71,8 +102,37 @@ export function HeroSection() {
               <ArrowRight className="w-5 h-5" />
             </Button>
           </motion.div>
-
         </div>
+
+        {/* Service Cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="max-w-6xl mx-auto mt-8"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {serviceCards.map((card, index) => (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                className={`${card.bgClass} border rounded-2xl p-6 hover:scale-105 transition-transform duration-300 cursor-pointer`}
+              >
+                <div className={`w-12 h-12 rounded-xl ${card.bgClass === "bg-white border-white/20" || card.bgClass === "bg-secondary border-secondary" ? "bg-dark/10" : "bg-secondary/20"} flex items-center justify-center mb-4`}>
+                  <card.icon className={`w-6 h-6 ${card.bgClass === "bg-white border-white/20" ? "text-primary" : card.bgClass === "bg-secondary border-secondary" ? "text-dark" : "text-secondary"}`} />
+                </div>
+                <h3 className={`font-semibold ${card.textClass} mb-2`}>{card.title}</h3>
+                <p className={`text-sm ${card.textClass} opacity-70 mb-1`}>Starting at</p>
+                <p className={`text-3xl font-display font-bold ${card.priceClass} mb-4`}>{card.price}</p>
+                <a href="#" className={`inline-flex items-center gap-1 text-sm font-medium ${card.linkClass} hover:gap-2 transition-all`}>
+                  Find out more <ArrowRight className="w-4 h-4" />
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
