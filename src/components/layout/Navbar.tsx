@@ -131,8 +131,8 @@ export function Navbar() {
                                       href="#"
                                       className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors group"
                                     >
-                                      <div className="w-9 h-9 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors">
-                                        <item.icon className="w-4 h-4 text-secondary" />
+                                      <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors flex-shrink-0">
+                                        <item.icon className="w-5 h-5 text-secondary" />
                                       </div>
                                       <div>
                                         <div className="font-medium text-foreground text-sm">{item.label}</div>
@@ -153,7 +153,7 @@ export function Navbar() {
                                 href="#"
                                 className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
                               >
-                                <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors">
+                                <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center group-hover:bg-secondary/30 transition-colors flex-shrink-0">
                                   <item.icon className="w-5 h-5 text-secondary" />
                                 </div>
                                 <div>
