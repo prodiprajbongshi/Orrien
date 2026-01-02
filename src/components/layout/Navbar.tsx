@@ -118,7 +118,7 @@ const navLinks = [
         title: "Programs",
         items: [
           { icon: Users, label: "Affiliate Program", description: "Start earning up to $125 today", href: "/affiliate-program" },
-          { icon: MessageCircle, label: "Refer a Friend", description: "Earn up to $130 with a single referral", href: "#" },
+          { icon: MessageCircle, label: "Refer a Friend", description: "Earn up to $130 with a single referral", href: "/refer-friend" },
         ],
       },
     ],
