@@ -12,20 +12,20 @@ import {
   Database,
   HardDrive,
   Layers,
-  FileCode,
+ 
   Palette,
   ShoppingCart,
   Rocket,
-  BookOpen,
+ 
   HeadphonesIcon,
   MessageCircle,
   FileText,
-  Video,
+ 
   Users,
   LifeBuoy,
   Mail,
   Zap,
-  ArrowRightLeft,
+ 
   Building2,
   DollarSign,
 } from "lucide-react";
@@ -44,9 +44,7 @@ const currencies = [
   { code: "BDT", symbol: "৳" },
   { code: "USD", symbol: "$" },
 ];
-const simpleLinks = [
-  { label: "Offers", href: "/offers" },
-];
+const simpleLinks = [{ label: "Offers", href: "/offers" }];
 
 const navLinks = [
   {
@@ -322,9 +320,12 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-xl border-b border-border/30 py-1 transition-transform duration-300 ${
-        showNavbar ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50
+bg-gradient-to-b from-white/10 to-white/5
+backdrop-blur-2xl backdrop-saturate-150
+border-b border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.12)]
+py-1 transition-transform duration-300
+${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -339,17 +340,6 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
-            {/* Simple Links (like Offers) */}
-            {simpleLinks.map((link) => (
-              <Link
-                key={link.label}
-                to={link.href}
-                className="flex items-center gap-1 px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium rounded-lg hover:bg-muted/30"
-              >
-                {link.label}
-              </Link>
-            ))}
-            
             {/* Dropdown Links */}
             {navLinks.map((link) => (
               <div
@@ -370,6 +360,17 @@ export function Navbar() {
                 </a>
               </div>
             ))}
+
+            {/*  Offers page */}
+            {simpleLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                className="flex items-center gap-1 px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium rounded-lg hover:bg-muted/30"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
           {/* Currency Switcher - Always visible */}
@@ -381,7 +382,7 @@ export function Navbar() {
                   size="sm"
                   className="gap-1.5 border-border/50 bg-transparent hover:bg-muted/30"
                 >
-                  <DollarSign className="w-4 h-4" />
+  
                   <span className="font-medium">{selectedCurrency.code}</span>
                   <ChevronDown className="w-3 h-3" />
                 </Button>
@@ -524,7 +525,7 @@ export function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                
+
                 {/* Dropdown Links */}
                 {navLinks.map((link) => (
                   <div key={link.label}>
