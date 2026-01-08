@@ -44,6 +44,10 @@ const currencies = [
   { code: "BDT", symbol: "৳" },
   { code: "USD", symbol: "$" },
 ];
+const simpleLinks = [
+  { label: "Offers", href: "/offers" },
+];
+
 const navLinks = [
   {
     label: "Hosting & Servers",
@@ -335,6 +339,18 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
+            {/* Simple Links (like Offers) */}
+            {simpleLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                className="flex items-center gap-1 px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium rounded-lg hover:bg-muted/30"
+              >
+                {link.label}
+              </Link>
+            ))}
+            
+            {/* Dropdown Links */}
             {navLinks.map((link) => (
               <div
                 key={link.label}
@@ -497,6 +513,19 @@ export function Navbar() {
           >
             <div className="container mx-auto px-4 py-6">
               <div className="flex flex-col gap-2">
+                {/* Simple Links (like Offers) */}
+                {simpleLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    className="w-full flex items-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-3 px-2 rounded-lg hover:bg-muted/30"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                
+                {/* Dropdown Links */}
                 {navLinks.map((link) => (
                   <div key={link.label}>
                     <button
