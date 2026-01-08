@@ -27,6 +27,7 @@ import MergersAcquisitions from "./pages/MergersAcquisitions";
 import Blog from "./pages/Blog";
 import AffiliateProgram from "./pages/AffiliateProgram";
 import ReferFriend from "./pages/ReferFriend";
+import Offers from "./pages/Offers";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -62,6 +63,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/affiliate-program" element={<AffiliateProgram />} />
           <Route path="/refer-friend" element={<ReferFriend />} />
+          <Route path="/offers" element={<Offers />} />
            
           <Route path="*" element={<NotFound />} />
         </Routes>
