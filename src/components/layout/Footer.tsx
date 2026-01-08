@@ -47,17 +47,19 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-12 mb-12">
           {/* Brand */}
           <div className="col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              
-              <span className="font-display text-xl font-bold text-foreground">
-                Orrien
-              </span>
+            {/* Logo */}
+            <Link to="/" className="flex items-center">
+              <img
+                className="w-[200px] h-[140px]"
+                src="/logo.png"
+                alt="Brand Icon"
+              />
             </Link>
             <p className="text-muted-foreground mb-6 max-w-xs">
-              Lightning-fast hosting with enterprise-grade security. 
-              Trusted by 10,000+ businesses worldwide.
+              Lightning-fast hosting with enterprise-grade security. Trusted by
+              10,000+ businesses worldwide.
             </p>
-            
+
             {/* Social Links */}
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -101,9 +103,15 @@ export function Footer() {
             © 2026 Orrien. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-foreground transition-colors">Cookie Policy</a>
+            <a href="#" className="hover:text-foreground transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-foreground transition-colors">
+              Terms of Service
+            </a>
+            <a href="#" className="hover:text-foreground transition-colors">
+              Cookie Policy
+            </a>
           </div>
         </div>
       </div>

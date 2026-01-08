@@ -1,8 +1,38 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, Server, Cloud, Shield, Globe, Cpu, Database, HardDrive, Layers, FileCode, Palette, ShoppingCart, Rocket, BookOpen, HeadphonesIcon, MessageCircle, FileText, Video, Users, LifeBuoy, Mail, Zap, ArrowRightLeft, Building2, DollarSign } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Server,
+  Cloud,
+  Shield,
+  Globe,
+  Cpu,
+  Database,
+  HardDrive,
+  Layers,
+  FileCode,
+  Palette,
+  ShoppingCart,
+  Rocket,
+  BookOpen,
+  HeadphonesIcon,
+  MessageCircle,
+  FileText,
+  Video,
+  Users,
+  LifeBuoy,
+  Mail,
+  Zap,
+  ArrowRightLeft,
+  Building2,
+  DollarSign,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef } from "react";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,11 +41,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const currencies = [
-  { code: "USD", symbol: "$", name: "US Dollar" },
-  { code: "EUR", symbol: "€", name: "Euro" },
-  { code: "GBP", symbol: "£", name: "British Pound" },
-  { code: "INR", symbol: "₹", name: "Indian Rupee" },
-  { code: "AUD", symbol: "A$", name: "Australian Dollar" },
+  { code: "BDT", symbol: "৳" },
+  { code: "USD", symbol: "$" },
 ];
 const navLinks = [
   {
@@ -25,29 +52,65 @@ const navLinks = [
       {
         title: "Shared Hosting",
         items: [
-          { icon: Server, label: "Web Hosting", description: "Feature-rich cPanel & one-click tools", href: "/web-hosting" },
-          { icon: Globe, label: "Hosting for WordPress", description: "Optimized WordPress hosting for growth", href: "/wordpress-hosting" },
-          { icon: Layers, label: "Reseller Hosting", description: "Launch your own hosting business", href: "/reseller-hosting" },
+          {
+            icon: Server,
+            label: "Web Hosting",
+            description: "Feature-rich cPanel & one-click tools",
+            href: "/web-hosting",
+          },
+          {
+            icon: Globe,
+            label: "Hosting for WordPress",
+            description: "Optimized WordPress hosting for growth",
+            href: "/wordpress-hosting",
+          },
+          {
+            icon: Layers,
+            label: "Reseller Hosting",
+            description: "Launch your own hosting business",
+            href: "/reseller-hosting",
+          },
         ],
       },
       {
         title: "VPS Hosting",
         items: [
-          { icon: Cloud, label: "Managed VPS Hosting", description: "Zero server hassle, 100% managed for you", href: "/managed-vps-hosting" },
-          { icon: Cpu, label: "VPS Hosting (root access)", description: "Full root access, full control", href: "/vps-hosting" },
+          {
+            icon: Cloud,
+            label: "Managed VPS Hosting",
+            description: "Zero server hassle, 100% managed for you",
+            href: "/managed-vps-hosting",
+          },
+          {
+            icon: Cpu,
+            label: "VPS Hosting (root access)",
+            description: "Full root access, full control",
+            href: "/vps-hosting",
+          },
         ],
       },
       {
         title: "Dedicated",
         items: [
-          { icon: Database, label: "Managed VDS Hosting", description: "Dedicated-level power", href: "/managed-vds-hosting" },
-          { icon: HardDrive, label: "Dedicated Servers", description: "Full control on your hardware", href: "/dedicated-servers" },
+          {
+            icon: Database,
+            label: "Managed VDS Hosting",
+            description: "Dedicated-level power",
+            href: "/managed-vds-hosting",
+          },
+          {
+            icon: HardDrive,
+            label: "Dedicated Servers",
+            description: "Full control on your hardware",
+            href: "/dedicated-servers",
+          },
         ],
       },
     ],
     cardTitle: "Talk to our sales team",
-    cardDescription: "Get in touch with our team to find the best solution for you",
-    cardLink: "/contact"
+    cardDescription:
+      "Get in touch with our team to find the best solution for you",
+    cardLink: "/contact",
   },
   {
     label: "WordPress",
@@ -56,22 +119,52 @@ const navLinks = [
       {
         title: "Product",
         items: [
-          { icon: Globe, label: "Hosting for WordPress", description: "Optimized WordPress hosting for growth", href: "/wordpress-hosting" },
-          { icon: ShoppingCart, label: "Hosting for Woocommerce", description: "Woocommerce hosting built for success", href: "/woocommerce-hosting" },
+          {
+            icon: Globe,
+            label: "Hosting for WordPress",
+            description: "Optimized WordPress hosting for growth",
+            href: "/wordpress-hosting",
+          },
+          {
+            icon: ShoppingCart,
+            label: "Hosting for Woocommerce",
+            description: "Woocommerce hosting built for success",
+            href: "/woocommerce-hosting",
+          },
         ],
       },
       {
         title: "Features",
         items: [
-          { icon: Zap, label: "Speed & Performance", description: "Blazing speed for a smoother experience", href: "/speed-performance" },
-          { icon: Shield, label: "Security", description: "Continuous protection for your site", href: "/security" },
-          { icon: Palette, label: "Ease of Use", description: "Simple, intuitive site management", href: "/ease-of-use" },
+          {
+            icon: Zap,
+            label: "Speed & Performance",
+            description: "Blazing speed for a smoother experience",
+            href: "/speed-performance",
+          },
+          {
+            icon: Shield,
+            label: "Security",
+            description: "Continuous protection for your site",
+            href: "/security",
+          },
+          {
+            icon: Palette,
+            label: "Ease of Use",
+            description: "Simple, intuitive site management",
+            href: "/ease-of-use",
+          },
         ],
       },
       {
         title: "Add-ons / Plug-ins",
         items: [
-          { icon: Rocket, label: "WP Rocket", description: "Boost your website speed with WP Rocket", href: "/wp-rocket" },
+          {
+            icon: Rocket,
+            label: "WP Rocket",
+            description: "Boost your website speed with WP Rocket",
+            href: "/wp-rocket",
+          },
         ],
       },
     ],
@@ -85,28 +178,52 @@ const navLinks = [
       {
         title: "Domains & SSL",
         items: [
-          { icon: Globe, label: "Buy a domain", description: "Register your domain today", href: "/buy-domain" },
-          { icon: Layers, label: "Transfer a Domain", description: "Fast domain transfers", href: "/transfer-domain" },
-          { icon: Shield, label: "SSL Certificates", description: "Lock in trust, secure your site with SSL", href: "/ssl-certificates" },
+          {
+            icon: Globe,
+            label: "Buy a domain",
+            description: "Register your domain today",
+            href: "/buy-domain",
+          },
+          {
+            icon: Layers,
+            label: "Transfer a Domain",
+            description: "Fast domain transfers",
+            href: "/transfer-domain",
+          },
+          {
+            icon: Shield,
+            label: "SSL Certificates",
+            description: "Lock in trust, secure your site with SSL",
+            href: "/ssl-certificates",
+          },
         ],
       },
       {
         title: "Email",
         items: [
-          { icon: Mail, label: "Email Hosting", description: "Your brands inbox. Fast, secure, professional", href: "/email-hosting" },
+          {
+            icon: Mail,
+            label: "Email Hosting",
+            description: "Your brands inbox. Fast, secure, professional",
+            href: "/email-hosting",
+          },
         ],
       },
       {
         title: "Site Builder",
         items: [
-          { icon: Zap, label: "AI Sitebuilder", description: "Stress free sites, built by you in minutes", href: "/ai-sitebuilder" },
+          {
+            icon: Zap,
+            label: "AI Sitebuilder",
+            description: "Stress free sites, built by you in minutes",
+            href: "/ai-sitebuilder",
+          },
         ],
       },
-      
     ],
     cardTitle: "Free site migrations",
     cardDescription: "Let our experts migrate your site for you",
-    cardLink: "/site-migration"
+    cardLink: "/site-migration",
   },
   {
     label: "Resources",
@@ -115,48 +232,105 @@ const navLinks = [
       {
         title: "Company",
         items: [
-          { icon: Building2, label: "About", description: "Learn more about Orrien", href: "/about" },
-          { icon: Layers, label: "M&A", description: "Powered by exceptional brands", href: "/mergers-acquisitions" },
+          {
+            icon: Building2,
+            label: "About",
+            description: "Learn more about Orrien",
+            href: "/about",
+          },
+          {
+            icon: Layers,
+            label: "M&A",
+            description: "Powered by exceptional brands",
+            href: "/mergers-acquisitions",
+          },
         ],
       },
       {
         title: "Resources",
         items: [
-          { icon: LifeBuoy, label: "Free Migration by Experts", description: "Effortless website transfers by experts", href: "/site-migration" },
-          { icon: FileText, label: "Blog", description: "Latest insights", href: "/blog" },
-           
+          {
+            icon: LifeBuoy,
+            label: "Free Migration by Experts",
+            description: "Effortless website transfers by experts",
+            href: "/site-migration",
+          },
+          {
+            icon: FileText,
+            label: "Blog",
+            description: "Latest insights",
+            href: "/blog",
+          },
         ],
       },
       {
         title: "Programs",
         items: [
-          { icon: Users, label: "Affiliate Program", description: "Start earning up to $125 today", href: "/affiliate-program" },
-          { icon: MessageCircle, label: "Refer a Friend", description: "Earn up to $130 with a single referral", href: "/refer-friend" },
+          {
+            icon: Users,
+            label: "Affiliate Program",
+            description: "Start earning up to $125 today",
+            href: "/affiliate-program",
+          },
+          {
+            icon: MessageCircle,
+            label: "Refer a Friend",
+            description: "Earn up to $130 with a single referral",
+            href: "/refer-friend",
+          },
         ],
       },
     ],
     cardTitle: "Talk to our sales team",
-    cardDescription: "Get in touch with our team to find the best solution for you",
+    cardDescription:
+      "Get in touch with our team to find the best solution for you",
   },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [mobileActiveDropdown, setMobileActiveDropdown] = useState<string | null>(null);
+  const [mobileActiveDropdown, setMobileActiveDropdown] = useState<
+    string | null
+  >(null);
   const [selectedCurrency, setSelectedCurrency] = useState(currencies[0]);
-  const activeLink = navLinks.find(link => link.label === activeDropdown);
+  const activeLink = navLinks.find((link) => link.label === activeDropdown);
+
+  // for make navbar stikey
+  const [showNavbar, setShowNavbar] = useState(true);
+  const lastScrollY = useRef(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
+        setShowNavbar(false); // scrolling down
+      } else {
+        setShowNavbar(true); // scrolling up
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-xl border-b border-border/30">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-xl border-b border-border/30 py-1 transition-transform duration-300 ${
+        showNavbar ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            
-            <span className="font-display text-xl font-bold text-foreground">
-              Orrien
-            </span>
+            <img
+              className="w-[200px] h-[140px]"
+              src="/logo.png"
+              alt="Brand Icon"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -172,47 +346,66 @@ export function Navbar() {
                   className="flex items-center gap-1 px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium rounded-lg hover:bg-muted/30"
                 >
                   {link.label}
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === link.label ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-200 ${
+                      activeDropdown === link.label ? "rotate-180" : ""
+                    }`}
+                  />
                 </a>
               </div>
             ))}
           </div>
 
-          {/* CTA Section - Currency always visible, Login hidden on mobile */}
+          {/* Currency Switcher - Always visible */}
           <div className="flex items-center gap-2">
-            {/* Currency Switcher - Always visible */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm" className="gap-1.5 border-border/50 bg-transparent hover:bg-muted/30">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-1.5 border-border/50 bg-transparent hover:bg-muted/30"
+                >
                   <DollarSign className="w-4 h-4" />
                   <span className="font-medium">{selectedCurrency.code}</span>
                   <ChevronDown className="w-3 h-3" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="bg-light-dark border-border">
+              <DropdownMenuContent
+                align="end"
+                className="bg-light-dark border-border"
+              >
                 {currencies.map((currency) => (
                   <DropdownMenuItem
                     key={currency.code}
                     onClick={() => setSelectedCurrency(currency)}
-                    className={`cursor-pointer ${selectedCurrency.code === currency.code ? "bg-secondary/20 text-secondary" : ""}`}
+                    className={`cursor-pointer ${
+                      selectedCurrency.code === currency.code
+                        ? "bg-secondary/20 text-secondary"
+                        : ""
+                    }`}
                   >
                     <span className="w-6">{currency.symbol}</span>
                     <span>{currency.code}</span>
-                    <span className="ml-2 text-muted-foreground text-xs">({currency.name})</span>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            
+
             {/* Login - Hidden on mobile */}
-            <Button variant="ghost" className="hidden lg:inline-flex">Log In</Button>
+            <Button variant="ghost" className="hidden lg:inline-flex">
+              Log In
+            </Button>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden p-2 text-foreground"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -250,8 +443,12 @@ export function Navbar() {
                               <item.icon className="w-5 h-5 text-secondary" />
                             </div>
                             <div>
-                              <div className="font-medium text-foreground text-sm">{item.label}</div>
-                              <div className="text-xs text-muted-foreground">{item.description}</div>
+                              <div className="font-medium text-foreground text-sm">
+                                {item.label}
+                              </div>
+                              <div className="text-xs text-muted-foreground">
+                                {item.description}
+                              </div>
                             </div>
                           </Link>
                         ))}
@@ -266,14 +463,20 @@ export function Navbar() {
                       </div>
                       <div className="font-semibold text-foreground mb-1">
                         {activeLink.cardTitle}
-                    
                       </div>
                       <div className="text-xs text-muted-foreground">
                         {activeLink.cardDescription}
                       </div>
                     </div>
-                    <Link to={activeLink.cardLink} className="mt-4 text-sm font-medium text-secondary hover:text-light transition-colors flex items-center gap-1">
-                      {activeLink.cardTitle === "Book a demo" ? "Book Now →" : activeLink.cardTitle === "Free site migrations" ? "Get Started →" : "Contact Sales →"}
+                    <Link
+                      to={activeLink.cardLink}
+                      className="mt-4 text-sm font-medium text-secondary hover:text-light transition-colors flex items-center gap-1"
+                    >
+                      {activeLink.cardTitle === "Book a demo"
+                        ? "Book Now →"
+                        : activeLink.cardTitle === "Free site migrations"
+                        ? "Get Started →"
+                        : "Contact Sales →"}
                     </Link>
                   </div>
                 </div>
@@ -297,13 +500,25 @@ export function Navbar() {
                 {navLinks.map((link) => (
                   <div key={link.label}>
                     <button
-                      onClick={() => setMobileActiveDropdown(mobileActiveDropdown === link.label ? null : link.label)}
+                      onClick={() =>
+                        setMobileActiveDropdown(
+                          mobileActiveDropdown === link.label
+                            ? null
+                            : link.label
+                        )
+                      }
                       className="w-full flex items-center justify-between text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-3 px-2 rounded-lg hover:bg-muted/30"
                     >
                       {link.label}
-                      <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${mobileActiveDropdown === link.label ? "rotate-180" : ""}`} />
+                      <ChevronDown
+                        className={`w-5 h-5 transition-transform duration-200 ${
+                          mobileActiveDropdown === link.label
+                            ? "rotate-180"
+                            : ""
+                        }`}
+                      />
                     </button>
-                    
+
                     <AnimatePresence>
                       {mobileActiveDropdown === link.label && (
                         <motion.div
@@ -330,8 +545,12 @@ export function Navbar() {
                                         <item.icon className="w-5 h-5 text-secondary" />
                                       </div>
                                       <div>
-                                        <div className="font-medium text-foreground text-sm">{item.label}</div>
-                                        <div className="text-xs text-muted-foreground">{item.description}</div>
+                                        <div className="font-medium text-foreground text-sm">
+                                          {item.label}
+                                        </div>
+                                        <div className="text-xs text-muted-foreground">
+                                          {item.description}
+                                        </div>
                                       </div>
                                     </Link>
                                   ))}
