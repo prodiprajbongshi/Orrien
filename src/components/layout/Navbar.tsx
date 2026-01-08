@@ -178,9 +178,9 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-2">
-            {/* Currency Switcher */}
+          {/* CTA Section - Currency always visible, Login hidden on mobile */}
+          <div className="flex items-center gap-2">
+            {/* Currency Switcher - Always visible */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="gap-1.5 border-border/50 bg-transparent hover:bg-muted/30">
@@ -203,16 +203,18 @@ export function Navbar() {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button variant="ghost">Log In</Button>
-          </div>
+            
+            {/* Login - Hidden on mobile */}
+            <Button variant="ghost" className="hidden lg:inline-flex">Log In</Button>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden p-2 text-foreground"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -343,31 +345,6 @@ export function Navbar() {
                   </div>
                 ))}
                 <div className="flex flex-col gap-3 pt-4 border-t border-border/30 mt-2">
-                  {/* Mobile Currency Switcher */}
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button variant="outline" size="lg" className="gap-2 border-border/50 bg-transparent hover:bg-muted/30 justify-between">
-                        <span className="flex items-center gap-2">
-                          <DollarSign className="w-4 h-4" />
-                          <span>{selectedCurrency.code} - {selectedCurrency.name}</span>
-                        </span>
-                        <ChevronDown className="w-4 h-4" />
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="center" className="bg-light-dark border-border w-[calc(100vw-2rem)]">
-                      {currencies.map((currency) => (
-                        <DropdownMenuItem
-                          key={currency.code}
-                          onClick={() => setSelectedCurrency(currency)}
-                          className={`cursor-pointer ${selectedCurrency.code === currency.code ? "bg-secondary/20 text-secondary" : ""}`}
-                        >
-                          <span className="w-6">{currency.symbol}</span>
-                          <span>{currency.code}</span>
-                          <span className="ml-2 text-muted-foreground text-xs">({currency.name})</span>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
                   <Button variant="outline" size="lg">
                     Log In
                   </Button>
