@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles } from "lucide-react";
 
@@ -8,8 +8,10 @@ const plans = [
   {
     name: "Starter",
     description: "Perfect for personal projects and small websites",
-    price: "$4.99",
+    monthlyPrice: "$4.99",
+    yearlyPrice: "$49.99",
     period: "/month",
+    yearlyPeriod: "/year",
     features: [
       "1 Website",
       "10 GB SSD Storage",
@@ -23,8 +25,10 @@ const plans = [
   {
     name: "Professional",
     description: "Ideal for growing businesses and agencies",
-    price: "$9.99",
+    monthlyPrice: "$9.99",
+    yearlyPrice: "$99.99",
     period: "/month",
+    yearlyPeriod: "/year",
     features: [
       "Unlimited Websites",
       "100 GB NVMe Storage",
@@ -38,10 +42,32 @@ const plans = [
     popular: true,
   },
   {
+    name: "Business",
+    description: "For established businesses with high demands",
+    monthlyPrice: "$19.99",
+    yearlyPrice: "$199.99",
+    period: "/month",
+    yearlyPeriod: "/year",
+    features: [
+      "Unlimited Websites",
+      "250 GB NVMe Storage",
+      "Unmetered Bandwidth",
+      "Free SSL Certificates",
+      "Hourly Backups",
+      "Priority 24/7 Support",
+      "Free Domain (1 year)",
+      "Staging Environment",
+      "Advanced Caching",
+    ],
+    popular: false,
+  },
+  {
     name: "Enterprise",
     description: "For high-traffic sites requiring premium resources",
-    price: "$29.99",
+    monthlyPrice: "$29.99",
+    yearlyPrice: "$299.99",
     period: "/month",
+    yearlyPeriod: "/year",
     features: [
       "Unlimited Websites",
       "500 GB NVMe Storage",
@@ -58,7 +84,7 @@ const plans = [
   },
 ];
 
-function PricingCard({ plan, index }: { plan: typeof plans[0]; index: number }) {
+function PricingCard({ plan, index, isYearly }: { plan: typeof plans[0]; index: number; isYearly: boolean }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -99,10 +125,13 @@ function PricingCard({ plan, index }: { plan: typeof plans[0]; index: number }) 
         <div className="mb-6">
           <div className="flex items-baseline gap-1">
             <span className="text-4xl md:text-5xl font-display font-bold text-foreground">
-              {plan.price}
+              {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
             </span>
-            <span className="text-muted-foreground">{plan.period}</span>
+            <span className="text-muted-foreground">{isYearly ? plan.yearlyPeriod : plan.period}</span>
           </div>
+          {isYearly && (
+            <p className="text-sm text-secondary mt-1">Save 2 months free!</p>
+          )}
         </div>
 
         {/* Features */}
@@ -133,6 +162,7 @@ function PricingCard({ plan, index }: { plan: typeof plans[0]; index: number }) 
 export function PricingSection() {
   const headerRef = useRef(null);
   const isHeaderInView = useInView(headerRef, { once: true, margin: "-100px" });
+  const [isYearly, setIsYearly] = useState(false);
 
   return (
     <section id="pricing" className="py-24 md:py-32 relative overflow-hidden">
@@ -146,7 +176,7 @@ export function PricingSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-10"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/30 text-secondary text-sm font-medium mb-4">
             Pricing
@@ -161,10 +191,47 @@ export function PricingSection() {
           </p>
         </motion.div>
 
+        {/* Billing Toggle */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex justify-center mb-12"
+        >
+          <div className="inline-flex items-center gap-1 p-1 rounded-full bg-muted/30 border border-border/50">
+            <button
+              onClick={() => setIsYearly(false)}
+              className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${
+                !isYearly
+                  ? "bg-secondary text-dark shadow-lg"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Monthly
+            </button>
+            <button
+              onClick={() => setIsYearly(true)}
+              className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
+                isYearly
+                  ? "bg-secondary text-dark shadow-lg"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Yearly
+              <span className={`text-xs px-2 py-0.5 rounded-full ${
+                isYearly ? "bg-dark/20 text-dark" : "bg-secondary/20 text-secondary"
+              }`}>
+                Save 17%
+              </span>
+            </button>
+          </div>
+        </motion.div>
+
         {/* Pricing Grid */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
-            <PricingCard key={plan.name} plan={plan} index={index} />
+            <PricingCard key={plan.name} plan={plan} index={index} isYearly={isYearly} />
           ))}
         </div>
 
