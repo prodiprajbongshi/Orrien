@@ -1,9 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, Server, Cloud, Shield, Globe, Cpu, Database, HardDrive, Layers, FileCode, Palette, ShoppingCart, Rocket, BookOpen, HeadphonesIcon, MessageCircle, FileText, Video, Users, LifeBuoy, Mail, Zap, ArrowRightLeft, Building2 } from "lucide-react";
+import { Menu, X, ChevronDown, Server, Cloud, Shield, Globe, Cpu, Database, HardDrive, Layers, FileCode, Palette, ShoppingCart, Rocket, BookOpen, HeadphonesIcon, MessageCircle, FileText, Video, Users, LifeBuoy, Mail, Zap, ArrowRightLeft, Building2, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
+const currencies = [
+  { code: "USD", symbol: "$", name: "US Dollar" },
+  { code: "EUR", symbol: "€", name: "Euro" },
+  { code: "GBP", symbol: "£", name: "British Pound" },
+  { code: "INR", symbol: "₹", name: "Indian Rupee" },
+  { code: "AUD", symbol: "A$", name: "Australian Dollar" },
+];
 const navLinks = [
   {
     label: "Hosting & Servers",
@@ -131,7 +144,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileActiveDropdown, setMobileActiveDropdown] = useState<string | null>(null);
-
+  const [selectedCurrency, setSelectedCurrency] = useState(currencies[0]);
   const activeLink = navLinks.find(link => link.label === activeDropdown);
 
   return (
@@ -166,7 +179,30 @@ export function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-2">
+            {/* Currency Switcher */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm" className="gap-1.5 border-border/50 bg-transparent hover:bg-muted/30">
+                  <DollarSign className="w-4 h-4" />
+                  <span className="font-medium">{selectedCurrency.code}</span>
+                  <ChevronDown className="w-3 h-3" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-light-dark border-border">
+                {currencies.map((currency) => (
+                  <DropdownMenuItem
+                    key={currency.code}
+                    onClick={() => setSelectedCurrency(currency)}
+                    className={`cursor-pointer ${selectedCurrency.code === currency.code ? "bg-secondary/20 text-secondary" : ""}`}
+                  >
+                    <span className="w-6">{currency.symbol}</span>
+                    <span>{currency.code}</span>
+                    <span className="ml-2 text-muted-foreground text-xs">({currency.name})</span>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Button variant="ghost">Log In</Button>
           </div>
 
@@ -307,6 +343,31 @@ export function Navbar() {
                   </div>
                 ))}
                 <div className="flex flex-col gap-3 pt-4 border-t border-border/30 mt-2">
+                  {/* Mobile Currency Switcher */}
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="outline" size="lg" className="gap-2 border-border/50 bg-transparent hover:bg-muted/30 justify-between">
+                        <span className="flex items-center gap-2">
+                          <DollarSign className="w-4 h-4" />
+                          <span>{selectedCurrency.code} - {selectedCurrency.name}</span>
+                        </span>
+                        <ChevronDown className="w-4 h-4" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="center" className="bg-light-dark border-border w-[calc(100vw-2rem)]">
+                      {currencies.map((currency) => (
+                        <DropdownMenuItem
+                          key={currency.code}
+                          onClick={() => setSelectedCurrency(currency)}
+                          className={`cursor-pointer ${selectedCurrency.code === currency.code ? "bg-secondary/20 text-secondary" : ""}`}
+                        >
+                          <span className="w-6">{currency.symbol}</span>
+                          <span>{currency.code}</span>
+                          <span className="ml-2 text-muted-foreground text-xs">({currency.name})</span>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                   <Button variant="outline" size="lg">
                     Log In
                   </Button>
