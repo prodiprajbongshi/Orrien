@@ -7,7 +7,7 @@ const serviceCards = [
     icon: Server,
     title: "Fast Shared Hosting",
     price: "$1.99",
-    bgClass: "bg-dark border-border/30",
+    bgClass: "bg-light-dark border-border/30",
     textClass: "text-foreground",
     priceClass: "text-foreground",
     linkClass: "text-secondary",
@@ -25,19 +25,19 @@ const serviceCards = [
     icon: Zap,
     title: "Ultrafast VPS",
     price: "$9.99",
-    bgClass: "bg-secondary border-secondary",
-    textClass: "text-dark",
-    priceClass: "text-dark",
-    linkClass: "text-dark/80",
+     bgClass: "bg-light-dark border-border/30",
+    textClass: "text-foreground",
+    priceClass: "text-foreground",
+    linkClass: "text-secondary",
   },
   {
     icon: Globe,
     title: "Hosting for WordPress",
     price: "$1.00",
-    bgClass: "bg-white border-white/20",
-    textClass: "text-dark",
-    priceClass: "text-dark",
-    linkClass: "text-primary",
+    bgClass: "bg-light-dark border-border/30",
+    textClass: "text-foreground",
+    priceClass: "text-foreground",
+    linkClass: "text-secondary",
   },
 ];
 
@@ -108,7 +108,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                className={`${card.bgClass} border rounded-2xl p-6 hover:scale-105 transition-transform duration-300 cursor-pointer`}
+                className={`${card.bgClass} border rounded-2xl p-6 hover:scale-105  duration-250 cursor-pointer hover:shadow-light hover:shadow-sm transition-all ease-linear `}
               >
                 <div className={`w-12 h-12 rounded-xl ${card.bgClass === "bg-white border-white/20" || card.bgClass === "bg-secondary border-secondary" ? "bg-dark/10" : "bg-secondary/20"} flex items-center justify-center mb-4`}>
                   <card.icon className={`w-6 h-6 ${card.bgClass === "bg-white border-white/20" ? "text-primary" : card.bgClass === "bg-secondary border-secondary" ? "text-dark" : "text-secondary"}`} />

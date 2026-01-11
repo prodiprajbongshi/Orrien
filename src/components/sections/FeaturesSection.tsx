@@ -65,7 +65,7 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative"
+      className="group relative cursor-pointer"
     >
       <div className="glass-card p-6 h-full glow-effect transition-all duration-300 hover:border-secondary/50">
         {/* Icon */}
@@ -101,7 +101,7 @@ export function FeaturesSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-16 cursor-pointer"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/30 text-secondary text-sm font-medium mb-4">
             Features
@@ -119,7 +119,7 @@ export function FeaturesSection() {
         {/* Features Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <FeatureCard key={feature.title} feature={feature} index={index} />
+            <FeatureCard  key={feature.title} feature={feature} index={index} />
           ))}
         </div>
       </div>

@@ -12,20 +12,16 @@ import {
   Database,
   HardDrive,
   Layers,
- 
   Palette,
   ShoppingCart,
   Rocket,
- 
   HeadphonesIcon,
   MessageCircle,
   FileText,
- 
   Users,
   LifeBuoy,
   Mail,
   Zap,
- 
   Building2,
   DollarSign,
 } from "lucide-react";
@@ -44,7 +40,7 @@ const currencies = [
   { code: "BDT", symbol: "৳" },
   { code: "USD", symbol: "$" },
 ];
-const simpleLinks = [{ label: "Offers", href: "/offers" }];
+ 
 
 const navLinks = [
   {
@@ -323,19 +319,15 @@ export function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50
 bg-gradient-to-b from-white/10 to-white/5
 backdrop-blur-2xl backdrop-saturate-150
-border-b border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.12)]
-py-1 transition-transform duration-300
+border-b border-b-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.12)]
+py-2 transition-transform duration-300
 ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img
-              className="w-[200px] h-[140px]"
-              src="/logo.png"
-              alt="Brand Icon"
-            />
+            <img className="w-[200px] " src="/logo.png" alt="Brand Icon" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -362,15 +354,14 @@ ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
             ))}
 
             {/*  Offers page */}
-            {simpleLinks.map((link) => (
-              <Link
-                key={link.label}
-                to={link.href}
-                className="flex items-center gap-1 px-4 py-2 text-muted-foreground hover:text-foreground transition-colors font-medium rounded-lg hover:bg-muted/30"
-              >
-                {link.label}
-              </Link>
-            ))}
+
+            <Link to="/offers">
+              <input
+                className="bg-primary/70 transition-all duration-300 hover:bg-primary rounded-[16px] shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[5px] border border-white/30  py-1 px-3 cursor-pointer  "
+                type="button"
+                value="Offers"
+              />
+            </Link>
           </div>
 
           {/* Currency Switcher - Always visible */}
@@ -382,7 +373,6 @@ ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
                   size="sm"
                   className="gap-1.5 border-border/50 bg-transparent hover:bg-muted/30"
                 >
-  
                   <span className="font-medium">{selectedCurrency.code}</span>
                   <ChevronDown className="w-3 h-3" />
                 </Button>
@@ -514,17 +504,15 @@ ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
           >
             <div className="container mx-auto px-4 py-6">
               <div className="flex flex-col gap-2">
-                {/* Simple Links (like Offers) */}
-                {simpleLinks.map((link) => (
-                  <Link
-                    key={link.label}
-                    to={link.href}
-                    className="w-full flex items-center text-lg font-medium text-muted-foreground hover:text-foreground transition-colors py-3 px-2 rounded-lg hover:bg-muted/30"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                {/*  Offers page */}
+
+               <Link to="/offers">
+              <input
+                className="bg-primary/70 transition-all duration-300 hover:bg-primary rounded-[16px] shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[5px] border border-white/30  py-1 px-3 cursor-pointer  "
+                type="button"
+                value="Offers"
+              />
+            </Link>
 
                 {/* Dropdown Links */}
                 {navLinks.map((link) => (

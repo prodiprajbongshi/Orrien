@@ -27,12 +27,13 @@ export function DomainSearchBar() {
 
   return (
     <section className="bg-gradient-to-r from-light-dark via-primary/20 to-light-dark border-b border-border/30 ">
-      <div className="container mx-auto px-4 py-6 md:py-16">
+      <div className="container mx-auto px-4 py-6 md:py-24">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-5">
-            <h2 className="font-display text-xl md:text-2xl font-bold text-foreground mb-1">
-              Find Your Perfect Domain
+            <h2 className="font-display text-xl md:text-4xl font-bold text-foreground mb-2">
+              Find Your Perfect 
+              <span className="text-gradient"> Domain</span>
             </h2>
             <p className="text-sm text-muted-foreground">
               Search from millions of available domain names

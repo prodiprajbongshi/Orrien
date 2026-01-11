@@ -10,7 +10,6 @@ const blogPosts = [
     author: "Daphne Monro",
     role: "Head of Website & Content, hosting.com",
     date: "December 23, 2025",
-    readTime: "5 min read",
     gradientClass: "bg-gradient-to-br from-primary/80 via-secondary/60 to-light/40",
   },
   {
@@ -21,7 +20,6 @@ const blogPosts = [
     author: "Konstantin Kolarov",
     role: "Senior Copywriter, hosting.com",
     date: "December 22, 2025",
-    readTime: "5 min read",
     gradientClass: "bg-gradient-to-br from-secondary/70 via-primary/50 to-light-dark",
   },
   {
@@ -32,7 +30,6 @@ const blogPosts = [
     author: "",
     role: "January 14th",
     date: "December 22, 2025",
-    readTime: "5 min read",
     gradientClass: "bg-gradient-to-br from-light-dark via-primary/40 to-secondary/30",
   },
   {
@@ -43,7 +40,6 @@ const blogPosts = [
     author: "Konstantin Kolarov",
     role: "Senior Copywriter, hosting.com",
     date: "December 19, 2025",
-    readTime: "5 min read",
     gradientClass: "bg-gradient-to-br from-secondary/50 via-light/30 to-primary/20",
   },
 ];
@@ -115,13 +111,14 @@ export function BlogSection() {
               </div>
 
               {/* Card Content */}
+              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <span>{post.date}</span>
+                
+              </div>
               <h4 className="font-medium text-foreground mb-3 group-hover:text-secondary transition-colors line-clamp-2">
                 {post.fullTitle}
               </h4>
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                <span>{post.date}</span>
-                <span className="text-secondary">{post.readTime}</span>
-              </div>
+              
             </motion.div>
           ))}
         </div>
