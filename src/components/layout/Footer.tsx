@@ -84,12 +84,12 @@ export function Footer() {
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-muted-foreground hover:text-secondary transition-colors"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -103,15 +103,16 @@ export function Footer() {
             © 2026 Orrien. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-foreground transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="hover:text-foreground transition-colors">
-              Cookie Policy
-            </a>
+            <Link to="/privacy-policy" className="hover:text-foreground transition-colors">
+             Privacy Policy
+            </Link>
+            <Link to="/termsOfServices" className="hover:text-foreground transition-colors">
+                 Terms of Service
+            </Link>
+            <Link to="/cookie" className="hover:text-foreground transition-colors">
+            Cookie Policy
+            </Link>
+           
           </div>
         </div>
       </div>

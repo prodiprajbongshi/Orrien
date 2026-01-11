@@ -28,7 +28,10 @@ import Blog from "./pages/Blog";
 import AffiliateProgram from "./pages/AffiliateProgram";
 import ReferFriend from "./pages/ReferFriend";
 import Offers from "./pages/Offers";
+import TermOfServices from "./pages/termsOfServices";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiePolicy from "./pages/CookiePolicy";
 
 const queryClient = new QueryClient();
 
@@ -64,6 +67,9 @@ const App = () => (
           <Route path="/affiliate-program" element={<AffiliateProgram />} />
           <Route path="/refer-friend" element={<ReferFriend />} />
           <Route path="/offers" element={<Offers />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/termsOfServices" element={<TermOfServices />} />
+          <Route path="/cookie" element={<CookiePolicy />} />
            
           <Route path="*" element={<NotFound />} />
         </Routes>
