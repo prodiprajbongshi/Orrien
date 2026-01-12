@@ -472,7 +472,7 @@ export default function WebHosting() {
               Everything you need to host your website successfully
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuresGrid.map((feature, index) => (
               <motion.div
                 key={feature.title}

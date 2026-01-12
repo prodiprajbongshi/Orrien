@@ -2,18 +2,18 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { 
-  Check, 
-  Server, 
-  Shield, 
-  Zap, 
-  Globe, 
-  Clock, 
-  HeadphonesIcon, 
-  Database, 
-  Lock, 
-  ArrowRight, 
-  ChevronRight, 
+import {
+  Check,
+  Server,
+  Shield,
+  Zap,
+  Globe,
+  Clock,
+  HeadphonesIcon,
+  Database,
+  Lock,
+  ArrowRight,
+  ChevronRight,
   Star,
   Play,
   Cpu,
@@ -28,9 +28,10 @@ import {
   Gauge,
   Eye,
   Rocket,
-  MessageSquare
+  MessageSquare,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { PricingSection } from "@/components/sections/PricingSection";
 
 const trustedProviders = [
   { name: "WordPress.org", rating: "4.9/5" },
@@ -111,46 +112,78 @@ const pricingPlans = [
 ];
 
 const wpFeatures = [
-  { icon: Zap, title: "LiteSpeed Cache", description: "Built-in caching for blazing fast WordPress" },
-  { icon: Shield, title: "Security Hardening", description: "WordPress-specific security rules" },
-  { icon: RefreshCw, title: "Auto Updates", description: "Automatic WordPress core & plugin updates" },
-  { icon: Database, title: "Daily Backups", description: "Automated daily WordPress backups" },
-  { icon: Layers, title: "Staging Sites", description: "Test changes before going live" },
-  { icon: Globe, title: "Free SSL", description: "Free SSL for all WordPress sites" },
-  { icon: Settings, title: "WP-CLI Access", description: "Command-line WordPress management" },
-  { icon: HeadphonesIcon, title: "WP Experts", description: "WordPress-specialized support team" },
+  {
+    icon: Zap,
+    title: "LiteSpeed Cache",
+    description: "Built-in caching for blazing fast WordPress",
+  },
+  {
+    icon: Shield,
+    title: "Security Hardening",
+    description: "WordPress-specific security rules",
+  },
+  {
+    icon: RefreshCw,
+    title: "Auto Updates",
+    description: "Automatic WordPress core & plugin updates",
+  },
+  {
+    icon: Database,
+    title: "Daily Backups",
+    description: "Automated daily WordPress backups",
+  },
+  {
+    icon: Layers,
+    title: "Staging Sites",
+    description: "Test changes before going live",
+  },
+  {
+    icon: Globe,
+    title: "Free SSL",
+    description: "Free SSL for all WordPress sites",
+  },
+  {
+    icon: Settings,
+    title: "WP-CLI Access",
+    description: "Command-line WordPress management",
+  },
+  {
+    icon: HeadphonesIcon,
+    title: "WP Experts",
+    description: "WordPress-specialized support team",
+  },
 ];
 
 const aiFeatures = [
-  { 
-    icon: Bot, 
-    title: "AI Content Assistant", 
-    description: "Generate blog posts, pages, and product descriptions with AI" 
+  {
+    icon: Bot,
+    title: "AI Content Assistant",
+    description: "Generate blog posts, pages, and product descriptions with AI",
   },
-  { 
-    icon: Eye, 
-    title: "AI Image Optimization", 
-    description: "Automatically optimize images for faster load times" 
+  {
+    icon: Eye,
+    title: "AI Image Optimization",
+    description: "Automatically optimize images for faster load times",
   },
-  { 
-    icon: Shield, 
-    title: "AI Security Scanning", 
-    description: "Intelligent malware detection and removal" 
+  {
+    icon: Shield,
+    title: "AI Security Scanning",
+    description: "Intelligent malware detection and removal",
   },
-  { 
-    icon: Sparkles, 
-    title: "AI SEO Suggestions", 
-    description: "Get smart recommendations to boost your rankings" 
+  {
+    icon: Sparkles,
+    title: "AI SEO Suggestions",
+    description: "Get smart recommendations to boost your rankings",
   },
-  { 
-    icon: MessageSquare, 
-    title: "AI Chatbot Builder", 
-    description: "Create custom chatbots for your WordPress site" 
+  {
+    icon: MessageSquare,
+    title: "AI Chatbot Builder",
+    description: "Create custom chatbots for your WordPress site",
   },
-  { 
-    icon: Gauge, 
-    title: "AI Performance Analysis", 
-    description: "Intelligent insights to speed up your site" 
+  {
+    icon: Gauge,
+    title: "AI Performance Analysis",
+    description: "Intelligent insights to speed up your site",
   },
 ];
 
@@ -164,19 +197,22 @@ const testimonials = [
   {
     name: "David Miller",
     role: "WordPress Developer",
-    content: "The WordPress-specific optimizations make a huge difference. My client sites load in under a second now.",
+    content:
+      "The WordPress-specific optimizations make a huge difference. My client sites load in under a second now.",
     avatar: "DM",
   },
   {
     name: "Lisa Thompson",
     role: "Blogger & Content Creator",
-    content: "The AI content assistant has transformed how I create blog posts. It's like having a writing partner.",
+    content:
+      "The AI content assistant has transformed how I create blog posts. It's like having a writing partner.",
     avatar: "LT",
   },
   {
     name: "James Wilson",
     role: "Agency Owner",
-    content: "Managing 50+ WordPress sites is a breeze with staging environments and one-click updates.",
+    content:
+      "Managing 50+ WordPress sites is a breeze with staging environments and one-click updates.",
     avatar: "JW",
   },
 ];
@@ -184,23 +220,28 @@ const testimonials = [
 const faqs = [
   {
     question: "Can I migrate my existing WordPress site?",
-    answer: "Yes! We offer free WordPress migration by our expert team. We'll handle everything from files to databases, ensuring zero downtime.",
+    answer:
+      "Yes! We offer free WordPress migration by our expert team. We'll handle everything from files to databases, ensuring zero downtime.",
   },
   {
     question: "Do you support WooCommerce?",
-    answer: "Absolutely! All our WordPress hosting plans are fully compatible with WooCommerce. Our higher-tier plans are optimized for e-commerce performance.",
+    answer:
+      "Absolutely! All our WordPress hosting plans are fully compatible with WooCommerce. Our higher-tier plans are optimized for e-commerce performance.",
   },
   {
     question: "What WordPress version do you support?",
-    answer: "We always support the latest WordPress version and keep your installation automatically updated for security and performance.",
+    answer:
+      "We always support the latest WordPress version and keep your installation automatically updated for security and performance.",
   },
   {
     question: "Can I install custom plugins and themes?",
-    answer: "Yes, you have full freedom to install any WordPress plugins and themes. We also provide one-click installation for popular options.",
+    answer:
+      "Yes, you have full freedom to install any WordPress plugins and themes. We also provide one-click installation for popular options.",
   },
   {
     question: "Is there a staging environment?",
-    answer: "Yes, our Professional plan and above include staging environments where you can test changes before pushing them live.",
+    answer:
+      "Yes, our Professional plan and above include staging environments where you can test changes before pushing them live.",
   },
 ];
 
@@ -208,12 +249,12 @@ export default function WordPressHosting() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-gradient-to-br from-dark via-light-dark to-dark relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
         <div className="container mx-auto px-4 relative">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center py-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -221,24 +262,27 @@ export default function WordPressHosting() {
             >
               <div className="inline-flex items-center gap-2 bg-secondary/20 rounded-full px-4 py-2 mb-6">
                 <FileCode className="w-4 h-4 text-secondary" />
-                <span className="text-sm text-secondary font-medium">WordPress Optimized</span>
+                <span className="text-sm text-secondary font-medium">
+                  WordPress Optimized
+                </span>
               </div>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                Powerful & Secure<br />
+                Powerful & Secure
+                <br />
                 <span className="text-gradient">Hosting for WordPress</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-                Experience WordPress hosting built for speed, security, and simplicity. 
-                Get your site online with one-click installation and expert support.
+                Experience WordPress hosting built for speed, security, and
+                simplicity. Get your site online with one-click installation and
+                expert support.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button size="lg" className="bg-secondary hover:bg-primary text-dark font-semibold px-8">
+                <Button
+                  size="lg"
+                  className="bg-secondary hover:bg-primary text-dark font-semibold px-8"
+                >
                   Start Free Trial
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary/10">
-                  <Play className="w-5 h-5 mr-2" />
-                  See Demo
                 </Button>
               </div>
               <div className="flex flex-wrap items-center gap-6">
@@ -246,10 +290,15 @@ export default function WordPressHosting() {
                   <div key={provider.name} className="flex items-center gap-2">
                     <div className="flex items-center">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3 h-3 fill-secondary text-secondary" />
+                        <Star
+                          key={i}
+                          className="w-3 h-3 fill-secondary text-secondary"
+                        />
                       ))}
                     </div>
-                    <span className="text-sm text-muted-foreground">{provider.rating} on {provider.name}</span>
+                    <span className="text-sm text-muted-foreground">
+                      {provider.rating} on {provider.name}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -267,16 +316,24 @@ export default function WordPressHosting() {
                     <div className="w-3 h-3 rounded-full bg-red-500" />
                     <div className="w-3 h-3 rounded-full bg-yellow-500" />
                     <div className="w-3 h-3 rounded-full bg-green-500" />
-                    <span className="text-xs text-muted-foreground ml-2">WordPress Dashboard</span>
+                    <span className="text-xs text-muted-foreground ml-2">
+                      WordPress Dashboard
+                    </span>
                   </div>
                   <div className="bg-dark/50 rounded-lg p-4 mb-4">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-sm text-foreground font-medium">Site Health</span>
-                      <span className="text-xs text-light bg-light/20 px-2 py-1 rounded">Excellent</span>
+                      <span className="text-sm text-foreground font-medium">
+                        Site Health
+                      </span>
+                      <span className="text-xs text-light bg-light/20 px-2 py-1 rounded">
+                        Excellent
+                      </span>
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-xs">
-                        <span className="text-muted-foreground">Performance</span>
+                        <span className="text-muted-foreground">
+                          Performance
+                        </span>
                         <div className="flex-1 mx-3 h-1.5 bg-muted rounded-full">
                           <div className="w-[95%] h-full bg-light rounded-full" />
                         </div>
@@ -300,12 +357,20 @@ export default function WordPressHosting() {
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     <div className="bg-dark/50 rounded-lg p-3 text-center">
-                      <div className="text-2xl font-bold text-gradient">0.8s</div>
-                      <div className="text-xs text-muted-foreground">Load Time</div>
+                      <div className="text-2xl font-bold text-gradient">
+                        0.8s
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        Load Time
+                      </div>
                     </div>
                     <div className="bg-dark/50 rounded-lg p-3 text-center">
-                      <div className="text-2xl font-bold text-gradient">99.99%</div>
-                      <div className="text-xs text-muted-foreground">Uptime</div>
+                      <div className="text-2xl font-bold text-gradient">
+                        99.99%
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        Uptime
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -316,64 +381,7 @@ export default function WordPressHosting() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 lg:py-24 bg-muted/10">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Choose your ideal <span className="text-gradient">managed plan</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              WordPress hosting plans optimized for performance, security, and ease of use.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {pricingPlans.map((plan, index) => (
-              <motion.div
-                key={plan.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`relative bg-light-dark border rounded-2xl p-6 ${
-                  plan.popular ? "border-secondary shadow-lg shadow-secondary/20" : "border-border"
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-dark text-xs font-semibold px-3 py-1 rounded-full">
-                    Most Popular
-                  </div>
-                )}
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">{plan.name}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
-                <div className="mb-6">
-                  <span className="text-sm text-muted-foreground line-through">{plan.originalPrice}</span>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-foreground">{plan.price}</span>
-                    <span className="text-muted-foreground">{plan.period}</span>
-                  </div>
-                </div>
-                <Button 
-                  className={`w-full mb-6 ${
-                    plan.popular 
-                      ? "bg-secondary hover:bg-primary text-dark" 
-                      : "bg-muted hover:bg-muted/80 text-foreground"
-                  }`}
-                >
-                  Get Started
-                </Button>
-                <ul className="space-y-3">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Check className="w-4 h-4 text-secondary flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PricingSection />
 
       {/* Speed Section */}
       <section className="py-16 lg:py-24">
@@ -391,8 +399,12 @@ export default function WordPressHosting() {
                     <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-secondary/20 mb-4">
                       <Zap className="w-10 h-10 text-secondary" />
                     </div>
-                    <div className="text-5xl font-bold text-gradient mb-2">3x</div>
-                    <div className="text-lg text-foreground">Faster than standard hosting</div>
+                    <div className="text-5xl font-bold text-gradient mb-2">
+                      3x
+                    </div>
+                    <div className="text-lg text-foreground">
+                      Faster than standard hosting
+                    </div>
                     <p className="text-sm text-muted-foreground mt-2">
                       Thanks to LiteSpeed, NVMe SSDs & built-in caching
                     </p>
@@ -406,15 +418,22 @@ export default function WordPressHosting() {
               viewport={{ once: true }}
             >
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Orrien is<br />
+                Orrien is
+                <br />
                 <span className="text-gradient">the fastest</span> platform
               </h2>
               <p className="text-muted-foreground mb-6">
-                Our WordPress hosting is specifically optimized for speed. With LiteSpeed web servers, 
-                NVMe SSD storage, and built-in caching, your WordPress site will load faster than ever.
+                Our WordPress hosting is specifically optimized for speed. With
+                LiteSpeed web servers, NVMe SSD storage, and built-in caching,
+                your WordPress site will load faster than ever.
               </p>
               <ul className="space-y-4">
-                {["LiteSpeed Cache for WordPress", "Object caching with Redis", "Optimized PHP workers", "Global CDN included"].map((item) => (
+                {[
+                  "LiteSpeed Cache for WordPress",
+                  "Object caching with Redis",
+                  "Optimized PHP workers",
+                  "Global CDN included",
+                ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center">
                       <Check className="w-4 h-4 text-secondary" />
@@ -439,15 +458,23 @@ export default function WordPressHosting() {
               className="order-2 lg:order-1"
             >
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Enterprise level<br />
+                Enterprise level
+                <br />
                 <span className="text-gradient">protection</span>
               </h2>
               <p className="text-muted-foreground mb-6">
-                Your WordPress site is protected by enterprise-grade security including 
-                Web Application Firewall, malware scanning, and automatic patching.
+                Your WordPress site is protected by enterprise-grade security
+                including Web Application Firewall, malware scanning, and
+                automatic patching.
               </p>
               <ul className="space-y-4">
-                {["WordPress-specific WAF rules", "Real-time malware scanning", "Automatic security patching", "DDoS protection included", "Two-factor authentication"].map((item) => (
+                {[
+                  "WordPress-specific WAF rules",
+                  "Real-time malware scanning",
+                  "Automatic security patching",
+                  "DDoS protection included",
+                  "Two-factor authentication",
+                ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center">
                       <Shield className="w-4 h-4 text-secondary" />
@@ -471,15 +498,29 @@ export default function WordPressHosting() {
                       <Shield className="w-6 h-6 text-secondary" />
                     </div>
                     <div>
-                      <div className="font-semibold text-foreground">Security Status</div>
-                      <div className="text-sm text-light">All systems secure</div>
+                      <div className="font-semibold text-foreground">
+                        Security Status
+                      </div>
+                      <div className="text-sm text-light">
+                        All systems secure
+                      </div>
                     </div>
                   </div>
                   <div className="space-y-3">
-                    {["Firewall", "Malware Scanner", "SSL Certificate", "Brute Force Protection"].map((item, i) => (
-                      <div key={item} className="flex items-center justify-between p-3 bg-dark/50 rounded-lg">
+                    {[
+                      "Firewall",
+                      "Malware Scanner",
+                      "SSL Certificate",
+                      "Brute Force Protection",
+                    ].map((item, i) => (
+                      <div
+                        key={item}
+                        className="flex items-center justify-between p-3 bg-dark/50 rounded-lg"
+                      >
                         <span className="text-sm text-foreground">{item}</span>
-                        <span className="text-xs text-light bg-light/20 px-2 py-1 rounded">Active</span>
+                        <span className="text-xs text-light bg-light/20 px-2 py-1 rounded">
+                          Active
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -506,13 +547,17 @@ export default function WordPressHosting() {
                     <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center">
                       <FileCode className="w-4 h-4 text-dark" />
                     </div>
-                    <span className="font-medium text-foreground">WordPress Manager</span>
+                    <span className="font-medium text-foreground">
+                      WordPress Manager
+                    </span>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between p-3 bg-dark/50 rounded-lg">
                       <div className="flex items-center gap-3">
                         <RefreshCw className="w-4 h-4 text-secondary" />
-                        <span className="text-sm text-foreground">Auto Updates</span>
+                        <span className="text-sm text-foreground">
+                          Auto Updates
+                        </span>
                       </div>
                       <div className="w-10 h-5 bg-secondary rounded-full relative">
                         <div className="absolute right-0.5 top-0.5 w-4 h-4 bg-dark rounded-full" />
@@ -521,7 +566,9 @@ export default function WordPressHosting() {
                     <div className="flex items-center justify-between p-3 bg-dark/50 rounded-lg">
                       <div className="flex items-center gap-3">
                         <Database className="w-4 h-4 text-primary" />
-                        <span className="text-sm text-foreground">Daily Backups</span>
+                        <span className="text-sm text-foreground">
+                          Daily Backups
+                        </span>
                       </div>
                       <div className="w-10 h-5 bg-secondary rounded-full relative">
                         <div className="absolute right-0.5 top-0.5 w-4 h-4 bg-dark rounded-full" />
@@ -530,9 +577,15 @@ export default function WordPressHosting() {
                     <div className="flex items-center justify-between p-3 bg-dark/50 rounded-lg">
                       <div className="flex items-center gap-3">
                         <Layers className="w-4 h-4 text-light" />
-                        <span className="text-sm text-foreground">Staging Site</span>
+                        <span className="text-sm text-foreground">
+                          Staging Site
+                        </span>
                       </div>
-                      <Button size="sm" variant="outline" className="h-7 text-xs">
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-7 text-xs"
+                      >
                         Create
                       </Button>
                     </div>
@@ -546,15 +599,22 @@ export default function WordPressHosting() {
               viewport={{ once: true }}
             >
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Simple WordPress<br />
+                Simple WordPress
+                <br />
                 <span className="text-gradient">management</span>
               </h2>
               <p className="text-muted-foreground mb-6">
-                Manage your WordPress sites with ease. One-click staging, automatic updates, 
-                and a powerful dashboard designed specifically for WordPress.
+                Manage your WordPress sites with ease. One-click staging,
+                automatic updates, and a powerful dashboard designed
+                specifically for WordPress.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
-                {["One-click WordPress install", "Staging environments", "Plugin & theme management", "Database optimization"].map((item) => (
+                {[
+                  "One-click WordPress install",
+                  "Staging environments",
+                  "Plugin & theme management",
+                  "Database optimization",
+                ].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <Check className="w-5 h-5 text-secondary" />
                     <span className="text-foreground">{item}</span>
@@ -574,7 +634,8 @@ export default function WordPressHosting() {
               Let AI do the <span className="text-gradient">heavy lifting</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Leverage artificial intelligence to create content, optimize images, and enhance security.
+              Leverage artificial intelligence to create content, optimize
+              images, and enhance security.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -590,8 +651,12 @@ export default function WordPressHosting() {
                 <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4 group-hover:bg-secondary/30 transition-colors">
                   <feature.icon className="w-6 h-6 text-secondary" />
                 </div>
-                <h3 className="font-display text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -603,14 +668,15 @@ export default function WordPressHosting() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              WordPress support<br />
+              WordPress support
+              <br />
               <span className="text-gradient">you can count on</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Our WordPress experts are available 24/7 to help you succeed.
             </p>
           </div>
-          
+
           {/* Stats */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {stats.map((stat, index) => (
@@ -622,14 +688,17 @@ export default function WordPressHosting() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-5xl lg:text-6xl font-bold text-gradient mb-2">{stat.value}</div>
+                <div className="text-5xl lg:text-6xl font-bold text-gradient mb-2">
+                  {stat.value}
+                  
+                </div>
                 <div className="text-muted-foreground">{stat.label}</div>
               </motion.div>
             ))}
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {wpFeatures.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -642,8 +711,12 @@ export default function WordPressHosting() {
                 <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mx-auto mb-4">
                   <feature.icon className="w-6 h-6 text-secondary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                <h3 className="font-semibold text-foreground mb-1">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -655,7 +728,8 @@ export default function WordPressHosting() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Trusted by those who<br />
+              Trusted by those who
+              <br />
               <span className="text-gradient">trust WordPress most</span>
             </h2>
           </div>
@@ -671,17 +745,26 @@ export default function WordPressHosting() {
               >
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
+                    <Star
+                      key={i}
+                      className="w-4 h-4 fill-secondary text-secondary"
+                    />
                   ))}
                 </div>
-                <p className="text-muted-foreground mb-6">"{testimonial.content}"</p>
+                <p className="text-muted-foreground mb-6">
+                  "{testimonial.content}"
+                </p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center text-sm font-medium text-secondary">
                     {testimonial.avatar}
                   </div>
                   <div>
-                    <div className="font-medium text-foreground">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                    <div className="font-medium text-foreground">
+                      {testimonial.name}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {testimonial.role}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -698,14 +781,22 @@ export default function WordPressHosting() {
               Ready to get started?
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              Join thousands of WordPress users who trust Orrien for their hosting needs.
+              Join thousands of WordPress users who trust Orrien for their
+              hosting needs.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" className="bg-secondary hover:bg-primary text-dark font-semibold px-8">
+              <Button
+                size="lg"
+                className="bg-secondary hover:bg-primary text-dark font-semibold px-8"
+              >
                 Start Free Trial
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
-              <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary/10">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-secondary text-secondary hover:bg-secondary/10"
+              >
                 Compare Plans
               </Button>
             </div>
@@ -719,12 +810,13 @@ export default function WordPressHosting() {
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Frequently<br />
+                Frequently
+                <br />
                 <span className="text-gradient">asked questions</span>
               </h2>
               <p className="text-muted-foreground mb-8">
-                Got questions? We've got answers. If you can't find what you're looking for, 
-                our support team is available 24/7.
+                Got questions? We've got answers. If you can't find what you're
+                looking for, our support team is available 24/7.
               </p>
               <Button className="bg-secondary hover:bg-primary text-dark">
                 Contact Support
@@ -741,7 +833,9 @@ export default function WordPressHosting() {
                   transition={{ delay: index * 0.1 }}
                   className="bg-light-dark border border-border rounded-xl p-5"
                 >
-                  <h4 className="font-medium text-foreground mb-2">{faq.question}</h4>
+                  <h4 className="font-medium text-foreground mb-2">
+                    {faq.question}
+                  </h4>
                   <p className="text-sm text-muted-foreground">{faq.answer}</p>
                 </motion.div>
               ))}
