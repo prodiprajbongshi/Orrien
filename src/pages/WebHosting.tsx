@@ -2,18 +2,18 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { 
-  Check, 
-  Server, 
-  Shield, 
-  Zap, 
-  Globe, 
-  Clock, 
-  HeadphonesIcon, 
-  Database, 
-  Lock, 
-  ArrowRight, 
-  ChevronRight, 
+import {
+  Check,
+  Server,
+  Shield,
+  Zap,
+  Globe,
+  Clock,
+  HeadphonesIcon,
+  Database,
+  Lock,
+  ArrowRight,
+  ChevronRight,
   Star,
   Play,
   Cpu,
@@ -28,9 +28,10 @@ import {
   FileCode,
   Palette,
   ShoppingCart,
-  Settings
+  Settings,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { PricingSection } from "@/components/sections/PricingSection";
 
 const trustedProviders = [
   { name: "WordPress", icon: "W" },
@@ -116,46 +117,72 @@ const stats = [
 ];
 
 const featuresGrid = [
-  { icon: Server, title: "cPanel Control", description: "Easy-to-use control panel" },
-  { icon: Shield, title: "Free SSL", description: "Secure your site instantly" },
-  { icon: Zap, title: "LiteSpeed Cache", description: "Lightning fast performance" },
-  { icon: Database, title: "Daily Backups", description: "Never lose your data" },
+  {
+    icon: Server,
+    title: "cPanel Control",
+    description: "Easy-to-use control panel",
+  },
+  {
+    icon: Shield,
+    title: "Free SSL",
+    description: "Secure your site instantly",
+  },
+  {
+    icon: Zap,
+    title: "LiteSpeed Cache",
+    description: "Lightning fast performance",
+  },
+  {
+    icon: Database,
+    title: "Daily Backups",
+    description: "Never lose your data",
+  },
   { icon: Globe, title: "Free Domain", description: "Get your domain free" },
-  { icon: Mail, title: "Email Hosting", description: "Professional email accounts" },
+  {
+    icon: Mail,
+    title: "Email Hosting",
+    description: "Professional email accounts",
+  },
   { icon: Lock, title: "DDoS Protection", description: "Stay protected 24/7" },
-  { icon: HeadphonesIcon, title: "24/7 Support", description: "Always here to help" },
+  {
+    icon: HeadphonesIcon,
+    title: "24/7 Support",
+    description: "Always here to help",
+  },
 ];
 
 const advancedFeatures = [
-  { 
-    icon: Cpu, 
-    title: "High-Performance Servers", 
-    description: "Latest gen AMD EPYC processors with NVMe SSDs for blazing fast speeds" 
+  {
+    icon: Cpu,
+    title: "High-Performance Servers",
+    description:
+      "Latest gen AMD EPYC processors with NVMe SSDs for blazing fast speeds",
   },
-  { 
-    icon: Shield, 
-    title: "Enterprise Security", 
-    description: "Advanced firewall, malware scanning, and DDoS protection included" 
+  {
+    icon: Shield,
+    title: "Enterprise Security",
+    description:
+      "Advanced firewall, malware scanning, and DDoS protection included",
   },
-  { 
-    icon: RefreshCw, 
-    title: "Auto-Scaling Resources", 
-    description: "Automatically scale CPU and RAM based on traffic demands" 
+  {
+    icon: RefreshCw,
+    title: "Auto-Scaling Resources",
+    description: "Automatically scale CPU and RAM based on traffic demands",
   },
-  { 
-    icon: Cloud, 
-    title: "Global CDN", 
-    description: "Content delivery network for faster loading worldwide" 
+  {
+    icon: Cloud,
+    title: "Global CDN",
+    description: "Content delivery network for faster loading worldwide",
   },
-  { 
-    icon: Database, 
-    title: "Managed Databases", 
-    description: "MySQL, PostgreSQL, and Redis with automatic optimization" 
+  {
+    icon: Database,
+    title: "Managed Databases",
+    description: "MySQL, PostgreSQL, and Redis with automatic optimization",
   },
-  { 
-    icon: Settings, 
-    title: "Developer Tools", 
-    description: "Git, SSH, WP-CLI, and staging environments included" 
+  {
+    icon: Settings,
+    title: "Developer Tools",
+    description: "Git, SSH, WP-CLI, and staging environments included",
   },
 ];
 
@@ -163,13 +190,15 @@ const hostingTypes = [
   {
     icon: Server,
     title: "Shared Hosting",
-    description: "Perfect for beginners and small websites. Cost-effective and easy to manage.",
+    description:
+      "Perfect for beginners and small websites. Cost-effective and easy to manage.",
     link: "/web-hosting",
   },
   {
     icon: Cloud,
     title: "VPS Hosting",
-    description: "More power and control with dedicated resources for growing sites.",
+    description:
+      "More power and control with dedicated resources for growing sites.",
     link: "#",
   },
   {
@@ -181,31 +210,50 @@ const hostingTypes = [
 ];
 
 const whyChoose = [
-  { icon: Zap, title: "Blazing Fast", description: "99.9% uptime guarantee with premium hardware" },
-  { icon: Shield, title: "Secure & Protected", description: "Enterprise-grade security for your peace of mind" },
-  { icon: HeadphonesIcon, title: "Expert Support", description: "24/7/365 support from hosting professionals" },
-  { icon: Globe, title: "Global Reach", description: "Data centers across 6 continents" },
+  {
+    icon: Zap,
+    title: "Blazing Fast",
+    description: "99.9% uptime guarantee with premium hardware",
+  },
+  {
+    icon: Shield,
+    title: "Secure & Protected",
+    description: "Enterprise-grade security for your peace of mind",
+  },
+  {
+    icon: HeadphonesIcon,
+    title: "Expert Support",
+    description: "24/7/365 support from hosting professionals",
+  },
+  {
+    icon: Globe,
+    title: "Global Reach",
+    description: "Data centers across 6 continents",
+  },
 ];
 
 const testimonials = [
   {
     name: "Sarah Chen",
     role: "Small Business Owner",
-    content: "Switching to Orrien was the best decision for my business. My site is faster than ever!",
+    content:
+      "Switching to Orrien was the best decision for my business. My site is faster than ever!",
     avatar: "SC",
     rating: 5,
   },
   {
     name: "Mike Johnson",
     role: "Freelance Developer",
-    content: "The developer tools and SSH access make my workflow so much smoother.",
+    content:
+      "The developer tools and SSH access make my workflow so much smoother.",
     avatar: "MJ",
     rating: 5,
   },
   {
     name: "Emily Davis",
     role: "E-commerce Store Owner",
-    content: "99.9% uptime is not just a promise - they actually deliver it consistently.",
+    content:
+      "99.9% uptime is not just a promise - they actually deliver it consistently.",
     avatar: "ED",
     rating: 5,
   },
@@ -223,19 +271,23 @@ const platforms = [
 const faqs = [
   {
     question: "What is web hosting?",
-    answer: "Web hosting is a service that allows you to publish your website on the internet. When you purchase hosting, you're renting space on a server to store your website files.",
+    answer:
+      "Web hosting is a service that allows you to publish your website on the internet. When you purchase hosting, you're renting space on a server to store your website files.",
   },
   {
     question: "Do you offer a money-back guarantee?",
-    answer: "Yes! We offer a 30-day money-back guarantee on all hosting plans. If you're not satisfied, we'll refund your purchase.",
+    answer:
+      "Yes! We offer a 30-day money-back guarantee on all hosting plans. If you're not satisfied, we'll refund your purchase.",
   },
   {
     question: "Can I upgrade my plan later?",
-    answer: "Absolutely! You can upgrade your hosting plan at any time. The price difference will be prorated for the remaining billing period.",
+    answer:
+      "Absolutely! You can upgrade your hosting plan at any time. The price difference will be prorated for the remaining billing period.",
   },
   {
     question: "Is SSL included for free?",
-    answer: "Yes, all our hosting plans include free SSL certificates to keep your website secure and boost your SEO rankings.",
+    answer:
+      "Yes, all our hosting plans include free SSL certificates to keep your website secure and boost your SEO rankings.",
   },
 ];
 
@@ -243,11 +295,11 @@ export default function WebHosting() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-gradient-to-br from-dark via-light-dark to-dark relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto px-4 relative py-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -255,33 +307,48 @@ export default function WebHosting() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                Fast, reliable,<br />
+                Fast, reliable,
+                <br />
                 <span className="text-gradient">secure web hosting</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-                Get your website online with our powerful hosting solutions. 
-                Enjoy lightning-fast speeds, 99.9% uptime, and 24/7 expert support.
+                Get your website online with our powerful hosting solutions.
+                Enjoy lightning-fast speeds, 99.9% uptime, and 24/7 expert
+                support.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button size="lg" className="bg-secondary hover:bg-primary text-dark font-semibold px-8">
+                <Button
+                  size="lg"
+                  className="bg-secondary hover:bg-primary text-dark font-semibold px-8"
+                >
                   Get Started
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary/10">
-                  <Play className="w-5 h-5 mr-2" />
-                  Watch Demo
                 </Button>
               </div>
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-2">
-                    {["S", "M", "E"].map((initial, i) => (
-                      <div key={i} className="w-8 h-8 rounded-full bg-secondary/20 border-2 border-dark flex items-center justify-center text-xs font-medium text-secondary">
-                        {initial}
-                      </div>
-                    ))}
+                   
+                      <img
+                        src="https://randomuser.me/api/portraits/women/68.jpg"            
+                        alt="Emily Davis"
+                        className="w-8 h-8 rounded-full border-2 border-dark hover:scale-110 transition-transform duration-200 cursor-pointer"
+                      />
+                      <img
+                        src="https://randomuser.me/api/portraits/women/70.jpg"            
+                        alt="Emily Davis"
+                        className="w-8 h-8 rounded-full border-2 border-dark hover:scale-110 transition-transform duration-200 cursor-pointer"
+                      />
+                      <img
+                        src="https://randomuser.me/api/portraits/women/85.jpg"            
+                        alt="Emily Davis"
+                        className="w-8 h-8 rounded-full border-2 border-dark hover:scale-110 transition-transform duration-200 cursor-pointer"
+                      />
+                 
                   </div>
-                  <span className="text-sm text-muted-foreground">1M+ happy customers</span>
+                  <span className="text-md text-muted-foreground">
+                    500+ happy customers
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -305,32 +372,42 @@ export default function WebHosting() {
                       <div className="flex-1 h-2 bg-secondary/30 rounded-full">
                         <div className="w-4/5 h-2 bg-secondary rounded-full" />
                       </div>
-                      <span className="text-xs text-muted-foreground">CPU: 80%</span>
+                      <span className="text-xs text-muted-foreground">
+                        CPU: 80%
+                      </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Database className="w-5 h-5 text-primary" />
                       <div className="flex-1 h-2 bg-primary/30 rounded-full">
                         <div className="w-3/5 h-2 bg-primary rounded-full" />
                       </div>
-                      <span className="text-xs text-muted-foreground">RAM: 60%</span>
+                      <span className="text-xs text-muted-foreground">
+                        RAM: 60%
+                      </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <HardDrive className="w-5 h-5 text-light" />
                       <div className="flex-1 h-2 bg-light/30 rounded-full">
                         <div className="w-2/5 h-2 bg-light rounded-full" />
                       </div>
-                      <span className="text-xs text-muted-foreground">Storage: 40%</span>
+                      <span className="text-xs text-muted-foreground">
+                        Storage: 40%
+                      </span>
                     </div>
                   </div>
                   <div className="mt-6 p-4 bg-dark/50 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-foreground">Server Status</span>
+                      <span className="text-sm text-foreground">
+                        Server Status
+                      </span>
                       <span className="flex items-center gap-1 text-xs text-light">
                         <span className="w-2 h-2 rounded-full bg-light animate-pulse" />
                         Online
                       </span>
                     </div>
-                    <div className="text-2xl font-bold text-gradient">99.99% Uptime</div>
+                    <div className="text-2xl font-bold text-gradient">
+                      99.99% Uptime
+                    </div>
                   </div>
                 </div>
               </div>
@@ -342,10 +419,15 @@ export default function WebHosting() {
       {/* Trusted Providers */}
       <section className="py-12 bg-muted/30 border-y border-border/30">
         <div className="container mx-auto px-4">
-          <p className="text-center text-sm text-muted-foreground mb-8">Trusted technologies we use</p>
+          <p className="text-center text-sm text-muted-foreground mb-8">
+            Trusted technologies we use
+          </p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
             {trustedProviders.map((provider) => (
-              <div key={provider.name} className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
+              <div
+                key={provider.name}
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              >
                 <span className="text-2xl">{provider.icon}</span>
                 <span className="font-medium">{provider.name}</span>
               </div>
@@ -366,7 +448,9 @@ export default function WebHosting() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="text-5xl lg:text-6xl font-bold text-gradient mb-2">{stat.value}</div>
+                <div className="text-5xl lg:text-6xl font-bold text-gradient mb-2">
+                  {stat.value}
+                </div>
                 <div className="text-muted-foreground">{stat.label}</div>
               </motion.div>
             ))}
@@ -375,64 +459,7 @@ export default function WebHosting() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Choose your <span className="text-gradient">plan</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Select the perfect hosting plan for your needs. All plans include our core features.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {pricingPlans.map((plan, index) => (
-              <motion.div
-                key={plan.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`relative bg-light-dark border rounded-2xl p-6 ${
-                  plan.popular ? "border-secondary shadow-lg shadow-secondary/20" : "border-border"
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-dark text-xs font-semibold px-3 py-1 rounded-full">
-                    Most Popular
-                  </div>
-                )}
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">{plan.name}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
-                <div className="mb-6">
-                  <span className="text-sm text-muted-foreground line-through">{plan.originalPrice}</span>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-foreground">{plan.price}</span>
-                    <span className="text-muted-foreground">{plan.period}</span>
-                  </div>
-                </div>
-                <Button 
-                  className={`w-full mb-6 ${
-                    plan.popular 
-                      ? "bg-secondary hover:bg-primary text-dark" 
-                      : "bg-muted hover:bg-muted/80 text-foreground"
-                  }`}
-                >
-                  Get Started
-                </Button>
-                <ul className="space-y-3">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Check className="w-4 h-4 text-secondary flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+     <PricingSection/>
 
       {/* Features Grid */}
       <section className="py-16 lg:py-24 bg-muted/20">
@@ -458,8 +485,12 @@ export default function WebHosting() {
                 <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mx-auto mb-4">
                   <feature.icon className="w-6 h-6 text-secondary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                <h3 className="font-semibold text-foreground mb-1">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -490,7 +521,9 @@ export default function WebHosting() {
                 <div className="w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center mb-4 group-hover:bg-secondary/30 transition-colors">
                   <feature.icon className="w-7 h-7 text-secondary" />
                 </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+                  {feature.title}
+                </h3>
                 <p className="text-muted-foreground">{feature.description}</p>
               </motion.div>
             ))}
@@ -503,7 +536,8 @@ export default function WebHosting() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Find the perfect hosting<br />
+              Find the perfect hosting
+              <br />
               <span className="text-gradient">plan for your needs</span>
             </h2>
           </div>
@@ -520,9 +554,11 @@ export default function WebHosting() {
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-secondary/30 to-primary/30 flex items-center justify-center mb-4">
                   <type.icon className="w-7 h-7 text-secondary" />
                 </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">{type.title}</h3>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+                  {type.title}
+                </h3>
                 <p className="text-muted-foreground mb-4">{type.description}</p>
-                <Link 
+                <Link
                   to={type.link}
                   className="inline-flex items-center text-secondary hover:text-light transition-colors font-medium"
                 >
@@ -543,7 +579,9 @@ export default function WebHosting() {
                 Why <span className="text-gradient">Orrien</span>?
               </h2>
               <p className="text-muted-foreground mb-8">
-                We've been in the hosting industry for over a decade, serving millions of customers worldwide with reliable, fast, and secure hosting solutions.
+                We've been in the hosting industry for over a decade, serving
+                millions of customers worldwide with reliable, fast, and secure
+                hosting solutions.
               </p>
               <div className="grid sm:grid-cols-2 gap-6">
                 {whyChoose.map((item, index) => (
@@ -559,8 +597,12 @@ export default function WebHosting() {
                       <item.icon className="w-6 h-6 text-secondary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground">{item.description}</p>
+                      <h3 className="font-semibold text-foreground mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {item.description}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -579,12 +621,15 @@ export default function WebHosting() {
                     <HeadphonesIcon className="w-8 h-8 text-secondary" />
                   </div>
                   <div>
-                    <h3 className="font-display text-xl font-semibold text-foreground">Industry best solutions</h3>
+                    <h3 className="font-display text-xl font-semibold text-foreground">
+                      Industry best solutions
+                    </h3>
                     <p className="text-muted-foreground">Expert support 24/7</p>
                   </div>
                 </div>
                 <p className="text-muted-foreground mb-6">
-                  Our team of hosting experts is available around the clock to help you with any questions or issues.
+                  Our team of hosting experts is available around the clock to
+                  help you with any questions or issues.
                 </p>
                 <Button className="bg-secondary hover:bg-primary text-dark">
                   Contact Support
@@ -600,7 +645,8 @@ export default function WebHosting() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What our customers <span className="text-gradient">have to say</span>
+              What our customers{" "}
+              <span className="text-gradient">have to say</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -615,17 +661,26 @@ export default function WebHosting() {
               >
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
+                    <Star
+                      key={i}
+                      className="w-4 h-4 fill-secondary text-secondary"
+                    />
                   ))}
                 </div>
-                <p className="text-muted-foreground mb-6">"{testimonial.content}"</p>
+                <p className="text-muted-foreground mb-6">
+                  "{testimonial.content}"
+                </p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center text-sm font-medium text-secondary">
                     {testimonial.avatar}
                   </div>
                   <div>
-                    <div className="font-medium text-foreground">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                    <div className="font-medium text-foreground">
+                      {testimonial.name}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {testimonial.role}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -639,7 +694,8 @@ export default function WebHosting() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What platforms do <span className="text-gradient">you support?</span>
+              What platforms do{" "}
+              <span className="text-gradient">you support?</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               One-click installation for all major CMS and e-commerce platforms
@@ -656,7 +712,9 @@ export default function WebHosting() {
                 className="flex items-center gap-3 bg-light-dark border border-border rounded-xl px-6 py-4 hover:border-secondary/50 transition-colors"
               >
                 <platform.icon className="w-6 h-6 text-secondary" />
-                <span className="font-medium text-foreground">{platform.name}</span>
+                <span className="font-medium text-foreground">
+                  {platform.name}
+                </span>
               </motion.div>
             ))}
           </div>
@@ -669,12 +727,17 @@ export default function WebHosting() {
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Want to get started, <span className="text-gradient">at bulk?</span>
+                Want to get started,{" "}
+                <span className="text-gradient">at bulk?</span>
               </h2>
               <p className="text-muted-foreground mb-8">
-                Get in touch with our sales team for custom enterprise solutions and volume discounts.
+                Get in touch with our sales team for custom enterprise solutions
+                and volume discounts.
               </p>
-              <Button size="lg" className="bg-secondary hover:bg-primary text-dark">
+              <Button
+                size="lg"
+                className="bg-secondary hover:bg-primary text-dark"
+              >
                 Contact Sales
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -693,8 +756,12 @@ export default function WebHosting() {
                     transition={{ delay: index * 0.1 }}
                     className="bg-light-dark border border-border rounded-xl p-5"
                   >
-                    <h4 className="font-medium text-foreground mb-2">{faq.question}</h4>
-                    <p className="text-sm text-muted-foreground">{faq.answer}</p>
+                    <h4 className="font-medium text-foreground mb-2">
+                      {faq.question}
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      {faq.answer}
+                    </p>
                   </motion.div>
                 ))}
               </div>
