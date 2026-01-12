@@ -139,7 +139,7 @@ const AffiliateProgram = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg border border-secondary/40 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
                   <span className="text-2xl">{tier.icon}</span>
                 </div>
                 <div className="text-2xl font-bold text-secondary mb-1">{tier.commission}</div>

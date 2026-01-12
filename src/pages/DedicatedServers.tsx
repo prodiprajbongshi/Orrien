@@ -105,7 +105,7 @@ export default function DedicatedServers() {
       <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-gradient-to-br from-dark via-light-dark to-dark">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center py-12">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -145,8 +145,8 @@ export default function DedicatedServers() {
               className="relative hidden lg:block"
             >
               <div className="relative">
-                <div className="absolute -top-4 -right-4 bg-card rounded-xl p-3 shadow-xl border border-border z-10">
-                  <div className="flex items-center gap-2">
+                <div className="absolute -top-4 -right-4  bg-card rounded-xl p-3 shadow-xl border border-border z-10">
+                  <div className="flex items-center gap-2 ">
                     <div className="w-8 h-8 rounded-lg bg-secondary/20 flex items-center justify-center">
                       <Settings className="w-4 h-4 text-secondary" />
                     </div>
@@ -158,7 +158,7 @@ export default function DedicatedServers() {
                 </div>
                 <div className="rounded-2xl overflow-hidden border border-border/30 shadow-2xl bg-gradient-to-br from-primary/10 to-secondary/10">
                   <img 
-                    src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600" 
+                    src="https://images.unsplash.com/photo-1700936655615-65a2aef3b4e7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                     alt="Dedicated server hardware" 
                     className="w-full h-auto"
                   />
@@ -219,14 +219,14 @@ export default function DedicatedServers() {
               className="relative"
             >
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-2xl p-4 border border-border/50">
+                <div className="bg-gradient-to-br from-secondary/20 to-primary/10 border border-secondary/40 rounded-2xl p-4  ">
                   <div className="flex items-center gap-2 mb-2">
                     <Globe className="w-4 h-4 text-secondary" />
                     <span className="text-xs text-secondary font-medium">United States</span>
                     <span className="bg-secondary text-dark text-xs px-2 py-0.5 rounded-full">New</span>
                   </div>
                 </div>
-                <div className="row-span-2 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl overflow-hidden border border-border/50">
+                <div className="row-span-2 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl overflow-hidden border border-secondary/40">
                   <div className="h-full flex items-center justify-center p-8">
                     <div className="text-center">
                       <Cpu className="w-12 h-12 text-secondary mx-auto mb-2" />
@@ -234,7 +234,7 @@ export default function DedicatedServers() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-card rounded-2xl p-4 border border-border">
+                <div className="bg-card rounded-2xl p-4 border border-secondary/40">
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">CPU</span>
@@ -263,7 +263,7 @@ export default function DedicatedServers() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="text-center "
           >
             <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4 mx-auto">
               <AlertTriangle className="w-6 h-6 text-secondary" />
@@ -288,7 +288,7 @@ export default function DedicatedServers() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-12 "
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               Our top configurations
@@ -299,9 +299,9 @@ export default function DedicatedServers() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="overflow-x-auto"
+            className="overflow-x-auto shadow-sm shadow-primary p-6"
           >
-            <table className="w-full min-w-[800px]">
+            <table className="w-full min-w-[800px] ">
               <thead>
                 <tr className="border-b border-border">
                   <th className="text-left py-4 px-4 text-sm font-medium text-muted-foreground">Specification</th>

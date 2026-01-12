@@ -119,7 +119,7 @@ export function TestimonialsSection() {
             Testimonials
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Trusted by <span className="text-gradient">10,000+ Businesses</span>
+            Trusted by <span className="text-gradient">1000+ Businesses</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             See what our customers have to say about their experience with

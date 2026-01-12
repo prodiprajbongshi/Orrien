@@ -53,7 +53,7 @@ const About = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden ">
         <div className="absolute inset-0 bg-gradient-to-br from-dark via-lightDark to-primary" />
         <div className="absolute top-0 right-0 w-1/2 h-full">
           <div className="absolute inset-0 bg-gradient-to-l from-transparent to-dark/80" />
@@ -64,7 +64,7 @@ const About = () => {
           />
         </div>
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 ">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -178,7 +178,7 @@ const About = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
               >
-                <div className={`w-12 h-12 ${value.color} rounded-lg flex items-center justify-center mb-4`}>
+                <div className={`w-12 h-12 ${value.color} border border-secondary/40 rounded-lg flex items-center justify-center mb-4`}>
                   <value.icon className="w-6 h-6 text-dark" />
                 </div>
                 <p className="text-sm text-foreground font-medium leading-relaxed">
@@ -218,7 +218,7 @@ const About = () => {
                 transition={{ delay: index * 0.1 }}
                 className="flex items-start gap-4"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary/10 border border-secondary/40 rounded-lg flex items-center justify-center flex-shrink-0">
                   <item.icon className="w-6 h-6 text-primary" />
                 </div>
                 <div>
@@ -296,7 +296,7 @@ const About = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-card rounded-xl p-8 border border-border hover:border-primary/50 transition-all duration-300"
               >
-                <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-6">
+                <div className="w-14 h-14 bg-primary border border-secondary/40 rounded-lg flex items-center justify-center mb-6">
                   <item.icon className="w-7 h-7 text-light" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">{item.title}</h3>

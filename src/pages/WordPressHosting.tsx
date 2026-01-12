@@ -32,6 +32,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PricingSection } from "@/components/sections/PricingSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 
 const trustedProviders = [
   { name: "WordPress.org", rating: "4.9/5" },
@@ -260,8 +261,7 @@ export default function WordPressHosting() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 bg-secondary/20 rounded-full px-4 py-2 mb-6">
-                <FileCode className="w-4 h-4 text-secondary" />
+              <div className="inline-flex items-center gap-2 bg-secondary/20 rounded-full px-4 py-2 mb-6 border border-secondary/40">
                 <span className="text-sm text-secondary font-medium">
                   WordPress Optimized
                 </span>
@@ -494,7 +494,7 @@ export default function WordPressHosting() {
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-3xl" />
                 <div className="relative bg-light-dark border border-border rounded-2xl p-6">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-xl bg-secondary/20 border border-secondary/40 flex items-center justify-center">
                       <Shield className="w-6 h-6 text-secondary" />
                     </div>
                     <div>
@@ -543,14 +543,11 @@ export default function WordPressHosting() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-secondary/20 to-light/20 rounded-3xl blur-3xl" />
                 <div className="relative bg-light-dark border border-border rounded-2xl p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center">
-                      <FileCode className="w-4 h-4 text-dark" />
-                    </div>
-                    <span className="font-medium text-foreground">
-                      WordPress Manager
-                    </span>
-                  </div>
+                 <div className="inline-flex items-center gap-2 bg-secondary/20 rounded-full px-4 py-2 mb-6 border border-secondary/40">
+                <span className="text-sm text-secondary font-medium">
+                  WordPress Manager
+                </span>
+              </div>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between p-3 bg-dark/50 rounded-lg">
                       <div className="flex items-center gap-3">
@@ -648,7 +645,7 @@ export default function WordPressHosting() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-light-dark border border-border rounded-2xl p-6 hover:border-secondary/50 transition-all group"
               >
-                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4 group-hover:bg-secondary/30 transition-colors">
+                <div className="w-12 h-12 rounded-xl border border-secondary/40 bg-secondary/20 flex items-center justify-center mb-4 group-hover:bg-secondary/30 transition-colors">
                   <feature.icon className="w-6 h-6 text-secondary" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-foreground mb-2">
@@ -677,25 +674,7 @@ export default function WordPressHosting() {
             </p>
           </div>
 
-          {/* Stats */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-5xl lg:text-6xl font-bold text-gradient mb-2">
-                  {stat.value}
-                  
-                </div>
-                <div className="text-muted-foreground">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
+         
 
           {/* Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -708,7 +687,7 @@ export default function WordPressHosting() {
                 transition={{ delay: index * 0.05 }}
                 className="bg-light-dark border border-border rounded-xl p-5 text-center hover:border-secondary/50 transition-colors"
               >
-                <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 border border-secondary/40 rounded-lg bg-secondary/20 flex items-center justify-center mx-auto mb-4">
                   <feature.icon className="w-6 h-6 text-secondary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">
@@ -724,54 +703,7 @@ export default function WordPressHosting() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 lg:py-24 bg-muted/20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Trusted by those who
-              <br />
-              <span className="text-gradient">trust WordPress most</span>
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-light-dark border border-border rounded-2xl p-6"
-              >
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-secondary text-secondary"
-                    />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-6">
-                  "{testimonial.content}"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center text-sm font-medium text-secondary">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground">
-                      {testimonial.name}
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      {testimonial.role}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+            <TestimonialsSection/>
 
       {/* CTA Section */}
       <section className="py-16 lg:py-24">
@@ -831,7 +763,7 @@ export default function WordPressHosting() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-light-dark border border-border rounded-xl p-5"
+                  className="bg-light-dark border border-border rounded-xl p-5 border border-secondary/40"
                 >
                   <h4 className="font-medium text-foreground mb-2">
                     {faq.question}

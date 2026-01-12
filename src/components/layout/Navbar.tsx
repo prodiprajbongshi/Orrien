@@ -476,7 +476,7 @@ ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
                       </div>
                     </div>
                     <Link
-                      to={activeLink.cardLink}
+                      to="/contact"
                       className="mt-4 text-sm font-medium text-secondary hover:text-light transition-colors flex items-center gap-1"
                     >
                       {activeLink.cardTitle === "Book a demo"

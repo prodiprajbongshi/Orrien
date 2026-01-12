@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 
 const EmailHosting = () => {
   const fadeInUp = {
@@ -126,30 +127,7 @@ const EmailHosting = () => {
     { name: 'Best Value', org: 'Business Choice' },
     { name: 'Most Secure', org: 'Security Today' },
   ];
-
-  const testimonials = [
-    {
-      rating: 5,
-      title: 'Wonderful service for e-commerce business',
-      text: 'We migrated our entire email system and the transition was seamless. The professional email addresses have improved our brand credibility significantly.',
-      author: 'Daniel Foster',
-      role: 'E-commerce Owner'
-    },
-    {
-      rating: 5,
-      title: 'Excellent and Prompt response time',
-      text: 'The support team responds within minutes. They helped us set up our email accounts and configure everything perfectly. Highly recommended!',
-      author: 'Maria Santos',
-      role: 'Marketing Director'
-    },
-    {
-      rating: 5,
-      title: 'Reliable support every time',
-      text: 'We\'ve been using their email hosting for 2 years now. Zero downtime and the spam protection is excellent. Our team loves the collaboration features.',
-      author: 'James Mitchell',
-      role: 'IT Manager'
-    },
-  ];
+ 
 
   return (
     <div className="min-h-screen bg-background">
@@ -163,7 +141,7 @@ const EmailHosting = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center py-12">
             <motion.div {...fadeInUp}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                 Email <span className="text-secondary">hosting</span>
@@ -184,7 +162,7 @@ const EmailHosting = () => {
               className="relative"
             >
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600" 
+                src="https://plus.unsplash.com/premium_photo-1661375025352-d5a4d633999b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="Email Hosting" 
                 className="rounded-2xl shadow-2xl border border-primary/20"
               />
@@ -448,126 +426,10 @@ const EmailHosting = () => {
         </div>
       </section>
 
-      {/* Awards Section */}
-      <section className="py-20 bg-gradient-to-br from-dark via-lightDark to-dark">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Email solutions – industry best solutions
-            </h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              Our platform is consistently voted the best, most reliable, and best-value email hosting service. Join thousands of satisfied customers who trust us with their business email.
-            </p>
-          </motion.div>
-
-          <div className="flex flex-wrap justify-center items-center gap-8">
-            {awards.map((award, index) => (
-              <motion.div
-                key={award.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-dark/50 backdrop-blur-sm border border-secondary/30 rounded-xl p-6 text-center"
-              >
-                <div className="w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center mx-auto mb-3">
-                  <Star className="w-7 h-7 text-secondary" />
-                </div>
-                <div className="font-semibold text-white text-sm">{award.name}</div>
-                <div className="text-secondary text-xs">{award.org}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Help Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-gradient-to-br from-secondary/20 to-primary/10 rounded-3xl p-8 md:p-12 relative overflow-hidden"
-          >
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500" 
-                  alt="Customer support" 
-                  className="rounded-2xl shadow-2xl"
-                />
-                <div className="absolute -bottom-4 -right-4 bg-dark/90 backdrop-blur-sm p-4 rounded-xl border border-secondary/30">
-                  <div className="flex items-center gap-2">
-                    <Send className="w-5 h-5 text-secondary" />
-                    <span className="text-white font-medium">Quick Response</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Questions? We're here to help.
-                </h2>
-                <p className="text-muted-foreground mb-6">
-                  Our email experts are available 24/7 to help you choose the right plan, migrate your emails, and get everything set up perfectly.
-                </p>
-                <Button className="bg-secondary hover:bg-semilight text-dark font-semibold">
-                  Get in touch <MessageSquare className="ml-2 h-5 w-5" />
-                </Button>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
+       
+ 
       {/* Testimonials Section */}
-      <section className="py-20 bg-light-dark">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              What our customers have to say
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card border border-border/30 rounded-2xl p-6"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
-                  ))}
-                </div>
-                <h3 className="font-semibold text-foreground mb-3">{testimonial.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{testimonial.text}</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <span className="text-secondary font-semibold">{testimonial.author.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground text-sm">{testimonial.author}</div>
-                    <div className="text-muted-foreground text-xs">{testimonial.role}</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+     <TestimonialsSection/>
 
       <Footer />
     </div>

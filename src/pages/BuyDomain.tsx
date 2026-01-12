@@ -26,6 +26,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 
 const BuyDomain = () => {
   const [searchDomain, setSearchDomain] = useState('');
@@ -152,7 +153,7 @@ const BuyDomain = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center my-12">
             <motion.div {...fadeInUp}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                 Find your domain. <span className="text-secondary">Make it yours.</span>
@@ -179,6 +180,7 @@ const BuyDomain = () => {
                 </div>
                 
                 {/* Popular Extensions */}
+                {/* need add domain price  */}
                 <div className="flex flex-wrap gap-2 mt-4">
                   {['.com', '.org', '.net', '.io', '.co'].map((ext) => (
                     <span 
@@ -295,7 +297,7 @@ const BuyDomain = () => {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="flex items-start gap-4"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-secondary/20  border border-secondary/40 flex items-center justify-center flex-shrink-0">
                       <feature.icon className="w-6 h-6 text-secondary" />
                     </div>
                     <div>
@@ -401,7 +403,7 @@ const BuyDomain = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-card border border-border/30 rounded-2xl p-6 text-center hover:border-secondary/50 transition-colors"
               >
-                <div className="w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center mx-auto mb-4">
+                <div className="w-14 h-14 rounded-xl bg-secondary/20  border border-secondary/40 flex items-center justify-center mx-auto mb-4">
                   <feature.icon className="w-7 h-7 text-secondary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2 text-sm">{feature.title}</h3>
@@ -432,16 +434,16 @@ const BuyDomain = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-card border border-border/30 rounded-2xl p-8"
+              className="bg-card  rounded-2xl p-8  border border-secondary/60"
             >
-              <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-secondary/20  border border-secondary/40 flex items-center justify-center mb-6">
                 <RefreshCw className="w-8 h-8 text-secondary" />
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-4">Transfer your domain</h3>
               <p className="text-muted-foreground mb-6">
                 Want to hold up your site? Keep everything with us and we handle it. From renewal, DNS management, and everything in between. It's that easy.
               </p>
-              <Button className="bg-secondary hover:bg-semilight text-dark font-semibold">
+              <Button className="bg-secondary hover:bg-semilight  text-dark font-semibold">
                 Start Transfer <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
@@ -451,9 +453,9 @@ const BuyDomain = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-card border border-border/30 rounded-2xl p-8"
+              className="bg-card   rounded-2xl p-8  border border-secondary/60" 
             >
-              <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-primary/20  border border-secondary/40 flex items-center justify-center mb-6">
                 <Server className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-4">Get a hosting plan</h3>
@@ -469,48 +471,7 @@ const BuyDomain = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-light-dark">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What people are saying
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card border border-border/30 rounded-2xl p-6"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
-                  ))}
-                </div>
-                <h3 className="font-semibold text-foreground mb-3">{testimonial.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{testimonial.text}</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <span className="text-secondary font-semibold">{testimonial.author.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground text-sm">{testimonial.author}</div>
-                    <div className="text-muted-foreground text-xs">{testimonial.role}</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+   <TestimonialsSection/>
 
       {/* FAQ Section */}
       <section className="py-20 bg-background">

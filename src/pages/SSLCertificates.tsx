@@ -22,6 +22,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
+import { BlogSection } from '@/components/sections/BlogSection';
 
 const SSLCertificates = () => {
   const fadeInUp = {
@@ -144,30 +146,7 @@ const SSLCertificates = () => {
       description: 'Modern browsers flag non-SSL sites as insecure. Stay ahead with SSL protection.' 
     },
   ];
-
-  const testimonials = [
-    {
-      rating: 5,
-      title: 'Thanks for the quick help',
-      text: 'The support team helped me set up my SSL certificate in minutes. The process was seamless and my site is now fully secure.',
-      author: 'Amanda Peters',
-      role: 'Online Store Owner'
-    },
-    {
-      rating: 5,
-      title: 'Tech support is the best!',
-      text: 'Had issues with certificate installation and the team walked me through every step. Excellent customer service!',
-      author: 'Marcus Johnson',
-      role: 'Web Developer'
-    },
-    {
-      rating: 5,
-      title: 'I love hosting.com',
-      text: 'SSL certificates are affordable and the auto-renewal feature means I never have to worry about expiration.',
-      author: 'Sophie Williams',
-      role: 'Blogger'
-    },
-  ];
+ 
 
   const faqs = [
     {
@@ -196,36 +175,7 @@ const SSLCertificates = () => {
     },
   ];
 
-  const blogPosts = [
-    {
-      category: 'Security',
-      title: 'Do you need an SSL certificate for all your websites?',
-      description: 'Understanding when and why you need SSL protection for your web properties.',
-      image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400',
-      date: 'Nov 28, 2024'
-    },
-    {
-      category: 'Guide',
-      title: 'What does website security mean for your business?',
-      description: 'How proper security measures protect your business and customers.',
-      image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=400',
-      date: 'Nov 25, 2024'
-    },
-    {
-      category: 'Tutorial',
-      title: 'DV vs OV vs EV SSL: Which type is right for you?',
-      description: 'Compare different SSL certificate types to find the best fit for your needs.',
-      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400',
-      date: 'Nov 20, 2024'
-    },
-    {
-      category: 'News',
-      title: 'The HTTPS era: why encryption matters more than ever',
-      description: 'Exploring the growing importance of HTTPS in modern web security.',
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400',
-      date: 'Nov 15, 2024'
-    },
-  ];
+ 
 
   return (
     <div className="min-h-screen bg-background">
@@ -239,7 +189,7 @@ const SSLCertificates = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center py-12">
             <motion.div {...fadeInUp}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                 SSL <span className="text-secondary">Certificates</span>
@@ -432,7 +382,7 @@ const SSLCertificates = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-card border border-border/30 rounded-2xl p-6 hover:border-secondary/50 transition-colors"
               >
-                <div className="w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                <div className="w-14 h-14 rounded-xl bg-secondary/20 border border-secondary/40 flex items-center justify-center mb-4">
                   <benefit.icon className="w-7 h-7 text-secondary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
@@ -473,7 +423,7 @@ const SSLCertificates = () => {
               className="relative"
             >
               <img 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600" 
+                src="https://images.unsplash.com/photo-1554098415-788601c80aef?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="SSL explanation" 
                 className="rounded-2xl shadow-2xl border border-primary/20"
               />
@@ -489,96 +439,9 @@ const SSLCertificates = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mb-16"
-          >
-            <span className="inline-block px-4 py-2 bg-secondary/20 text-secondary rounded-full text-sm font-medium mb-4">
-              Testimonials
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              What our customers have to say
-            </h2>
-          </motion.div>
+ <TestimonialsSection/>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card border border-border/30 rounded-2xl p-6"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
-                  ))}
-                </div>
-                <h3 className="font-semibold text-foreground mb-3">{testimonial.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{testimonial.text}</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <span className="text-secondary font-semibold">{testimonial.author.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground text-sm">{testimonial.author}</div>
-                    <div className="text-muted-foreground text-xs">{testimonial.role}</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Help Section */}
-      <section className="py-20 bg-light-dark">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-gradient-to-br from-dark to-lightDark rounded-3xl p-8 md:p-12 relative overflow-hidden"
-          >
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
-            </div>
-            
-            <div className="grid lg:grid-cols-2 gap-8 items-center relative z-10">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  Questions? We're here to help.
-                </h2>
-                <p className="text-gray-300 mb-6">
-                  Our SSL experts are ready to help you choose the right certificate and guide you through installation.
-                </p>
-                <Button className="bg-secondary hover:bg-semilight text-dark font-semibold">
-                  Contact Us <MessageSquare className="ml-2 h-5 w-5" />
-                </Button>
-              </div>
-              
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=500" 
-                  alt="Customer support" 
-                  className="rounded-2xl shadow-2xl"
-                />
-                <div className="absolute bottom-4 right-4 bg-dark/90 backdrop-blur-sm p-3 rounded-xl border border-secondary/30">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-secondary animate-pulse"></div>
-                    <span className="text-white text-sm font-medium">SSL Experts Online</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+ 
 
       {/* FAQ Section */}
       <section className="py-20 bg-background">
@@ -620,52 +483,7 @@ const SSLCertificates = () => {
       </section>
 
       {/* Blog Section */}
-      <section className="py-20 bg-light-dark">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            {...fadeInUp}
-            className="mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Recent articles about security and SSL certificates
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {blogPosts.map((post, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card border border-border/30 rounded-2xl overflow-hidden hover:border-secondary/50 transition-colors group"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <span className="absolute top-4 left-4 px-3 py-1 bg-secondary text-dark text-xs font-semibold rounded-full">
-                    {post.category}
-                  </span>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-semibold text-foreground mb-2 group-hover:text-secondary transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4">{post.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-muted-foreground text-xs">{post.date}</span>
-                    <ArrowRight className="w-4 h-4 text-secondary" />
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+     <BlogSection/>
 
       <Footer />
     </div>

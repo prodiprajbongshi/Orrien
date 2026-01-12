@@ -33,6 +33,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { BlogSection } from "@/components/sections/BlogSection";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -289,13 +291,13 @@ export default function VPSHosting() {
       <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-gradient-to-br from-dark via-light-dark to-dark">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center py-12">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-medium mb-4">
+              <div className="inline-flex items-center gap-2 bg-secondary/20 text-secondary px-3 py-2 border border-secondary/40 rounded-full text-sm font-medium mb-4">
                 <Terminal className="w-4 h-4" />
                 Full Root Access
               </div>
@@ -377,7 +379,7 @@ export default function VPSHosting() {
                   plan.popular 
                     ? "bg-gradient-to-b from-secondary/20 to-primary/10 border-2 border-secondary" 
                     : "bg-card border border-border"
-                }`}
+                }  hover:shadow-sm hover:shadow-primary`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -460,7 +462,7 @@ export default function VPSHosting() {
                 variants={fadeInUp}
                 className="bg-card rounded-2xl p-6 border border-border hover:border-secondary/50 transition-colors"
               >
-                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-secondary/20 border border-secondary/40 flex items-center justify-center mb-4">
                   <feature.icon className="w-6 h-6 text-secondary" />
                 </div>
                 <h3 className="font-display text-lg font-bold text-foreground mb-2">
@@ -492,8 +494,8 @@ export default function VPSHosting() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <Terminal className="w-4 h-4 text-secondary" />
+                  <div className="w-8 h-8 rounded-sm  bg-secondary/20 border border-secondary/40 flex items-center justify-center flex-shrink-0 mt-1">
+                    <Terminal className="w-4 h-4 text-secondary " />
                   </div>
                   <div>
                     <h4 className="font-medium text-foreground">Unmanaged VPS</h4>
@@ -501,8 +503,8 @@ export default function VPSHosting() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <Settings className="w-4 h-4 text-primary" />
+                  <div className="w-8 h-8 rounded-sm  bg-primary/20 border border-secondary/40 flex items-center justify-center flex-shrink-0 mt-1">
+                    <Settings className="w-4 h-4 text-primary " />
                   </div>
                   <div>
                     <h4 className="font-medium text-foreground">Managed VPS</h4>
@@ -518,17 +520,17 @@ export default function VPSHosting() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
-                <div className="flex items-center justify-center gap-8">
+              <div className="bg-card/50 backdrop-blur-sm rounded-2xl px-6 py-8 border border-secondary/20">
+                <div className="flex items-center justify-center gap-8 ">
                   <div className="text-center">
-                    <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center mx-auto mb-3">
+                    <div className="w-16 h-16 rounded-2xl bg-secondary/20 border border-secondary/40 flex items-center justify-center mx-auto mb-3">
                       <Terminal className="w-8 h-8 text-secondary" />
                     </div>
                     <p className="font-medium text-foreground">Developers</p>
                     <p className="text-xs text-muted-foreground">Choose Unmanaged</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-3">
+                    <div className="w-16 h-16 rounded-2xl bg-primary/20 border border-secondary/40 flex items-center justify-center mx-auto mb-3">
                       <Users className="w-8 h-8 text-primary" />
                     </div>
                     <p className="font-medium text-foreground">Businesses</p>
@@ -572,7 +574,7 @@ export default function VPSHosting() {
                 variants={fadeInUp}
                 className="bg-card rounded-2xl p-6 border border-border hover:border-secondary/50 transition-colors"
               >
-                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-secondary/20 border border-secondary/40 flex items-center justify-center mb-4">
                   <item.icon className="w-6 h-6 text-secondary" />
                 </div>
                 <h3 className="font-display text-lg font-bold text-foreground mb-2">
@@ -638,7 +640,7 @@ export default function VPSHosting() {
                 variants={fadeInUp}
                 className="bg-card rounded-2xl p-6 border border-border hover:border-secondary/50 transition-colors text-center"
               >
-                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4 mx-auto">
+                <div className="w-12 h-12 rounded-xl bg-secondary/20 border border-secondary/40 flex items-center justify-center mb-4 mx-auto">
                   <addon.icon className="w-6 h-6 text-secondary" />
                 </div>
                 <h3 className="font-display text-lg font-bold text-foreground mb-2">
@@ -745,47 +747,7 @@ export default function VPSHosting() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-dark via-light-dark to-dark">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What our customers have to say
-            </h2>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-6"
-          >
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-4">"{testimonial.content}"</p>
-                <div>
-                  <p className="font-medium text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+   <TestimonialsSection/>
 
       {/* FAQ Section */}
       <section className="py-20 bg-background">
@@ -828,48 +790,7 @@ export default function VPSHosting() {
       </section>
 
       {/* Blog Posts Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Recent VPS news & blog posts
-            </h2>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {blogPosts.map((post, index) => (
-              <motion.a
-                key={index}
-                href="#"
-                variants={fadeInUp}
-                className="group bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-6 border border-border hover:border-secondary/50 transition-all"
-              >
-                <span className="inline-block bg-secondary/20 text-secondary text-xs font-medium px-2 py-1 rounded mb-3">
-                  {post.category}
-                </span>
-                <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-secondary transition-colors">
-                  {post.title}
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  {post.description}
-                </p>
-              </motion.a>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
+      <BlogSection/>
       <Footer />
     </div>
   );

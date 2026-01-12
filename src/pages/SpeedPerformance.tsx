@@ -2,12 +2,16 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+ 
 import { motion } from "framer-motion";
 import { 
   Zap, Shield, Globe, CheckCircle, ArrowRight, 
   Server, Database, Gauge, Star, Clock, TrendingUp,
   BarChart3, Search, Bot, Rocket, LineChart, Layers
 } from "lucide-react";
+import { TeamSliderSection } from "@/components/sections/TeamSliderSection";
+import { BlogSection } from "@/components/sections/BlogSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 
 const performanceMetrics = [
   { label: "Page Load Time", value: "<200ms", description: "Average TTFB" },
@@ -117,6 +121,7 @@ export default function SpeedPerformance() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
+              className="py-12"
             >
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
                 WordPress built for{" "}
@@ -179,7 +184,7 @@ export default function SpeedPerformance() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-16 "
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               Built to perform
@@ -192,7 +197,7 @@ export default function SpeedPerformance() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-light-dark rounded-2xl p-8 border border-border/50"
+              className="bg-light-dark rounded-2xl p-8 border border-secondary/40 "
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center">
@@ -251,8 +256,8 @@ export default function SpeedPerformance() {
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-2 mb-4">
-                <span className="bg-secondary/20 text-secondary text-xs font-medium px-3 py-1 rounded-full">SEO</span>
-                <span className="bg-secondary/20 text-secondary text-xs font-medium px-3 py-1 rounded-full">CORE WEB VITALS</span>
+                <span className="bg-secondary/20 text-secondary text-xs font-medium px-3  rounded-full border border-secondary/40 py-2">SEO</span>
+                <span className="bg-secondary/20 text-secondary text-xs font-medium px-3  rounded-full border border-secondary/40 py-2">CORE WEB VITALS</span>
               </div>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Google rewards<br />fast websites
@@ -265,7 +270,7 @@ export default function SpeedPerformance() {
               <div className="space-y-4">
                 {googleRewardsFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-secondary/20 border border-secondary/40 flex items-center justify-center flex-shrink-0">
                       <feature.icon className="w-5 h-5 text-secondary" />
                     </div>
                     <span className="text-foreground">{feature.text}</span>
@@ -298,7 +303,7 @@ export default function SpeedPerformance() {
               <div className="space-y-4 mb-8">
                 {cachingFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-secondary/20 border border-secondary/40 flex items-center justify-center flex-shrink-0">
                       <feature.icon className="w-5 h-5 text-secondary" />
                     </div>
                     <span className="text-foreground">{feature.text}</span>
@@ -403,7 +408,7 @@ export default function SpeedPerformance() {
               <div className="space-y-4 mb-8">
                 {aiFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-secondary/20 border border-secondary/40 flex items-center justify-center flex-shrink-0">
                       <feature.icon className="w-5 h-5 text-secondary" />
                     </div>
                     <span className="text-foreground">{feature.text}</span>
@@ -432,7 +437,7 @@ export default function SpeedPerformance() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-secondary">
+      <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -478,6 +483,7 @@ export default function SpeedPerformance() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+               
             >
               <p className="text-muted-foreground">
                 Every hosting plan includes a free WP Rocket license ($49/year value). 
@@ -495,9 +501,9 @@ export default function SpeedPerformance() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-dark rounded-2xl p-8 border border-border/50"
+                className="bg-dark rounded-2xl p-8 border border-secondary/60"
               >
-                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-secondary/20 border border-secondary/40 flex items-center justify-center mb-4">
                   <feature.icon className="w-6 h-6 text-secondary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">{feature.title}</h3>
@@ -508,143 +514,13 @@ export default function SpeedPerformance() {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-dark via-light-dark to-dark">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto text-center mb-12"
-          >
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Ready to see<br />Orrien in action?
-            </h2>
-            <p className="text-muted-foreground">
-              Get in touch with our team to schedule a demo or ask any questions about 
-              our high-performance WordPress hosting.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="max-w-xl mx-auto"
-          >
-            <form className="space-y-4">
-              <Input 
-                type="text" 
-                placeholder="Your name" 
-                className="bg-light-dark border-border/50 text-foreground"
-              />
-              <Input 
-                type="email" 
-                placeholder="Email address" 
-                className="bg-light-dark border-border/50 text-foreground"
-              />
-              <Input 
-                type="text" 
-                placeholder="Company (optional)" 
-                className="bg-light-dark border-border/50 text-foreground"
-              />
-              <Input 
-                type="text" 
-                placeholder="How can we help?" 
-                className="bg-light-dark border-border/50 text-foreground"
-              />
-              <Button className="w-full bg-secondary hover:bg-secondary/90 text-dark">
-                Submit
-              </Button>
-            </form>
-          </motion.div>
-        </div>
-      </section>
+     
 
       {/* Testimonials Section */}
-      <section className="py-20 lg:py-32 bg-light-dark">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <p className="text-secondary text-sm font-medium mb-2">REVIEWS</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              What our customers have to say
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-dark rounded-2xl p-6 border border-border/50"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
-                  ))}
-                </div>
-                <p className="text-foreground mb-6">"{testimonial.content}"</p>
-                <div>
-                  <div className="font-semibold text-foreground">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+  <TestimonialsSection/>
 
       {/* Blog Section */}
-      <section className="py-20 lg:py-32 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="mb-12"
-          >
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              Recent news & blog posts
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {blogPosts.map((post, index) => (
-              <motion.div
-                key={post.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <div className="bg-secondary/20 rounded-xl aspect-video mb-4 flex items-center justify-center">
-                  <LineChart className="w-12 h-12 text-secondary" />
-                </div>
-                <div className="text-xs text-secondary mb-2">{post.category}</div>
-                <h3 className="font-semibold text-foreground mb-2 group-hover:text-secondary transition-colors">
-                  {post.title}
-                </h3>
-                <div className="text-xs text-muted-foreground">
-                  {post.date} • {post.readTime}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <BlogSection/>
 
       <Footer />
     </div>

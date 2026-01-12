@@ -108,7 +108,7 @@ const WPRocket = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center py-12">
             <motion.div {...fadeInUp}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                 Speed up your WordPress site in minutes with <span className="text-secondary">WP Rocket</span>
@@ -263,7 +263,7 @@ const WPRocket = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="p-6 bg-background rounded-xl border border-border hover:border-primary/50 transition-colors text-center group"
               >
-                <div className="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-colors">
+                <div className="w-16 h-16 bg-primary/20 border border-secondary/40 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-colors">
                   <feature.icon className="h-8 w-8 text-primary" />
                 </div>
                 <h4 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h4>
@@ -300,9 +300,9 @@ const WPRocket = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="p-6 bg-card rounded-xl border border-border"
+                className="p-6 bg-card rounded-xl border border-border border border-border hover:border-primary/50 transition-colors"
               >
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-primary/20 border border-secondary/40 rounded-lg flex items-center justify-center mb-4">
                   <result.icon className="h-6 w-6 text-primary" />
                 </div>
                 <h4 className="text-lg font-semibold text-foreground mb-2">{result.title}</h4>
@@ -380,51 +380,7 @@ const WPRocket = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Star className="h-5 w-5 text-secondary fill-secondary" />
-              <span className="text-secondary font-medium">Trustpilot</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What our customers have to say
-            </h2>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="p-6 bg-background rounded-xl border border-border"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-secondary fill-secondary" />
-                  ))}
-                </div>
-                <h4 className="font-semibold text-foreground mb-3">{testimonial.title}</h4>
-                <p className="text-sm text-muted-foreground mb-4 line-clamp-4">"{testimonial.text}"</p>
-                <div className="border-t border-border pt-4">
-                  <p className="font-medium text-foreground">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.company}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       {/* Help Section */}
       <section className="py-20 bg-background">
@@ -435,7 +391,7 @@ const WPRocket = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-8"
+              className="bg-gradient-to-br from-primary to-primary rounded-2xl p-8"
             >
               <div className="flex items-center gap-3 mb-4">
                 <HelpCircle className="h-8 w-8 text-white" />

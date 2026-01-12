@@ -32,6 +32,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -247,14 +248,15 @@ export default function ManagedVDSHosting() {
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-gradient-to-br from-dark via-light-dark to-dark">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 relative z-10 ">
+          <div className="grid lg:grid-cols-2 gap-12 items-center py-12 ">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
+               
             >
-              <div className="inline-flex items-center gap-2 bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-medium mb-4">
+              <div className="inline-flex items-center gap-2 bg-secondary/20 border border-secondary/40  py-2 text-secondary px-3  rounded-full text-sm font-medium mb-4">
                 <Server className="w-4 h-4" />
                 Premium VDS
               </div>
@@ -294,7 +296,7 @@ export default function ManagedVDSHosting() {
             >
               <div className="relative rounded-2xl overflow-hidden border border-border/30 shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600" 
+                  src="https://plus.unsplash.com/premium_photo-1682146029185-198922bd8350?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2VydmVyfGVufDB8fDB8fHww" 
                   alt="Managed VDS server infrastructure" 
                   className="w-full h-auto"
                 />
@@ -322,7 +324,7 @@ export default function ManagedVDSHosting() {
                   plan.popular 
                     ? "bg-gradient-to-b from-secondary/20 to-primary/10 border-2 border-secondary" 
                     : "bg-card border border-border"
-                }`}
+                } hover:shadow-sm hover:shadow-primary transition-all duration-300`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -388,7 +390,7 @@ export default function ManagedVDSHosting() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid md:grid-cols-3 lg:grid-cols-5 gap-6"
+            className="grid md:grid-cols-3 lg:grid-cols-4 gap-6"
           >
             {serverGreatness.map((item, index) => (
               <motion.div
@@ -396,7 +398,7 @@ export default function ManagedVDSHosting() {
                 variants={fadeInUp}
                 className="bg-card rounded-2xl p-6 border border-border hover:border-secondary/50 transition-colors text-center"
               >
-                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4 mx-auto">
+                <div className="w-12 h-12 rounded-xl bg-secondary/20 border border-secondary/40 flex items-center justify-center mb-4 mx-auto">
                   <item.icon className="w-6 h-6 text-secondary" />
                 </div>
                 <h3 className="font-display text-base font-bold text-foreground mb-2">
@@ -533,7 +535,7 @@ export default function ManagedVDSHosting() {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50"
+                className="bg-card/50 backdrop-blur-sm rounded-2xl p-6  border border-secondary/20"
               >
                 <h3 className="font-display text-lg font-bold text-foreground mb-2">
                   {item.title}
@@ -575,12 +577,13 @@ export default function ManagedVDSHosting() {
               <motion.div
                 key={index}
                 variants={fadeInUp}
+                className="border border-border hover:border-secondary/40 transition-colorss"
               >
                 <Link
                   to={product.link}
                   className="block bg-card rounded-2xl p-6 border border-border hover:border-secondary/50 transition-colors h-full"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-secondary/20 border border-secondary/40 flex items-center justify-center mb-4">
                     <product.icon className="w-6 h-6 text-secondary" />
                   </div>
                   <h3 className="font-display text-base font-bold text-foreground mb-2">
@@ -624,48 +627,7 @@ export default function ManagedVDSHosting() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-dark via-light-dark to-dark">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <span className="text-secondary text-sm font-medium uppercase tracking-wider">Testimonials</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
-              What our customers have to say
-            </h2>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-6"
-          >
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-4">"{testimonial.content}"</p>
-                <div>
-                  <p className="font-medium text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+     <TestimonialsSection/>
 
       {/* Questions CTA Section */}
       <section className="py-16 bg-background">
@@ -674,7 +636,7 @@ export default function ManagedVDSHosting() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8"
+            className="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-secondary/40"
           >
             <div>
               <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-2">

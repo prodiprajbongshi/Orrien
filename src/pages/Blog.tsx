@@ -93,40 +93,11 @@ const Blog = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark via-lightDark to-primary opacity-95" />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold text-light mb-6">
-              Latest Insights & Resources
-            </h1>
-            <p className="text-lg md:text-xl text-light/80 mb-8">
-              Stay updated with the latest trends, tutorials, and best practices 
-              in web hosting, security, and performance optimization.
-            </p>
-            <div className="flex items-center max-w-md mx-auto bg-background/10 backdrop-blur-sm rounded-xl p-2">
-              <Search className="w-5 h-5 text-light/60 ml-3" />
-              <Input 
-                placeholder="Search articles..." 
-                className="border-0 bg-transparent text-light placeholder:text-light/50 focus-visible:ring-0"
-              />
-              <Button className="bg-secondary hover:bg-semilight text-dark">
-                Search
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+ 
 
       {/* Featured Post */}
       <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

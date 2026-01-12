@@ -32,6 +32,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PricingSection } from "@/components/sections/PricingSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 
 const trustedProviders = [
   { name: "WordPress", icon: "W" },
@@ -436,28 +437,7 @@ export default function WebHosting() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-r from-primary/10 via-secondary/10 to-light/10">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className="text-5xl lg:text-6xl font-bold text-gradient mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-muted-foreground">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+ 
       {/* Pricing Section */}
      <PricingSection/>
 
@@ -482,9 +462,10 @@ export default function WebHosting() {
                 transition={{ delay: index * 0.05 }}
                 className="bg-light-dark border border-border rounded-xl p-5 text-center hover:border-secondary/50 transition-colors"
               >
-                <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mx-auto mb-4">
-                  <feature.icon className="w-6 h-6 text-secondary" />
-                </div>
+               <div className="w-12 h-12 rounded-lg bg-secondary/20 border border-secondary/50 flex items-center justify-center mx-auto mb-4">
+  <feature.icon className="w-6 h-6 text-secondary" />
+</div>
+
                 <h3 className="font-semibold text-foreground mb-1">
                   {feature.title}
                 </h3>
@@ -518,9 +499,10 @@ export default function WebHosting() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-gradient-to-br from-light-dark to-dark border border-border rounded-2xl p-6 hover:border-secondary/50 transition-all group"
               >
-                <div className="w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center mb-4 group-hover:bg-secondary/30 transition-colors">
-                  <feature.icon className="w-7 h-7 text-secondary" />
-                </div>
+          <div className="w-14 h-14 rounded-xl bg-secondary/20 border border-secondary/40 flex items-center justify-center mb-4 group-hover:bg-secondary/30 transition-colors">
+  <feature.icon className="w-7 h-7 text-secondary" />
+</div>
+
                 <h3 className="font-display text-xl font-semibold text-foreground mb-2">
                   {feature.title}
                 </h3>
@@ -551,9 +533,10 @@ export default function WebHosting() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-light-dark border border-border rounded-2xl p-6 hover:border-secondary/50 transition-all group"
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-secondary/30 to-primary/30 flex items-center justify-center mb-4">
-                  <type.icon className="w-7 h-7 text-secondary" />
-                </div>
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-secondary/30 to-primary/30 border border-secondary/40 flex items-center justify-center mb-4">
+  <type.icon className="w-7 h-7 text-secondary" />
+</div>
+
                 <h3 className="font-display text-xl font-semibold text-foreground mb-2">
                   {type.title}
                 </h3>
@@ -593,9 +576,10 @@ export default function WebHosting() {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-start gap-4"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-6 h-6 text-secondary" />
-                    </div>
+                    <div className="w-12 h-12 rounded-lg bg-secondary/20 border border-secondary/40 flex items-center justify-center flex-shrink-0">
+  <item.icon className="w-6 h-6 text-secondary" />
+</div>
+
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">
                         {item.title}
@@ -641,53 +625,7 @@ export default function WebHosting() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 lg:py-24 bg-muted/20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What our customers{" "}
-              <span className="text-gradient">have to say</span>
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-light-dark border border-border rounded-2xl p-6"
-              >
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-secondary text-secondary"
-                    />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-6">
-                  "{testimonial.content}"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center text-sm font-medium text-secondary">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground">
-                      {testimonial.name}
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      {testimonial.role}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection/>
 
       {/* Platforms */}
       <section className="py-16 lg:py-24">
@@ -754,7 +692,7 @@ export default function WebHosting() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-light-dark border border-border rounded-xl p-5"
+                    className="bg-light-dark border border-border rounded-xl p-5 border border-secondary/40"
                   >
                     <h4 className="font-medium text-foreground mb-2">
                       {faq.question}

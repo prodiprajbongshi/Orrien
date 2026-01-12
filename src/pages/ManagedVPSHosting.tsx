@@ -277,13 +277,13 @@ export default function ManagedVPSHosting() {
       <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-gradient-to-br from-dark via-light-dark to-dark">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center py-12">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-medium mb-4">
+              <div className="inline-flex items-center gap-2 bg-secondary/20 text-secondary px-3 py-2 border border-secondary/40 rounded-full text-sm font-medium mb-4 ">
                 <Server className="w-4 h-4" />
                 Enterprise VPS
               </div>
@@ -365,7 +365,7 @@ export default function ManagedVPSHosting() {
                   plan.popular 
                     ? "bg-gradient-to-b from-secondary/20 to-primary/10 border-2 border-secondary" 
                     : "bg-card border border-border"
-                }`}
+                } hover:shadow-sm hover:shadow-primary transition-all duration-300 cursor-pointer`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -375,7 +375,7 @@ export default function ManagedVPSHosting() {
                   </div>
                 )}
                 
-                <div className="text-center mb-6">
+                <div className="text-center mb-6 ">
                   <h3 className="font-display text-sm font-bold text-foreground mb-2">{plan.name}</h3>
                   <div className="flex items-baseline justify-center gap-1">
                     <span className="text-3xl font-bold text-foreground">{plan.price}</span>
@@ -488,9 +488,9 @@ export default function ManagedVPSHosting() {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-6 border border-border/50"
+                className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-6   border border-border hover:border-secondary/50 transition-colors"
               >
-                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4 border border-secondary/40">
                   <feature.icon className="w-6 h-6 text-secondary" />
                 </div>
                 <h3 className="font-display text-lg font-bold text-foreground mb-2">
@@ -531,7 +531,7 @@ export default function ManagedVPSHosting() {
                         : "bg-card/50 border-border/50 hover:border-secondary/30"
                     }`}
                   >
-                    <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0 border border-secondary/40">
                       <addon.icon className="w-5 h-5 text-secondary" />
                     </div>
                     <div>
@@ -547,7 +547,7 @@ export default function ManagedVPSHosting() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50"
+              className="bg-card/50 backdrop-blur-sm rounded-2xl p-6   border border-secondary/40"
             >
               <h3 className="font-display text-xl font-bold text-foreground mb-4">Why add-ons matter</h3>
               <div className="space-y-4 text-muted-foreground">
@@ -597,9 +597,9 @@ export default function ManagedVPSHosting() {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="bg-card rounded-2xl p-6 border border-border hover:border-secondary/50 transition-colors"
+                className="bg-card rounded-2xl p-6 border border-border hover:border-secondary/40 transition-colors "
               >
-                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4 border border-secondary/40">
                   <item.icon className="w-6 h-6 text-secondary" />
                 </div>
                 <h3 className="font-display text-lg font-bold text-foreground mb-2">

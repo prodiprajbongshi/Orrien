@@ -7,6 +7,7 @@ import {
   Server, Globe, Database, Lock, Gauge, Users, Star, ShoppingCart,
   CreditCard, Package, TrendingUp, BarChart3, RefreshCw, Award
 } from "lucide-react";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 
 const trustedLogos = [
   { name: "TrustPilot", rating: "4.9/5" },
@@ -191,7 +192,7 @@ export default function WooCommerceHosting() {
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-b from-dark via-dark to-light-dark">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-secondary/20 via-transparent to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center py-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -229,7 +230,7 @@ export default function WooCommerceHosting() {
               className="relative"
             >
               <div className="relative bg-gradient-to-br from-secondary/20 to-primary/20 rounded-2xl p-8 border border-secondary/30">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-4">
                   <div className="bg-dark/80 rounded-xl p-4 border border-border/50">
                     <ShoppingCart className="w-8 h-8 text-secondary mb-3" />
                     <div className="text-2xl font-bold text-foreground">50K+</div>
@@ -314,7 +315,7 @@ export default function WooCommerceHosting() {
               <div className="space-y-4">
                 {speedFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-secondary/20 border border-secondary/40 flex items-center justify-center flex-shrink-0">
                       <feature.icon className="w-5 h-5 text-secondary" />
                     </div>
                     <span className="text-foreground">{feature.text}</span>
@@ -347,7 +348,7 @@ export default function WooCommerceHosting() {
               <div className="space-y-4">
                 {securityFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-secondary/20 border border-secondary/40 flex items-center justify-center flex-shrink-0">
                       <feature.icon className="w-5 h-5 text-secondary" />
                     </div>
                     <span className="text-foreground">{feature.text}</span>
@@ -404,7 +405,7 @@ export default function WooCommerceHosting() {
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Never miss a sale
               </h2>
-              <div className="inline-block bg-secondary/20 text-secondary text-sm font-medium px-3 py-1 rounded-full mb-6">
+              <div className="inline-block bg-secondary/20 text-secondary border border-secondary/40 text-sm font-medium px-3 py-1 rounded-full mb-6">
                 99.99% UPTIME SLA
               </div>
               <p className="text-muted-foreground mb-8">
@@ -414,7 +415,7 @@ export default function WooCommerceHosting() {
               <div className="space-y-4">
                 {saleFeatures.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-secondary/20  border border-secondary/40 flex items-center justify-center flex-shrink-0">
                       <feature.icon className="w-5 h-5 text-secondary" />
                     </div>
                     <span className="text-foreground">{feature.text}</span>
@@ -427,7 +428,7 @@ export default function WooCommerceHosting() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-secondary">
+      <section className="py-16 lg:py-32 bg-primary">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -536,7 +537,7 @@ export default function WooCommerceHosting() {
                 viewport={{ once: true }}
                 className={`relative bg-light-dark rounded-2xl p-6 border ${
                   plan.popular ? "border-secondary" : "border-border/50"
-                }`}
+                } hover:border hover:border-secondary/40 transition-all duration-300 `}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-dark text-xs font-bold px-3 py-1 rounded-full">
@@ -659,7 +660,7 @@ export default function WooCommerceHosting() {
                 viewport={{ once: true }}
                 className="bg-light-dark rounded-2xl p-6 border border-border/50 hover:border-secondary/50 transition-colors"
               >
-                <div className="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-secondary/20 border border-secondary/40 flex items-center justify-center mb-4">
                   <feature.icon className="w-6 h-6 text-secondary" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
@@ -695,47 +696,7 @@ export default function WooCommerceHosting() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 lg:py-32 bg-light-dark">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <p className="text-secondary text-sm font-medium mb-2">REVIEWS</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              What our customers have to say
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-dark rounded-2xl p-6 border border-border/50"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
-                  ))}
-                </div>
-                <p className="text-foreground mb-6">"{testimonial.content}"</p>
-                <div>
-                  <div className="font-semibold text-foreground">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+  <TestimonialsSection/>
       {/* FAQ Section */}
       <section className="py-20 lg:py-32 bg-background">
         <div className="container mx-auto px-4">
@@ -765,7 +726,7 @@ export default function WooCommerceHosting() {
               {faqs.map((faq, index) => (
                 <div 
                   key={index} 
-                  className="bg-light-dark rounded-xl p-6 border border-border/50"
+                  className="bg-light-dark rounded-xl p-6  border border-secondary/40"
                 >
                   <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
                   <p className="text-muted-foreground text-sm">{faq.answer}</p>

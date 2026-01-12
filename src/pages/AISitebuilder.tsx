@@ -187,7 +187,7 @@ const AISitebuilder = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center py-12">
             <motion.div {...fadeInUp}>
               <span className="inline-block px-4 py-2 bg-secondary/20 text-secondary rounded-full text-sm font-medium mb-4">
                 <Sparkles className="w-4 h-4 inline mr-2" />
@@ -214,9 +214,7 @@ const AISitebuilder = () => {
                 <Button className="bg-secondary hover:bg-semilight text-dark font-semibold px-8 py-6 text-lg">
                   Try AI Builder Free <Wand2 className="ml-2 h-5 w-5" />
                 </Button>
-                <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-dark px-8 py-6 text-lg">
-                  Watch Demo
-                </Button>
+                
               </div>
             </motion.div>
             
@@ -227,7 +225,7 @@ const AISitebuilder = () => {
               className="relative"
             >
               <img 
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600" 
+                src="https://plus.unsplash.com/premium_photo-1725907643701-9ba38affe7bb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGFpfGVufDB8fDB8fHww" 
                 alt="AI Sitebuilder" 
                 className="rounded-2xl shadow-2xl border border-primary/20"
               />
@@ -275,7 +273,7 @@ const AISitebuilder = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-card border border-border/30 rounded-2xl p-6 hover:border-secondary/50 transition-colors"
               >
-                <div className="w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center mb-4">
+                <div className="w-14 h-14 rounded-xl bg-secondary/20 border border-secondary/40 flex items-center justify-center mb-4">
                   <feature.icon className="w-7 h-7 text-secondary" />
                 </div>
                 <h3 className="font-semibold text-foreground text-lg mb-2">{feature.title}</h3>
@@ -309,9 +307,9 @@ const AISitebuilder = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative"
+                className="relative border "
               >
-                <div className="bg-card border border-border/30 rounded-2xl p-6 h-full">
+                <div className="bg-card border border-border/30 rounded-2xl p-6 h-full border border-secondary/40">
                   <div className="text-6xl font-bold text-secondary/20 mb-4">{step.step}</div>
                   <h3 className="font-semibold text-foreground text-lg mb-2">{step.title}</h3>
                   <p className="text-muted-foreground text-sm">{step.description}</p>
@@ -428,50 +426,8 @@ const AISitebuilder = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            {...fadeInUp}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Loved by creators worldwide
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card border border-border/30 rounded-2xl p-6"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
-                  ))}
-                </div>
-                <h3 className="font-semibold text-foreground mb-3">{testimonial.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{testimonial.text}</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <span className="text-secondary font-semibold">{testimonial.author.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground text-sm">{testimonial.author}</div>
-                    <div className="text-muted-foreground text-xs">{testimonial.role}</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+ 
+   
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-dark via-lightDark to-dark">
         <div className="container mx-auto px-4">

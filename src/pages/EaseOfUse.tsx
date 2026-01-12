@@ -21,6 +21,8 @@ import {
 } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
+import { BlogSection } from "@/components/sections/BlogSection";
 
 const EaseOfUse = () => {
   const fadeInUp = {
@@ -123,7 +125,7 @@ const EaseOfUse = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center py-12">
             <motion.div {...fadeInUp}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                 WordPress, <span className="text-secondary">simplified</span>
@@ -183,7 +185,7 @@ const EaseOfUse = () => {
               <div className="grid sm:grid-cols-2 gap-4">
                 {controlPanelFeatures.map((feature, index) => (
                   <div key={index} className="flex items-start gap-3 p-4 bg-card rounded-lg border border-border">
-                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 bg-primary/20 border border-secondary/40 rounded-lg flex items-center justify-center flex-shrink-0">
                       <feature.icon className="h-5 w-5 text-primary" />
                     </div>
                     <div>
@@ -307,7 +309,7 @@ const EaseOfUse = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-secondary">
+      <section className="py-20 bg-gradient-to-r from-primary  ">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -363,8 +365,8 @@ const EaseOfUse = () => {
             >
               <div className="grid sm:grid-cols-2 gap-4">
                 {userManagementFeatures.map((feature, index) => (
-                  <div key={index} className="p-4 bg-card rounded-lg border border-border hover:border-primary/50 transition-colors">
-                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center mb-3">
+                  <div key={index} className="p-4 bg-card rounded-lg border border-secondary/40  ">
+                    <div className="w-10 h-10 bg-primary/20 border border-secondary/40 rounded-lg flex items-center justify-center mb-3">
                       <feature.icon className="h-5 w-5 text-primary" />
                     </div>
                     <h4 className="font-semibold text-foreground mb-1">{feature.title}</h4>
@@ -406,7 +408,7 @@ const EaseOfUse = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="p-6 bg-background rounded-xl border border-border hover:border-primary/50 transition-colors"
               >
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-primary/20 border border-secondary/40 rounded-lg flex items-center justify-center mb-4">
                   <feature.icon className="h-6 w-6 text-primary" />
                 </div>
                 <h4 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h4>
@@ -572,145 +574,13 @@ const EaseOfUse = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-gradient-to-br from-dark via-lightDark to-dark">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-10"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to see Rocket.net in action?
-              </h2>
-              <p className="text-gray-300">
-                Get in touch and we'll show you how easy WordPress hosting can be.
-              </p>
-            </motion.div>
-            
-            <motion.form
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-4"
-            >
-              <div className="grid md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-gray-400 focus:outline-none focus:border-secondary"
-                />
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-gray-400 focus:outline-none focus:border-secondary"
-                />
-              </div>
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-gray-400 focus:outline-none focus:border-secondary"
-              />
-              <textarea
-                placeholder="Your Message"
-                rows={4}
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-gray-400 focus:outline-none focus:border-secondary resize-none"
-              ></textarea>
-              <Button className="w-full bg-secondary hover:bg-semilight text-dark font-semibold py-6">
-                Send Message
-              </Button>
-            </motion.form>
-          </div>
-        </div>
-      </section>
+    
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <span className="text-secondary font-medium mb-4 block">Testimonials</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What our customers have to say
-            </h2>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="p-6 bg-background rounded-xl border border-border"
-              >
-                <p className="text-primary font-semibold mb-4">{testimonial.company}</p>
-                <p className="text-muted-foreground mb-6 italic">"{testimonial.text}"</p>
-                <div>
-                  <p className="font-semibold text-foreground">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+          {/* Testimonials Section */}
+  <TestimonialsSection/>
 
-      {/* Blog Posts Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Recent news & blog posts
-            </h2>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {blogPosts.map((post, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="group cursor-pointer"
-              >
-                <div className="relative overflow-hidden rounded-xl mb-4">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-secondary text-dark text-sm font-medium rounded-full">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-                <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                  {post.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">{post.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Blog Section */}
+    <BlogSection />
 
       <Footer />
     </div>

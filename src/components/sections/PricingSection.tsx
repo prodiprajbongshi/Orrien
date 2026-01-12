@@ -94,7 +94,7 @@ function PricingCard({ plan, index, isYearly }: { plan: typeof plans[0]; index: 
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.15 }}
-      className={`relative ${plan.popular ? "md:-mt-4 md:mb-4" : ""}`}
+      className={`relative ${plan.popular ? "md:-mt-4 md:mb-4" : ""} `}
     >
       {/* Popular Badge */}
       {plan.popular && (
@@ -111,7 +111,7 @@ function PricingCard({ plan, index, isYearly }: { plan: typeof plans[0]; index: 
           plan.popular
             ? "border-secondary/50 bg-gradient-to-b from-secondary/10 to-transparent"
             : ""
-        }`}
+        } hover:shadow-sm hover:shadow-primary`}
       >
         {/* Header */}
         <div className="mb-6">
@@ -176,7 +176,7 @@ export function PricingSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-10"
+          className="text-center max-w-3xl mx-auto mb-10 "
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/30 text-secondary text-sm font-medium mb-4">
             Pricing
@@ -197,9 +197,9 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-12 "
         >
-          <div className="inline-flex items-center gap-1 p-1 rounded-full bg-muted/30 border border-border/50">
+          <div className="inline-flex items-center gap-1 p-1 rounded-full bg-muted/30 border border-border/50 ">
             <button
               onClick={() => setIsYearly(false)}
               className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${
@@ -229,7 +229,7 @@ export function PricingSection() {
         </motion.div>
 
         {/* Pricing Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 max-w-7xl mx-auto ">
           {plans.map((plan, index) => (
             <PricingCard key={plan.name} plan={plan} index={index} isYearly={isYearly} />
           ))}
@@ -241,7 +241,7 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center mt-12"
+          className="text-center mt-12 "
         >
           <p className="text-muted-foreground">
             🔒 30-day money-back guarantee • No contracts • Cancel anytime

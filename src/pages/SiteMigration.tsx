@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { useState } from "react";
+import { PricingSection } from "@/components/sections/PricingSection";
 
 const SiteMigration = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -119,27 +120,7 @@ const SiteMigration = () => {
     { value: "700,000+", label: "Happy customers" },
   ];
 
-  const testimonials = [
-    {
-      name: "Samuel Johnson",
-      role: "CEO at TechStart",
-      content: "The migration was seamless. My site was up and running on the new server within hours with zero downtime.",
-      rating: 5,
-    },
-    {
-      name: "Maria Garcia",
-      role: "Marketing Director",
-      content: "Excellent service! The team handled everything professionally and kept me informed throughout the process.",
-      rating: 5,
-    },
-    {
-      name: "David Chen",
-      role: "Small Business Owner",
-      content: "I was worried about migrating my e-commerce site, but the team made it completely painless.",
-      rating: 5,
-    },
-  ];
-
+  
   const faqs = [
     {
       question: "How long does the migration process take?",
@@ -172,7 +153,7 @@ const SiteMigration = () => {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center py-12">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -291,9 +272,9 @@ const SiteMigration = () => {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full bg-card hover:shadow-lg transition-shadow border-border/50">
+                <Card className="h-full bg-card border border-secondary/60">
                   <CardHeader>
-                    <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
+                    <div className="w-16 h-16 bg-primary/10 rounded-2xl border border-secondary/40 flex items-center justify-center mb-4">
                       <step.icon className="w-8 h-8 text-primary" />
                     </div>
                     <CardTitle className="text-xl text-foreground">{step.step}</CardTitle>
@@ -361,64 +342,7 @@ const SiteMigration = () => {
       </section>
 
       {/* Pricing Plans */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Priority managed by Rocket.net specialists
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Choose the migration plan that fits your needs
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {pricingPlans.map((plan, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className={`h-full relative ${plan.popular ? 'border-primary border-2 shadow-lg shadow-primary/20' : 'border-border/50'}`}>
-                  {plan.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-dark text-sm font-semibold rounded-full">
-                      Most Popular
-                    </div>
-                  )}
-                  <CardHeader className="text-center pb-4">
-                    <CardTitle className="text-lg text-foreground">{plan.name}</CardTitle>
-                    <div className="mt-4">
-                      <span className="text-4xl font-bold text-foreground">{plan.price}</span>
-                      <span className="text-muted-foreground">{plan.period}</span>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3 mb-6">
-                      {plan.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button className={`w-full ${plan.popular ? 'bg-primary hover:bg-primary/90 text-dark' : 'bg-muted hover:bg-muted/80 text-foreground'}`}>
-                      Get Started
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+   <PricingSection/>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10">
@@ -454,80 +378,7 @@ const SiteMigration = () => {
           </div>
         </div>
       </section>
-
-      {/* Contact Form Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Ready to see Rocket.net in action?
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Fill out the form below and our team will get back to you within 24 hours
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto"
-          >
-            <Card className="bg-card border-border/50">
-              <CardContent className="p-8">
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">First Name</label>
-                      <input
-                        type="text"
-                        className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-foreground"
-                        placeholder="John"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">Last Name</label>
-                      <input
-                        type="text"
-                        className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-foreground"
-                        placeholder="Doe"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Email</label>
-                    <input
-                      type="email"
-                      className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-foreground"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Current Hosting Provider</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-foreground"
-                      placeholder="Your current host"
-                    />
-                  </div>
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-dark font-semibold py-6">
-                    Request Free Migration
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
+ 
       {/* Stats Section */}
       <section className="py-20 bg-gradient-to-br from-dark via-lightDark to-dark">
         <div className="container mx-auto px-4">
@@ -561,49 +412,7 @@ const SiteMigration = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What our customers have to say
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full bg-card border-border/50">
-                  <CardContent className="p-6">
-                    <div className="flex gap-1 mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                      ))}
-                    </div>
-                    <p className="text-muted-foreground mb-6">"{testimonial.content}"</p>
-                    <div>
-                      <p className="font-semibold text-foreground">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+       
 
       {/* FAQ Section */}
       <section className="py-20 bg-muted/30">
