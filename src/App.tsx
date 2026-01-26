@@ -29,7 +29,7 @@ import AffiliateProgram from "./pages/AffiliateProgram";
 import ReferFriend from "./pages/ReferFriend";
 import Offers from "./pages/Offers";
  
-import TermOfServices from "./pages/termsOfServices";
+import TermOfServices from "./pages/TermsOfServices";
 import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiePolicy from "./pages/CookiePolicy";
